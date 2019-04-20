@@ -80,4 +80,4 @@ theme: landscape
 deploy:
   type: git
   repo: git@github.com:moanan/blog.git
-  branch: published
+  branch: gh-pages
