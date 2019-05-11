@@ -17,3 +17,16 @@
 \# download source
 
 `$ git clone https://github.com/stkevintan/hexo-theme-material-flow themes/material-flow# New Document`
+
+# Usage
+create new post
+`$ hexo new 2020-01-01-whatever`
+
+start local server
+`$ hexo s`
+
+generate static files
+`$ hexo g`
+
+deploy to github pages
+`$ hexo d`
