@@ -21,4 +21,7 @@ To bulk resize multiple images, you can set the input image as a file name patte
 -r [frameRate] Force the frame rate (input/output) to `frameRate`
 -c[:stream_specifier] select encoder
 
+其实还可以转音频，如将目录中的无损音乐文件`*.flac`转为Itunes支持的`*.m4a`格式：
+> for f in \*.flac; do ffmpeg -i "$f" -acodec alac "${f%flac}m4a"; done
+
 参考资料：[Index of the Apple macOS command line (OS X bash)](https://ss64.com/osx/)
