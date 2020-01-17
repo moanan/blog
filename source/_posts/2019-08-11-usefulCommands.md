@@ -25,3 +25,20 @@ To bulk resize multiple images, you can set the input image as a file name patte
 > for f in \*.flac; do ffmpeg -i "$f" -acodec alac "${f%flac}m4a"; done
 
 参考资料：[Index of the Apple macOS command line (OS X bash)](https://ss64.com/osx/)
+
+## 文件夹同步-rsync
+> rsync source destination
+
+-a archive, sync recursively
+-z compress
+-v verbose
+-P progress
+-n dry run
+
+同步之前可以使用`-n`模拟真实输出，检验命令是否正确。注意：目标路径的末尾有`/`，表示同步该路径下的所有文件，而不包括该文件夹本身，如：
+
+> rsync -azvP --delete /media/pi/Elements/ /media/pi/My\ Passport/backup/Main_mirror
+> rsync -anzvP --delete /Users/anmo/Documents/ /Volumes/Backup/Documents (dry run)
+
+参考资料：[How To Use Rsync to Sync Local and Remote Directories on a VPS](
+https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps )
