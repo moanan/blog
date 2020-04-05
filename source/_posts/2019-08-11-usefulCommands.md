@@ -14,7 +14,8 @@ To bulk resize multiple images, you can set the input image as a file name patte
 
 
 ## 视频转码-ffmpeg
-> ffmpeg -y -r 30 -i input.cine -r 30 -c:v libx264 output.mp4
+ffmpeg支持绝大多数音视频编码的相互转换。通常我会转成mp4格式，大多数情况下输出视频体积远小于原始视频，并且几乎不影响视频质量。
+> ffmpeg -y -r 30 -i in.cine -r 30 -c:v libx264 out.mp4
 
 -i [url] Input file
 -y Overwrite output files without asking
@@ -24,7 +25,6 @@ To bulk resize multiple images, you can set the input image as a file name patte
 其实还可以转音频，如将目录中的无损音乐文件`*.flac`转为Itunes支持的`*.m4a`格式：
 > for f in \*.flac; do ffmpeg -i "$f" -acodec alac "${f%flac}m4a"; done
 
-参考资料：[Index of the Apple macOS command line (OS X bash)](https://ss64.com/osx/)
 
 ## 文件夹同步-rsync
 > rsync source destination
@@ -40,5 +40,7 @@ To bulk resize multiple images, you can set the input image as a file name patte
 > rsync -azvP --delete /media/pi/Elements/ /media/pi/My\ Passport/backup/Main_mirror
 > rsync -anzvP --delete /Users/anmo/Documents/ /Volumes/Backup/Documents (dry run)
 
-参考资料：[How To Use Rsync to Sync Local and Remote Directories on a VPS](
+参考资料：
+[Index of the Apple macOS command line (OS X bash)](https://ss64.com/osx/)
+[How To Use Rsync to Sync Local and Remote Directories on a VPS](
 https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps )
