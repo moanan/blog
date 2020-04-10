@@ -6,6 +6,8 @@ tags:
 
 [原文地址](http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/)
 
+<!--more-->
+
 Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be present in your repository index. This article we will see how to get rid of them.
 
 ## Step 1: Commit all your changes
