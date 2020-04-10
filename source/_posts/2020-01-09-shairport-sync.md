@@ -6,6 +6,8 @@ tags:
 
 家里闲置一套非常古老的索尼音响，可以放磁带、CD、广播的那种，留之无用弃之可惜。幸好它还支持音频输入，所以索性连上树莓派打造一个无线音响。
 
+<!--more-->
+
 ## 安装
 https://github.com/mikebrady/shairport-sync
 
