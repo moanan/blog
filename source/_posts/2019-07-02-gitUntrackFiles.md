@@ -16,7 +16,9 @@ Before proceeding, make sure all your changes are committed, including your .git
 ## Step 2: Remove everything from the repository
 To clear your repo, use:
 
-> git rm -r --cached .
+```bash
+git rm -r --cached .
+```
 - `rm` is the remove command
 - `-r` will allow recursive removal
 - `–cached` will only remove files from the index. Your files will still be there.
@@ -24,10 +26,14 @@ To clear your repo, use:
 The `rm` command can be unforgiving. If you wish to try what it does beforehand, add the `-n` or `--dry-run` flag to test things out.
 
 ## Step 3: Re add everything
-> git add .
+```bash
+git add .
+```
 
 ## Step 4: Commit
-> git commit -m ".gitignore fix"
+```bash
+git commit -m ".gitignore fix"
+```
 
 Your repository is clean :)
 

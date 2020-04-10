@@ -13,14 +13,22 @@ https://github.com/mikebrady/shairport-sync
 
 ## 调试
 start:
-> sudo systemctl enable shairport-sync.service
-> sudo service shairport-sync start
+```bash
+sudo systemctl enable shairport-sync.service
+sudo service shairport-sync start
+```
 
 restart:
-> sudo service shairport-sync restart
+```bash
+sudo service shairport-sync restart
+```
 
 adjust volume:(默认音域范围很窄，需要手动调至0 dB附近)
-> sudo alsamixer
+```bash
+sudo alsamixer
+```
 
 config file:
-> /etc/shairport-sync.conf
+```bash
+vim /etc/shairport-sync.conf
+```

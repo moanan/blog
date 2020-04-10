@@ -45,7 +45,7 @@ music-dl 				| 网易云, QQ, 酷狗, 咪咕, 百度, 虾米 | 适用于多平�
 music-get 				| 网易云, QQ	| 需要登录 
 netease-cloud-music-dl	| 网易云 	| 自动写入专辑封面，记录元数据 
 
-其中我最满意的还是netease-cloud-music-dl，完全满足我的下载需求：
+其中我最满意的还是`netease-cloud-music-dl`，完全满足我的下载需求：
 - 支持下载专辑封面并嵌入MP3文件
 - 支持写入歌手名、音乐标题、专辑名等信息至ID3 Tags
 - 支持跳过已下载的音频文件
@@ -57,8 +57,10 @@ netease-cloud-music-dl	| 网易云 	| 自动写入专辑封面，记录元数据
 - 支持下载公开歌单所有歌曲
 
 注：mac终端默认不走代理，因此即使ss/VPN设置全局代理，仍然无法使用命令行工具正常下载。我使用的是ss，在命令行输入执行以下两条指令：
-> export http_proxy=http://127.0.0.1:1087
-> export https_proxy=http://127.0.0.1:1087
+```bash
+export http_proxy=http://127.0.0.1:1087
+export https_proxy=http://127.0.0.1:1087
+```
 
 当前终端就实现代理了。macOS 版的 SS 默认监控本地的HTTP端口是`1087`，而Windows版本的则是`1080`，如果改过默认端口，就使用你指定的端口。（终端重启后需要重新输入这两条指令）
 
