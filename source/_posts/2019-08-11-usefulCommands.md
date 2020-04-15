@@ -17,6 +17,17 @@ sips --resampleHeight 1200 \*.jpg --out `targetFolder`
 
 To bulk resize multiple images, you can set the input image as a file name pattern, such as all jpg files: \*.jpg. Before running the resizing code, create a target folder like `targetFolder` to hold all the resized images. 
 
+## PDF压缩-ghostscript
+```bash
+gs -sDEVICE=pdfwrite -dPDFSETTINGS=/printer -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+```
+Other options for PDFSETTINGS:
+- `/screen` selects low-resolution output similar to the Acrobat Distiller "Screen Optimized" setting.
+- `/ebook` selects medium-resolution output similar to the Acrobat Distiller "eBook" setting.
+- `/printer` selects output similar to the Acrobat Distiller "Print Optimized" setting.
+- `/prepress` selects output similar to Acrobat Distiller "Prepress Optimized" setting.
+- `/default` selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.
+
 
 ## 视频转码-ffmpeg
 ffmpeg支持绝大多数音视频编码的相互转换。通常我会转成mp4格式，大多数情况下输出视频体积远小于原始视频，并且几乎不影响视频质量。
