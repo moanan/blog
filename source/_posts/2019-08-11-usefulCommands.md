@@ -1,5 +1,5 @@
 ---
-title: 实用OSX命令
+title: 实用bash指令工具
 date: 2019-08-11 15:43:35
 tags:
 ---
@@ -10,49 +10,46 @@ tags:
 
 {% asset_img nut_cracking.jpeg 没有小工具的猩猩 %}
 
-## 图片批量压缩-sip
+## 图片压缩-sip (OSX)
+Mac自带的图片压缩工具[sips](https://www.birme.net/blog/bulk-resize-images-with-sips-on-mac/)，支持批处理，可以方便地将整个文件夹内的图片压缩成想要的分辨率。
 ```bash
-sips --resampleHeight 1200 \*.jpg --out `targetFolder`
+sips --resampleHeight 1200 *.jpg --out `targetFolder`
 ```
-
 To bulk resize multiple images, you can set the input image as a file name pattern, such as all jpg files: \*.jpg. Before running the resizing code, create a target folder like `targetFolder` to hold all the resized images. 
 
-
-## 视频转码-ffmpeg
-ffmpeg支持绝大多数音视频编码的相互转换。通常我会转成mp4格式，大多数情况下输出视频体积远小于原始视频，并且几乎不影响视频质量。
+## PDF压缩
+[ghostscript](https://www.ghostscript.com/)适用于大多数pdf的压缩:
 ```bash
-ffmpeg -y -r 30 -i in.cine -r 30 -c:v libx264 out.mp4
+ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+\\ or
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
 ```
+Other options for PDFSETTINGS:
+/screen selects low-resolution output similar to the Acrobat Distiller "Screen Optimized" setting.
+/ebook selects medium-resolution output similar to the Acrobat Distiller "eBook" setting.
+/printer selects output similar to the Acrobat Distiller "Print Optimized" setting.
+/prepress selects output similar to Acrobat Distiller "Prepress Optimized" setting.
+/default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.
 
--i [url] Input file
--y Overwrite output files without asking
--r [frameRate] Force the frame rate (input/output) to `frameRate`
--c[:stream_specifier] select encoder
-
-其实还可以转音频，如将目录中的无损音乐文件`*.flac`转为Itunes支持的`*.m4a`格式：
+能将扫描文件压缩到10倍的高级指令[pdfsandwich](http://www.tobias-elze.de/pdfsandwich/)，再也不用担心辣鸡扫描仪导出的大文件作为普通附件上传，甚至还支持多国语言OCR：
 ```bash
-for f in \*.flac; do ffmpeg -i "$f" -acodec alac "${f%flac}m4a"; done
+pdfsandwich alice.pdf
 ```
 
 ## 文件夹同步-rsync
+[rsync](
+https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps )可以同步文件夹、备份硬盘，甚至通过ssh传输数据。如果是单纯需要备份，桌面应用[FreeFileSync](https://freefilesync.org/)也是很好的选择。
 ```bash
 rsync source destination
 ```
-
 -a archive, sync recursively
 -z compress
 -v verbose
 -P progress
 -n dry run
-
 同步之前可以使用`-n`模拟真实输出，检验命令是否正确。注意：目标路径的末尾有`/`，表示同步该路径下的所有文件，而不包括该文件夹本身，如：
 
 ```bash
 rsync -azvP --delete /media/pi/Elements/ /media/pi/My\ Passport/backup/Main_mirror
 rsync -anzvP --delete /Users/anmo/Documents/ /Volumes/Backup/Documents (dry run)
 ```
-
-参考资料：
-[Index of the Apple macOS command line (OS X bash)](https://ss64.com/osx/)
-[How To Use Rsync to Sync Local and Remote Directories on a VPS](
-https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps )
