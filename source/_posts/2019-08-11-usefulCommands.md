@@ -36,6 +36,11 @@ Other options for PDFSETTINGS:
 pdfsandwich alice.pdf
 ```
 
+## PDF合并多个文件
+```bash
+gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH *.pdf
+```
+
 ## 文件夹同步-rsync
 [rsync](
 https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps )可以同步文件夹、备份硬盘，甚至通过ssh传输数据。如果是单纯需要备份，桌面应用[FreeFileSync](https://freefilesync.org/)也是很好的选择。
