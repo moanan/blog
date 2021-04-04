@@ -2,30 +2,29 @@
 
 ## Setup Hexo
 ```
-$ brew install node`
-$ npm install -g hexo-cli`
-$ npm install hexo-deployer-git --save`
+brew install node
+npm install -g hexo-cli
+npm install hexo-deployer-git --save
 ```
 ## Setup Theme Maupassant
 ```
-$ cd /your_blog_dir/
-$ git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant
-$ npm install hexo-renderer-pug --save
-$ npm install hexo-renderer-sass --save
+cd /your_blog_dir/
+git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant
+npm install hexo-renderer-pug --save
+npm install hexo-renderer-sass --save
 ```
 
 ## Usage
-create new post
-`$ hexo new 2020-01-01-whatever`
-
-start local server
-`$ hexo s`
-
-generate static files
-`$ hexo g`
-
-deploy to github pages
-`$ hexo d`
+```bash
+# create new post
+hexo new 2020-01-01-whatever
+# start local server
+hexo s
+# generate static files
+hexo g
+# deploy to github pages
+hexo d
+```
 
 # Blogging with Docker
 The currently using [Maupassant Theme](https://github.com/tufu9441/maupassant-hexo) requires `hexo-renderer-pug` and `hexo-renderer-sass` which often mess up with Node versions and dependencies. 
@@ -35,14 +34,14 @@ To solve this, I use a modified [Docker hexo-cli](https://github.com/martindsouz
 docker pull moanan/hexo_maupassant:mode14.16.0-alpine3.10
 # yes, mode is a typo
 ```
-where I specified the working node version
+where I specified the working node version:
 ```
 FROM node:14.16.0-alpine3.10 as hexo-base
 ```
-and added Maupassant dependency
+and added Maupassant dependencies:
 ```
-  npm install hexo-renderer-pug --save && \
-  npm install hexo-renderer-sass --save && \
+npm install hexo-renderer-pug --save && \
+ npm install hexo-renderer-sass --save && \
 ```
 
 ## Usage
