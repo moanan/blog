@@ -37,7 +37,6 @@
 }
 
 #donate .blur {
-    -webkit-filter: blur(3px);
     filter: blur(3px);
 }
 
@@ -58,8 +57,7 @@
     text-align: center;
     left: calc(50% - 120px);
     top: calc(50% - 60px);
-    -webkit-transform: rotatez(-15deg);
-            transform: rotatez(-15deg);
+    transform: rotatez(-15deg);
 }
 
 #donate #donateBox {
@@ -89,14 +87,12 @@
     cursor: pointer;
     overflow: hidden;
     height: 28px;
-    -webkit-filter: grayscale(1);
     filter: grayscale(1);
     opacity: 0.5;
 }
 
 #donate #donateBox li:hover {
     background-color: rgba(204, 217, 220, 0.3);
-    -webkit-filter: grayscale(0);
     filter: grayscale(0);
     opacity: 1;
 }
@@ -143,8 +139,7 @@
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.3);
     display: none;
-    -webkit-perspective: 400px;
-            perspective: 400px;
+    perspective: 400px;
 }
 
 #donate #MainBox {
@@ -161,10 +156,8 @@
     box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: all 1s ease-in-out;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
+    transform-style: preserve-3d;
+    transform-origin: center center;
     overflow: hidden;
 }
 
@@ -176,8 +169,7 @@
     background: no-repeat center center url(../img/github.svg);
     background-size: contain;
     opacity: 0.3;
-    -webkit-transform: rotatez(15deg);
-            transform: rotatez(15deg);
+    transform: rotatez(15deg);
 }
 
 #donate #ps {
@@ -200,8 +192,7 @@
 [data-footnote]::after {
     position: absolute;
     transition: all .3s;
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
     opacity: 0;
     left: 37px;
     z-index: 10;
@@ -236,8 +227,7 @@
 
 #donate [data-footnote]:hover::before,
 [data-footnote]:hover::after {
-    -webkit-transform: translate3d(-50%, -7px, 0);
-            transform: translate3d(-50%, -7px, 0);
+    transform: translate3d(-50%, -7px, 0);
 }
 
 #donate #MainBox.showQR {
@@ -257,48 +247,39 @@
 
 @-webkit-keyframes showQR {
     from {
-        -webkit-transform: rotateX(90deg);
-                transform: rotateX(90deg);
+        transform: rotateX(90deg);
     }
     8% {
         opacity: 1;
-        -webkit-transform: rotateX(-60deg);
-                transform: rotateX(-60deg);
+        transform: rotateX(-60deg);
     }
     18% {
         opacity: 1;
-        -webkit-transform: rotateX(40deg);
-                transform: rotateX(40deg);
+        transform: rotateX(40deg);
     }
     34% {
         opacity: 1;
-        -webkit-transform: rotateX(-28deg);
-                transform: rotateX(-28deg);
+        transform: rotateX(-28deg);
     }
     44% {
         opacity: 1;
-        -webkit-transform: rotateX(18deg);
-                transform: rotateX(18deg);
+        transform: rotateX(18deg);
     }
     58% {
         opacity: 1;
-        -webkit-transform: rotateX(-12deg);
-                transform: rotateX(-12deg);
+        transform: rotateX(-12deg);
     }
     72% {
         opacity: 1;
-        -webkit-transform: rotateX(9deg);
-                transform: rotateX(9deg);
+        transform: rotateX(9deg);
     }
     88% {
         opacity: 1;
-        -webkit-transform: rotateX(-5deg);
-                transform: rotateX(-5deg);
+        transform: rotateX(-5deg);
     }
     96% {
         opacity: 1;
-        -webkit-transform: rotateX(2deg);
-                transform: rotateX(2deg);
+        transform: rotateX(2deg);
     }
     to {
         opacity: 1;
@@ -307,48 +288,39 @@
 
 @keyframes showQR {
     from {
-        -webkit-transform: rotateX(90deg);
-                transform: rotateX(90deg);
+        transform: rotateX(90deg);
     }
     8% {
         opacity: 1;
-        -webkit-transform: rotateX(-60deg);
-                transform: rotateX(-60deg);
+        transform: rotateX(-60deg);
     }
     18% {
         opacity: 1;
-        -webkit-transform: rotateX(40deg);
-                transform: rotateX(40deg);
+        transform: rotateX(40deg);
     }
     34% {
         opacity: 1;
-        -webkit-transform: rotateX(-28deg);
-                transform: rotateX(-28deg);
+        transform: rotateX(-28deg);
     }
     44% {
         opacity: 1;
-        -webkit-transform: rotateX(18deg);
-                transform: rotateX(18deg);
+        transform: rotateX(18deg);
     }
     58% {
         opacity: 1;
-        -webkit-transform: rotateX(-12deg);
-                transform: rotateX(-12deg);
+        transform: rotateX(-12deg);
     }
     72% {
         opacity: 1;
-        -webkit-transform: rotateX(9deg);
-                transform: rotateX(9deg);
+        transform: rotateX(9deg);
     }
     88% {
         opacity: 1;
-        -webkit-transform: rotateX(-5deg);
-                transform: rotateX(-5deg);
+        transform: rotateX(-5deg);
     }
     96% {
         opacity: 1;
-        -webkit-transform: rotateX(2deg);
-                transform: rotateX(2deg);
+        transform: rotateX(2deg);
     }
     to {
         opacity: 1;
@@ -374,14 +346,12 @@
     from {}
     20%,
     50% {
-        -webkit-transform: scale(1.08, 1.08);
-                transform: scale(1.08, 1.08);
+        transform: scale(1.08, 1.08);
         opacity: 1;
     }
     to {
         opacity: 0;
-        -webkit-transform: rotateZ(40deg) scale(0.6, 0.6);
-                transform: rotateZ(40deg) scale(0.6, 0.6);
+        transform: rotateZ(40deg) scale(0.6, 0.6);
     }
 }
 
@@ -389,13 +359,11 @@
     from {}
     20%,
     50% {
-        -webkit-transform: scale(1.08, 1.08);
-                transform: scale(1.08, 1.08);
+        transform: scale(1.08, 1.08);
         opacity: 1;
     }
     to {
         opacity: 0;
-        -webkit-transform: rotateZ(40deg) scale(0.6, 0.6);
-                transform: rotateZ(40deg) scale(0.6, 0.6);
+        transform: rotateZ(40deg) scale(0.6, 0.6);
     }
 }

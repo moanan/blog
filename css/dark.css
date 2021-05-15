@@ -255,12 +255,10 @@
         }
         #donate #DonateText {
             color: var(--block-background-color) !important;
-            -webkit-filter: grayscale(1);
-                    filter: grayscale(1);
+            filter: grayscale(1);
         }
         #donate #github {
-            -webkit-filter: Invert();
-                    filter: Invert();
+            filter: Invert();
             opacity: 1 !important;
         }
         #donate #donateBox {
@@ -272,8 +270,7 @@
             border-right: 1px solid var(--line-background-color) !important;
         }
         #donate #donateBox li:hover {
-            -webkit-filter: none;
-                    filter: none;
+            filter: none;
         }
         #donate #QRBox {
             background-color: rgba(255, 255, 255, .1);
@@ -335,7 +332,6 @@
             color: var(--modium-text-color) !important;
         }
         .gt-container .gt-ico-github .gt-svg {
-            -webkit-filter: invert(1);
-                    filter: invert(1);
+            filter: invert(1);
         }
     }
