@@ -1,14 +1,15 @@
 ---
-title: 实用bash指令工具
+title: 实用命令行工具
 date: 2019-08-11 15:43:35
 tags:
 ---
 
-一些小工具很不起眼，但在需要时却非常有用。比如在吃核桃时，没有`核桃夹`会非常痛苦。
+<!-- 一些小工具很不起眼，但在需要时却非常有用。比如在吃核桃时，没有`核桃夹`会非常痛苦。 -->
+整理一些平时常用的小工具。
 
 <!--more-->
 
-{% asset_img nut_cracking.jpeg 没有小工具的猩猩 %}
+<!-- {% asset_img nut_cracking.jpeg 没有小工具的猩猩 %} -->
 
 ## 图片压缩-sip (OSX)
 Mac自带的图片压缩工具[sips](https://www.birme.net/blog/bulk-resize-images-with-sips-on-mac/)，支持批处理，可以方便地将整个文件夹内的图片压缩成想要的分辨率。

@@ -41,7 +41,7 @@ FROM node:14.16.0-alpine3.10 as hexo-base
 and added Maupassant dependencies:
 ```
 npm install hexo-renderer-pug --save && \
- npm install hexo-renderer-sass --save && \
+npm install hexo-renderer-sass --save && \
 ```
 
 ## Usage
