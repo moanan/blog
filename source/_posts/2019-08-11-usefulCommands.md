@@ -8,6 +8,12 @@ tags:
 
 <!--more-->
 
+## 文件批量更名
+GoPro相机自动生成的.LRV文件改为.mp4后缀就能直接播放，不需要将原视频转码压缩。
+```bash
+for f in ./*.LRV; do mv "$f"  "${f%.LRV}.mp4"; done
+```
+
 ## 图片压缩-sip (OSX)
 Mac自带的图片压缩工具[sips](https://www.birme.net/blog/bulk-resize-images-with-sips-on-mac/)，支持批处理，可以方便地将整个文件夹内的图片压缩成想要的分辨率。
 ```bash
