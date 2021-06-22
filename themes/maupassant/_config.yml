@@ -101,12 +101,12 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - links
 
 links:
-  - title: pengchongfu's blog
+  - title: pengchongfu
     url: https://blog.pengchongfu.com/
+  - title: 七月
+    url: https://www.yueqi.work/
   - title: 恐龙的厨房
     url: https://moanan.github.io/recipe/
-  # - title: site-name3
-    # url: http://www.example3.com/
 
 timeline:
   - num: 1
