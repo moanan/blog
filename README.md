@@ -79,7 +79,7 @@ I have tried to use the [`hexo-deployer-git`](https://github.com/hexojs/hexo-dep
 git clone --single-branch --branch gh-pages <git-repo> .deploy_git
 
 # Example
-git clone --single-branch --branch gh-pages git@github.com:moanan/recipe.git .deploy_git
+git clone --single-branch --branch gh-pages git@github.com:moanan/blog.git .deploy_git
 
 ```
 
@@ -92,6 +92,7 @@ rm -rf .deploy_git/*
 cp -r public/* .deploy_git/
 cd .deploy_git
 git add *
-git commit -m "Site updated manually"
+git commit -m "Site_updated_manually"
 git push
+cd ..
 ```
