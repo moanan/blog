@@ -48,11 +48,13 @@ npm install hexo-renderer-sass --save && \
 Add the following to create (and persist) alias to `~/.bash_profile` (or `~/.zshrc` if using zsh):
 
 ```bash
-alias hexo="docker run -it --rm \
+hexo() {
+  docker run -it --rm \
   -v `pwd`:/opt/node_app/app \
   -p 4000:4000 \
   -p 3000:3000 \
-  moanan/hexo_maupassant:mode14.16.0-alpine3.10"
+  moanan/hexo_maupassant:mode14.16.0-alpine3.10 $1
+}
 ```
 
 You can then run all hexo (now `hexo_m`) commands as you normally would with the caveat that the container ***can only see the current directory or any of its children***. i.e. don't run commands like `hexo init ../../my-new-blog`
