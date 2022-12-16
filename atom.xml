@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mo-an.net/"/>
-  <updated>2022-11-19T19:05:55.556Z</updated>
+  <updated>2022-12-16T13:16:27.444Z</updated>
   <id>https://mo-an.net/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实时绘制命令行输出信息</title>
+    <link href="https://mo-an.net/2022/12/16/2022-12-16-terplot/"/>
+    <id>https://mo-an.net/2022/12/16/2022-12-16-terplot/</id>
+    <published>2022-12-16T20:51:23.000Z</published>
+    <updated>2022-12-16T13:16:27.444Z</updated>
+    
+    <content type="html"><![CDATA[<p>调试程序无非就是<code>print</code>，把一堆调试信息、变量<code>print</code>出来。如果要调试的是PID参数，把目标值和测量值同时<code>print</code>出来，只看两行数字进行调参会很痛苦，所以我们需要一个可以把命令行输出的数字实时绘制出来的工具。</p><span id="more"></span><p>Arduino IDE上内置了一个live plotter，但只能用于串口通讯的设备，有局限性。其实可以通过piping将命令行输出传递至绘图程序，一切就很简单了。效果如下：<br><img src="/2022/12/16/2022-12-16-terplot/demo.webp" class="" width="1000"></p><p>用命令行的好处是可以ssh远程登录其他设备（如机器人上的主控树莓派）进行实时调参。</p><p>绘图程序开源：<a href="https://github.com/moanan/terplot">https://github.com/moanan/terplot</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;调试程序无非就是&lt;code&gt;print&lt;/code&gt;，把一堆调试信息、变量&lt;code&gt;print&lt;/code&gt;出来。如果要调试的是PID参数，把目标值和测量值同时&lt;code&gt;print&lt;/code&gt;出来，只看两行数字进行调参会很痛苦，所以我们需要一个可以把命令行输出的数字实时绘制出来的工具。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="day-hack" scheme="https://mo-an.net/tags/day-hack/"/>
+    
+  </entry>
   
   <entry>
     <title>日本印象</title>
