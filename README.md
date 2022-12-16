@@ -98,3 +98,15 @@ git commit -m "Site_updated_manually"
 git push
 cd ..
 ```
+
+```bash
+hexo clean
+hexo generate
+y | rm -rf .deploy_git/*
+cp -r public/* .deploy_git/
+cd .deploy_git
+git add *
+git commit -m "Site_updated_manually"
+git push
+cd ..
+```
