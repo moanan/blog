@@ -8,6 +8,7 @@ mathjax: true
 
 |   序号    |    名称    |    品种     |      产地    |   处理   |   始重 g   |   挑豆 g   |   终重 g（脱水率）   |    温度 C    |   一爆 （发展）   |      程度  | 
 |   ---    |     ---   |      ---    |   ---       |    ---      |     ---    |     ---     |     ---    		|     ---    	|     ---    	|     ---    |
+|   006    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.0     |      123.6(14.2%)    |  	700-800 |     13'32'(20s)    |        medium    |
 |   005    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     142.6     |      123.7(13.3%)    |  	600-700 |     16'55'(20s)    |        medium    |
 |   004    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.4     |     127.5 (11.7%)    |  	450－600 |     19'30''(15s)    |        light    |
 |   003    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     100    |     96.1      |     83.0 (13.6%)    |  	N/A |     6'37''(15s)    |        light    |
@@ -16,6 +17,13 @@ mathjax: true
 
 
 <!--more-->
+
+## 2023-02-23 #006 埃塞尔比亚
+
+这次温度控制更好了一点，13分半实现一爆。但是由于开窗太大，风比较大，火力不稳定，热量总被吹走，所以后半段把床关小后火力才比较足。这次脱水率更高一点，不知道是不是这个缘故，一爆声音特别洪亮，非常好辨认。
+
+咖啡成色也很好，和上次相似。
+
 
 ## 2023-02-23 #005 埃塞尔比亚
 
