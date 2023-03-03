@@ -8,7 +8,8 @@ mathjax: true
 
 |   序号    |    名称    |    品种     |      产地    |   处理   |   始重 g   |   挑豆 g   |   终重 g（脱水率）   |    温度 C    |   一爆 （发展）   |      程度  | 
 |   ---    |     ---   |      ---    |   ---       |    ---      |     ---    |     ---     |     ---    		|     ---    	|     ---    	|     ---    |
-|   006    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.0     |      123.6(14.2%)    |  	700-800 |     13'32'(20s)    |        medium    |
+|   007    |     Kenia AB Plus      |      Arabica    |   Kenia, Mount Kenia        |  Fully washed  |     150    |     147.0     |      128.7(.%)    |  	700-800 |     11'17'(20s)    |        medium    |
+|   006    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.0     |      123.6(14.2%)    |  	700-750 |     13'32'(20s)    |        medium    |
 |   005    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     142.6     |      123.7(13.3%)    |  	600-700 |     16'55'(20s)    |        medium    |
 |   004    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.4     |     127.5 (11.7%)    |  	450－600 |     19'30''(15s)    |        light    |
 |   003    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     100    |     96.1      |     83.0 (13.6%)    |  	N/A |     6'37''(15s)    |        light    |
@@ -17,6 +18,16 @@ mathjax: true
 
 
 <!--more-->
+
+
+## 2023-03-03 #007 肯尼亚AB Plus
+
+终于要烘第二支豆啦！肯尼亚AB豆果然大了不少。因为是水洗，银皮少了很多。
+
+这次温度控制也更有经验了，前半段温度在700-750度之间，在6分钟时感觉火力逐渐变小听不清声音，于是挑高火力到800度左右，这个时候温度探针明显被烧红。在10分钟时又补了一点火力。最后在11分17秒一爆。
+
+
+
 
 ## 2023-02-23 #006 埃塞尔比亚
 
