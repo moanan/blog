@@ -24,32 +24,32 @@ layout: page
 ## Viscous damping in legged locomotion
 <img src="image/damped_hopper.jpg" width="500px">
 <img src="image/damped_boom.JPG" width="500px">
-[YouTube](https://youtu.be/F00Sma2BQ4c) | [YouTube](https://youtu.be/Sa-q-5NucGY) | [Publication 1](xx) | [Publication 2](xx)
+[YouTube](https://youtu.be/F00Sma2BQ4c) | [YouTube](https://youtu.be/Sa-q-5NucGY) | [Publication 1](http://dx.doi.org/10.3389/frobt.2020.00110) | [Publication 2](http://dx.doi.org/10.1038/s41598-023-30318-3) | [Publication 3](http://arxiv.org/abs/2202.02114)
 
 
 ## 6-axis robot arm - Sechs
 <img src="image/sechs.JPG" width="500px">
-[YouTube](https://youtu.be/u9WMYN56ERQ)
+[YouTube](https://youtu.be/u9WMYN56ERQ) | [Bilibili](https://www.bilibili.com/video/BV1eY4y11734/)
 
 
 ## 5-axis robot arm - CRS A255
 <img src="image/CRSA255.jpg" width="500px">
-[YouTube](https://youtu.be/jmlB4CtnPN8)
+[YouTube](https://youtu.be/jmlB4CtnPN8) | [Bilibili](https://www.bilibili.com/video/BV1vM41177hY/)
 
 
 ## Bipedal robot
 <img src="image/EcoWalker.jpg" width="500px">
-[YouTube](https://youtu.be/T79pKLQ47XU) | [Publication](xx)
+[YouTube](https://youtu.be/T79pKLQ47XU) | [Bilibili]((https://www.bilibili.com/video/BV13Y4y1w7x8/)) [Publication](https://doi.org/10.1109/IROS47612.2022.9981725)
 
 
 ## Adaptive feet
 <img src="image/birdbot_feet.jpg" width="250px">
-[YouTube](https://youtu.be/tJ7v81YDGRE) | [Publication](xx)
+[YouTube](https://youtu.be/tJ7v81YDGRE) | [Publication](https://arxiv.org/abs/2209.08499)
 
 
 ## SELDA hopper
 <img src="image/SELDA.JPG" width="500px">
-[YouTube](https://youtu.be/P1zkDmtD-hs) | [YouTube](https://youtu.be/Qvn7sKSEOTg) | [Publication](xx)
+[YouTube](https://youtu.be/P1zkDmtD-hs) | [YouTube](https://youtu.be/Qvn7sKSEOTg) | [Publication](https://doi.org/10.1109/IROS47612.2022.9981060)
 
 
 ## Pin array gripper
@@ -57,15 +57,15 @@ layout: page
 <img src="image/PAH_2.JPG" title="meshed pin array" width="250px">
 <img src="image/PAH_3.JPG" title="concentric pin array" width="500px">
 <img src="image/PAH_4.jpg" title="swing pin array" width="500px">
-[YouTube 1](https://youtu.be/ONr0l3ZMhpk) | [YouTube 2](https://youtu.be/GtAgCxQsDeI) | [Publication 1](xx) | [Publication 2](xx) | [Publication 3](xx)
+[YouTube 1](https://youtu.be/ONr0l3ZMhpk) | [YouTube 2](https://youtu.be/GtAgCxQsDeI) | [Publication 1](https://doi.org/10.1109/ROBIO.2017.8324725) | [Publication 2](https://doi.org/10.1007/978-3-319-97589-4_9) | [Publication 3](https://doi.org/10.1109/ICARM.2018.8610678) | [Publication 4](https://doi.org/10.1177/1729881419834781) | [Publication 5](http://scis.scichina.com/en/2019/050214.html)
 
 
 ## Intraspinal mechanosensing in avians
 <img src="image/LSO.png" width="1000px">
-[YouTube](https://youtu.be/g1EZH8dM_jw) | [Publication](xx)
+[YouTube](https://youtu.be/g1EZH8dM_jw) | [Publication](https://arxiv.org/abs/2212.11485)
 
 
 ## High-throughput screening (HTS)
 <img src="image/dispenser.JPG" width="250px">
-[YouTube_TBD](https://youtu.be/) | [Publication](xx)
+[YouTube_TBD](https://youtu.be/VE1dYkJHatw) | [Publication](https://doi.org/10.1115/1.4030985)
 
