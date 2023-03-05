@@ -18,13 +18,13 @@ layout: page
 
 ## High performance motion platform
 <img src="image/motion_platform_6dof.JPG" width="500px">
-[YouTube](https://youtu.be/u9WMYN56ERQ)
+[YouTube](https://youtu.be/u9WMYN56ERQ) | [Bilibili](https://www.bilibili.com/video/BV1q24y1t7qt/)
 
 
 ## Viscous damping in legged locomotion
 <img src="image/damped_hopper.jpg" width="500px">
 <img src="image/damped_boom.JPG" width="500px">
-[YouTube](https://youtu.be/F00Sma2BQ4c) | [YouTube](https://youtu.be/Sa-q-5NucGY) | [Publication 1](http://dx.doi.org/10.3389/frobt.2020.00110) | [Publication 2](http://dx.doi.org/10.1038/s41598-023-30318-3) | [Publication 3](http://arxiv.org/abs/2202.02114)
+[YouTube 1](https://youtu.be/F00Sma2BQ4c) | [YouTube 2](https://youtu.be/Sa-q-5NucGY) | [Bilibili](https://www.bilibili.com/video/BV1W84y1P7K6/) | [Publication 1](http://dx.doi.org/10.3389/frobt.2020.00110) | [Publication 2](http://dx.doi.org/10.1038/s41598-023-30318-3) | [Publication 3](http://arxiv.org/abs/2202.02114)
 
 
 ## 6-axis robot arm - Sechs
@@ -39,7 +39,7 @@ layout: page
 
 ## Bipedal robot
 <img src="image/EcoWalker.jpg" width="500px">
-[YouTube](https://youtu.be/T79pKLQ47XU) | [Bilibili]((https://www.bilibili.com/video/BV13Y4y1w7x8/)) [Publication](https://doi.org/10.1109/IROS47612.2022.9981725)
+[YouTube](https://youtu.be/T79pKLQ47XU) | [Bilibili](https://www.bilibili.com/video/BV13Y4y1w7x8/) | [Publication](https://doi.org/10.1109/IROS47612.2022.9981725)
 
 
 ## Adaptive feet
@@ -57,7 +57,12 @@ layout: page
 <img src="image/PAH_2.JPG" title="meshed pin array" width="250px">
 <img src="image/PAH_3.JPG" title="concentric pin array" width="500px">
 <img src="image/PAH_4.jpg" title="swing pin array" width="500px">
-[YouTube 1](https://youtu.be/ONr0l3ZMhpk) | [YouTube 2](https://youtu.be/GtAgCxQsDeI) | [Publication 1](https://doi.org/10.1109/ROBIO.2017.8324725) | [Publication 2](https://doi.org/10.1007/978-3-319-97589-4_9) | [Publication 3](https://doi.org/10.1109/ICARM.2018.8610678) | [Publication 4](https://doi.org/10.1177/1729881419834781) | [Publication 5](http://scis.scichina.com/en/2019/050214.html)
+[YouTube 1](https://youtu.be/ONr0l3ZMhpk) | [YouTube 2](https://youtu.be/GtAgCxQsDeI) | [Bilibili 1](https://www.bilibili.com/video/BV1RF4114717/) | [Bilibili 2](https://www.bilibili.com/video/BV1mF411s7Rg/) | [Publication 1](https://doi.org/10.1109/ROBIO.2017.8324725) | [Publication 2](https://doi.org/10.1007/978-3-319-97589-4_9) | [Publication 3](https://doi.org/10.1109/ICARM.2018.8610678) | [Publication 4](https://doi.org/10.1177/1729881419834781) | [Publication 5](http://scis.scichina.com/en/2019/050214.html)
+
+
+## 1-dof motion simulator
+<img src="image/motion_platform_1dof.JPG" width="250px">
+[Github](https://github.com/moanan/1_dof_motion_simulator)
 
 
 ## Intraspinal mechanosensing in avians
