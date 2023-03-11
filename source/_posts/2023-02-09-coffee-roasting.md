@@ -8,6 +8,7 @@ mathjax: true
 
 |   序号    |    名称    |    品种     |      产地    |   处理   |   始重 g   |   挑豆 g   |   终重 g（脱水率）   |    温度 C    |   一爆 （发展）   |      程度  | 
 |   ---    |     ---   |      ---    |   ---       |    ---      |     ---    |     ---     |     ---    		|     ---    	|     ---    	|     ---    |
+|   009    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.7      |     121.3 (.5%)    |  775-800	 |     11'27''(15s)    |        medium light    |
 |   008    |     Kenia AB Plus      |      Arabica    |   Kenia, Mount Kenia        |  Fully washed  |     150    |     144.3     |      126.3(.%)    |  	750-800 |     11'50'’(15s)    |      light      |
 |   007    |     Kenia AB Plus      |      Arabica    |   Kenia, Mount Kenia        |  Fully washed  |     150    |     147.0     |      128.7(12.4%)    |  	700-800 |     11'17‘'(20s)    |        medium    |
 |   006    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.0     |      123.6(14.2%)    |  	700-750 |     13'32'(20s)    |        medium    |
