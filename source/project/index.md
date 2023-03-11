@@ -18,7 +18,7 @@ layout: page
 
 ## High performance motion platform
 <img src="image/motion_platform_6dof.JPG" width="500px">
-[YouTube](https://youtu.be/g9HZiFTuGsQ) | [Bilibili](https://www.bilibili.com/video/BV1q24y1t7qt/)
+[YouTube](https://youtu.be/BtfoymwgIUY) | [Bilibili](https://www.bilibili.com/video/BV1q24y1t7qt/)
 
 
 ## Viscous damping in legged locomotion
