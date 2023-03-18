@@ -1,96 +1,61 @@
 ---
 title: 咖啡烘焙
 date: 2023-02-09 20:30:27
-tags:
+tags: 记录
 mathjax: true
 ---
 
 
-|   序号    |    名称    |    品种     |      产地    |   处理   |   始重 g   |   挑豆 g   |   终重 g（脱水率）   |    温度 C    |   一爆 （发展）   |      程度  | 
-|   ---    |     ---   |      ---    |   ---       |    ---      |     ---    |     ---     |     ---    		|     ---    	|     ---    	|     ---    |
-|   009    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.7      |     121.3 (.5%)    |  775-800	 |     11'27''(15s)    |        medium light    |
-|   008    |     Kenia AB Plus      |      Arabica    |   Kenia, Mount Kenia        |  Fully washed  |     150    |     144.3     |      126.3(.%)    |  	750-800 |     11'50'’(15s)    |      light      |
-|   007    |     Kenia AB Plus      |      Arabica    |   Kenia, Mount Kenia        |  Fully washed  |     150    |     147.0     |      128.7(12.4%)    |  	700-800 |     11'17‘'(20s)    |        medium    |
-|   006    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.0     |      123.6(14.2%)    |  	700-750 |     13'32'(20s)    |        medium    |
-|   005    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     142.6     |      123.7(13.3%)    |  	600-700 |     16'55'(20s)    |        medium    |
-|   004    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     150    |     144.4     |     127.5 (11.7%)    |  	450－600 |     19'30''(15s)    |        light    |
-|   003    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     100    |     96.1      |     83.0 (13.6%)    |  	N/A |     6'37''(15s)    |        light    |
-|   002    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     100    |     95.6      |     82.7 (13.5%)    |  	N/A |     7'40''(15s)    |         light    |
-|   001    |     Zege Forest Grow   |      Arabica    |   Ethiopia, Lake Tana       |    Natural     |     100    |     96.9      |     82.1 (15.3%)    |  	N/A	|     14'50''(20s)   |     medium dark    |
+|  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
+|  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  010  |  230318  |  03  |   150  |   146.2 |     127.4 (14.8%)   |   775-800 |  9'22''(10s)  |  L  |
+|  009  |  230311  |  01  |   150  |   144.7 |     121.3 (19.3%)   |   775-800 |  11'27''(15s) |  ML |
+|  008  |  230305  |  02  |   150  |   144.3 |     126.3 (14.3%)   |   750-800 |  11'50''(15s) |  L  |
+|  007  |  230303  |  02  |   150  |   147.0 |     128.7 (12.4%)   |   700-800 |  11'17''(20s) |  M  |
+|  006  |  230223  |  01  |   150  |   144.0 |     123.6 (14.2%)   |   700-750 |  13'32'(20s)  |  M  |
+|  005  |  230223  |  01  |   150  |   142.6 |     123.7 (13.3%)   |   600-700 |  16'55'(20s)  |  M  |
+|  004  |  230221  |  01  |   150  |   144.4 |     127.5 (11.7%)   |   450-600 |  19'30''(15s) |  L  |
+|  003  |  230211  |  01  |   100  |   96.1  |     83.0 (13.6%)    |    N/A    |  6'37''(15s)  |  L  |
+|  002  |  230211  |  01  |   100  |   95.6  |     82.7 (13.5%)    |    N/A    |  7'40''(15s)  |  L  |
+|  001  |  230209  |  01  |   100  |   96.9  |     82.1 (15.3%)    |    N/A    |  14'50''(20s) | MD  |
 
 
 <!--more-->
 
+# 豆子
 
+|  编号  |    名称                 |    品种        |      产地                  |   处理        |    口味    | 
+|  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
+|   03  |    Monsooned Malabar   |      Arabica   |   India, Malabar coast  |    Monsooned   |   五谷，坚果   |
+|   02  |    AB Plus             |      Arabica   |   Kenia, Mount Kenia    |  Fully washed  |   香茅   |
+|   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana   |    Natural     |   花果香   |
 
-## 2023-03-05 #008 肯尼亚AB Plus
+## [03-India](https://www.docklands-coffee.de/indien-monsooned-malabar-aa/0020107-1000)
+Er ist im Aroma und Geschmack etwas Besonderes, denn seine Aufbereitung erfolgt völlig anders als bei anderen Kaffees. Die Gründe dafür liegen in der Transportgeschichte von Kaffee.
+- Kaffeesorte: Monsooned Malabar
+- Klassifizierung: AA
+- Varietät: S 795 (100% Arabica)
+- Anbauland: Indien
+- Anbaugebiet: Malabarküste, Bundesstaat Kerala (im Südwesten Indiens)
+- Anbauhöhe: 1100-1200 m ü.M.
 
+## [02-Kenia](https://www.docklands-coffee.de/kenia-mount-kenya-selection/0020113-1000)
+Das Mount-Kenya-Massiv stellt für die afrikanische Flora und Fauna einen bemerkenswert artenreichen Lebensraum dar. Das tropisch-feuchte Hochgebirgs-Klima lässt einzigartige Pflanzenarten gedeihen. Große Niederschlagsmengen (es regnet an rund 200 Tagen im Jahr) und die fruchtbaren vulkanischen Böden am Fuß des Massivs bieten für den Kaffeeanbau hervorragende Bedingungen. Während der Bereich oberhalb von 3200m Höhe zum Mount-Kenya-Nationalpark gehört, werden rund um das Bergmassiv bis ca. 1900m ü.M. Premium-Kaffeesorten angebaut. Es werden ausschließlich tiefrote Kaffeekirschen per Hand geerntet. 
 
+Der besonders fruchtige und ausgewogene Kaffee mit einer angenehmen Süße besticht durch weinähnlichen Beerenaromen. Er hat eine mittlere bis stark ausgeprägte Säure, hat einen aromareichen, kraftvollen Körper und ist rundum ausgewogen.
+- Kaffeesorte: Mount Kenya
+- Klassifizierung: AB Plus
+- Varietät:  Typica, Bourbon (100% Arabica)
+- nbaugebiet: an den nordöstlichen Berghängen des Mount Kenya / Kenia
+- Anbauhöhe: 1650 – 1800m ü.M.
 
+## [01-Ethiopia](https://www.docklands-coffee.de/aethiopien-zege-lake-tana-coffee/0020125-1000)
+Rund um den Tanasee wächst seit Urzeiten Kaffee. Dennoch gehört diese Region nicht zu den klassischen Anbaugebieten Äthiopiens. Ursprunglich waren es Waldkaffees, aber der Holzeinschlag der letzten Jahrzehnten hat leider dafür gesorgt, daß dieser historische Waldkaffee rund um den Tanasee fast nicht mehr vorkommt. Eine Ausnahme stellt die Halbinsel Zege dar. Es ist das größte, noch zusammenhängende Waldgebiet am Tanasee in dem der Kaffee in seiner Ursprungsform gedeiht. Zu verdanken hat er das seiner einzigartigen „heiligen“ Herkunft, so unsere Recherchen.
+"Betre Maryam", der Name des Heiligen, teilte einst seinen Priesterstab in drei Teile. Aus dem Kopfteil entstanden die ersten Kaffeepflanzen. In einem der sieben Klöster von Zege ist diese einmalige Geschichte in Wandbildnissen verewigt. Zudem existiert auch ein altes Buch indem diese besondere Begebenheit niedergeschrieben wurde. Noch heute gibt es auf Zege aus diesen historisch religiösen Gründen keine echte Landkultivierung im herkömmlichen Sinne. So schützt der „heilige“ Kaffee den Wald und der Wald den "heiligen" Kaffee. Kaffee ist dort wirklich ein besonderes Gut.
+Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig mit der Kaffeekultivierung für den Eigenbedarf bzw. für den lokalen Markt. Es handelt sich hierbei um die unterschiedlichsten Qualitäten. Gesammelt und verwendet wird eigentlich alles. In den letzten vier Jahren (Erntezyklen) haben wir die Ernte und Aufbereitung in Zusammenarbeit mit den einheimischen Kaffeeanbauern und Klöstern optimiert, um einen wunderbaren Zege Waldkaffee zu kreieren. Dieser im Verlauf der Zeit entstandene Kaffee von höchster Qualität hat bereits wichtige Partner gefunden. InterAmerican Coffee, von der Neumann Gruppe (weltweit größter Rohkaffeehändler), beteiligt sich finanziell, logistisch und technisch an diesem außergewöhnlichen Kaffeeprojekt. Das erst ermöglicht diesem Kaffee seinen verdienten internationalen Auftritt. Unterstützt und gefördert wird dieses Kaffeeprojekt auch durch World-Habitat-Society, die sich seit Jahren vor Ort auf Zege für den Schutz des Waldes, der Regionalentwicklung und dem nachhaltigen Tourismus sowie für den Erhalt und die Restaurierung der Klöster und seiner Malkunst, die zum Teil aus dem 12. Jahrhundert stammen, einsetzt. In all diesen Punkten wird sich zukünftig unser Zege Waldkaffee einbringen. Denn durch diese Projekte wird die Region nachhaltig gestärkt und ermöglicht somit auch in Zukunft die Anfertigung dieses wunderbaren und zugleich einzigartigen Zege Waldkaffees mit „heiliger“ Herkunft.
+Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
-## 2023-03-03 #007 肯尼亚AB Plus
-
-终于要烘第二支豆啦！肯尼亚AB豆果然大了不少。因为是水洗，银皮少了很多。
-
-这次温度控制也更有经验了，前半段温度在700-750度之间，在6分钟时感觉火力逐渐变小听不清声音，于是挑高火力到800度左右，这个时候温度探针明显被烧红。在10分钟时又补了一点火力。最后在11分17秒一爆。
-
-
-
-
-## 2023-02-23 #006 埃塞尔比亚
-
-这次温度控制更好了一点，13分半实现一爆。但是由于开窗太大，风比较大，火力不稳定，热量总被吹走，所以后半段把床关小后火力才比较足。这次脱水率更高一点，不知道是不是这个缘故，一爆声音特别洪亮，非常好辨认。
-
-咖啡成色也很好，和上次相似。
-
-
-## 2023-02-23 #005 埃塞尔比亚
-
-这次温度控制更有经验一点了，探针温度浮动在600-700度之间。5分钟的时候银皮开始脱落，当时自我感觉良好。可是到9分钟到时候豆子还只是微微发黄就有点心虚了，并且感觉火力稍微小了一点，听不清楚声音。我的这个露营炉头在火大时会发出突突声。于是提高了一点火力加快转速，终于在16分55秒听到一爆（第三声），然后再全速旋转20秒钟下豆。
-
-虽然时间长了一点，但豆子品相看着很不错，是我想要的中烘的模样。脱水率也在13%左右，和最开始3次烘焙这支豆子一致（说明#004真的不行。。。），所以总的来说这次结果我还是比较满意的。
-
-
-
-
-## 2023-02-21 #004 埃塞尔比亚
-
-温度探针到了。第一次使用，很失败。。
-
-探针是伸到辐射网下面，贴着网的，所以也比较靠近火源，测的并不是网笼内的温度。刚开始时担心火太大，于是调小了一点，温度读数在400度左右。8分钟过后一点反应也没有，我才加大火力控制在600度左右，又持续了8分钟还是没有一爆，于是再加大了一点火力，最后终于在19分30秒模糊听到一爆。。这次其实多称了50g的豆，不知道是不是也有影响。
-
-这次主要也是试温度，下次打算试试把目标温度控制在550－600度，希望可以在10分钟一爆。
-
-
-
-## 2023-02-11 #003 埃塞尔比亚
-
-这次希望继续微调火力实现10分钟左右下豆。没想到火力更大了，不到7分钟就下豆了。。。这次调节火力是在开火听到声音后的平行位置再多开大了一点，下一次试试平行位置。不对，下一次应该买温度探针。
-
-
-
-## 2023-02-11 #002 埃塞尔比亚
-
-第一次烘焙时火力太小所以时间有点长，这次尝试加大火力，结果8分钟就下豆了，又有点太大了。
-
-这次可以判断一爆了，发展时间为15s，达到了浅烘的目标。
-
-
-
-## 2023-02-09 #001 埃塞尔比亚
-
-第一次烘豆实在太兴奋了！
-
-因为用的是露营气罐，火力没有掌握好，13分钟才加大火力，15分钟10秒才关火下豆。
-
-判断一爆很困难，听起来像柴火的声音，并不像爆米花（爆米花是什么声音？），难道已经是二爆了？？
-
-爆了大概20多秒才关火，发展有点过了头，感觉是中深烘了。原本的目标其实是浅烘，10分钟左右下豆。。
-
-下次吧，下次一定会更好！
-
-
-
+Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
 
 # 步骤
 
@@ -106,7 +71,7 @@ mathjax: true
 - 放一两个小时再装
 
 
-# 注意事项
+## 注意事项
 - 每锅不要超过15分钟，正常10分钟左右
 - 注意区分：银皮烧掉是单点弄烟，水蒸气凝结是均匀水雾
 - 中间可以吹风机吹走银皮，要用热风
@@ -115,7 +80,7 @@ mathjax: true
 - 戴上N95口罩阻挡烟雾中的有害物质
 
 
-# 准备
+## 准备
 - 防热手套
 - 一块湿抹布
 - 计时器
@@ -128,4 +93,51 @@ mathjax: true
 [KOGU烘豆流程](https://youtu.be/83mkgcTO_eY)
 
 
+# 记录
 
+
+## #010
+新豆子。豆子倒出来的一瞬间简直惊艳！生豆是象牙色的，巨大，和烘好的肯尼亚AB一般大。给人一种印度大象的错觉。
+
+烘焙出来也不是烂俗的花果香，而是有食欲的杂粮香气。
+
+## #007
+终于要烘第二支豆啦！肯尼亚AB豆果然大了不少。因为是水洗，银皮少了很多。
+
+这次温度控制也更有经验了，前半段温度在700-750度之间，在6分钟时感觉火力逐渐变小听不清声音，于是挑高火力到800度左右，这个时候温度探针明显被烧红。在10分钟时又补了一点火力。最后在11分17秒一爆。
+
+## #006
+这次温度控制更好了一点，13分半实现一爆。但是由于开窗太大，风比较大，火力不稳定，热量总被吹走，所以后半段把床关小后火力才比较足。这次脱水率更高一点，不知道是不是这个缘故，一爆声音特别洪亮，非常好辨认。
+
+咖啡成色也很好，和上次相似。
+
+## #005
+这次温度控制更有经验一点了，探针温度浮动在600-700度之间。5分钟的时候银皮开始脱落，当时自我感觉良好。可是到9分钟到时候豆子还只是微微发黄就有点心虚了，并且感觉火力稍微小了一点，听不清楚声音。我的这个露营炉头在火大时会发出突突声。于是提高了一点火力加快转速，终于在16分55秒听到一爆（第三声），然后再全速旋转20秒钟下豆。
+
+虽然时间长了一点，但豆子品相看着很不错，是我想要的中烘的模样。脱水率也在13%左右，和最开始3次烘焙这支豆子一致（说明#004真的不行。。。），所以总的来说这次结果我还是比较满意的。
+
+## #004
+温度探针到了。第一次使用，很失败。。
+
+探针是伸到辐射网下面，贴着网的，所以也比较靠近火源，测的并不是网笼内的温度。刚开始时担心火太大，于是调小了一点，温度读数在400度左右。8分钟过后一点反应也没有，我才加大火力控制在600度左右，又持续了8分钟还是没有一爆，于是再加大了一点火力，最后终于在19分30秒模糊听到一爆。。这次其实多称了50g的豆，不知道是不是也有影响。
+
+这次主要也是试温度，下次打算试试把目标温度控制在550－600度，希望可以在10分钟一爆。
+
+## #003
+这次希望继续微调火力实现10分钟左右下豆。没想到火力更大了，不到7分钟就下豆了。。。这次调节火力是在开火听到声音后的平行位置再多开大了一点，下一次试试平行位置。不对，下一次应该买温度探针。
+
+## #002
+第一次烘焙时火力太小所以时间有点长，这次尝试加大火力，结果8分钟就下豆了，又有点太大了。
+
+这次可以判断一爆了，发展时间为15s，达到了浅烘的目标。
+
+## #001
+第一次烘豆实在太兴奋了！
+
+因为用的是露营气罐，火力没有掌握好，13分钟才加大火力，15分钟10秒才关火下豆。
+
+判断一爆很困难，听起来像柴火的声音，并不像爆米花（爆米花是什么声音？），难道已经是二爆了？？
+
+爆了大概20多秒才关火，发展有点过了头，感觉是中深烘了。原本的目标其实是浅烘，10分钟左右下豆。。
+
+下次吧，下次一定会更好！
