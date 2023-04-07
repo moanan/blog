@@ -8,6 +8,7 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  012  |  230407  |  04  |   122  |   119.2 |     102.8 (13.8%)   |   700-800 |  10'15''(15s) |  M  |
 |  011  |  230327  |  03  |   N/A  |   151.8 |     131.0 (13.7%)   |   775-800 |  11'41''(20s) |  M  |
 |  010  |  230318  |  03  |   150  |   146.2 |     127.4 (14.8%)   |   775-800 |  9'22''(10s)  |  L  |
 |  009  |  230311  |  01  |   150  |   144.7 |     121.3 (19.3%)   |   775-800 |  11'27''(15s) |  ML |
@@ -27,9 +28,15 @@ mathjax: true
 
 |  编号  |    名称                 |    品种        |      产地                  |   处理        |    口味    | 
 |  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
+|   04  |    Gedebe			     |      耶加雪菲   |   Ethiopia               |    日晒   	  |      |
 |   03  |    Monsooned Malabar   |      Arabica   |   India, Malabar coast  |    Monsooned   |   五谷，坚果   |
 |   02  |    AB Plus             |      Arabica   |   Kenia, Mount Kenia    |  Fully washed  |   香茅   |
 |   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana   |    Natural     |   花果香   |
+
+
+## [04-耶加雪菲Gedeb](taobao)
+
+
 
 ## [03-India](https://www.docklands-coffee.de/indien-monsooned-malabar-aa/0020107-1000)
 Er ist im Aroma und Geschmack etwas Besonderes, denn seine Aufbereitung erfolgt völlig anders als bei anderen Kaffees. Die Gründe dafür liegen in der Transportgeschichte von Kaffee.
@@ -96,6 +103,9 @@ Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
 
 # 记录
 
+
+## #011
+国内买的生豆套装漂洋过海终于终于到了，这次有8种不同的豆，一段时间咖啡自由了！
 
 ## #010
 新豆子。豆子倒出来的一瞬间简直惊艳！生豆是象牙色的，巨大，和烘好的肯尼亚AB一般大。给人一种印度大象的错觉。
