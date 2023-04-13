@@ -8,6 +8,7 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  013  |  230411  |  05  |   122  |   116.9 |     104.0 (11.0%)   |   700-800 |  11'23''(15s) |  ML |
 |  012  |  230407  |  04  |   122  |   119.2 |     102.8 (13.8%)   |   700-800 |  10'15''(15s) |  M  |
 |  011  |  230327  |  03  |   N/A  |   151.8 |     131.0 (13.7%)   |   775-800 |  11'41''(20s) |  M  |
 |  010  |  230318  |  03  |   150  |   146.2 |     127.4 (14.8%)   |   775-800 |  9'22''(10s)  |  L  |
@@ -28,11 +29,14 @@ mathjax: true
 
 |  编号  |    名称                 |    品种        |      产地                  |   处理        |    口味    | 
 |  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
+|   05  |    Kisiizi			 |      		  |   Uganda, Kisiizi         |    日晒   	  |      青草   |
 |   04  |    Gedebe			     |      耶加雪菲   |   Ethiopia               |    日晒   	  |      |
 |   03  |    Monsooned Malabar   |      Arabica   |   India, Malabar coast  |    Monsooned   |   五谷，坚果   |
 |   02  |    AB Plus             |      Arabica   |   Kenia, Mount Kenia    |  Fully washed  |   香茅   |
 |   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana   |    Natural     |   花果香   |
 
+
+## [05-乌干达Kisiizi](taobao)
 
 ## [04-耶加雪菲Gedeb](taobao)
 
