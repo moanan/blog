@@ -36,10 +36,10 @@ mathjax: true
 |   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana   |    Natural     |   花果香   |
 
 
-## [05-乌干达Kisiizi](taobao)
+## [05-乌干达Kisiizi](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
 
-## [04-耶加雪菲Gedeb](taobao)
 
+## [04-耶加雪菲Gedeb](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
 
 
 ## [03-India](https://www.docklands-coffee.de/indien-monsooned-malabar-aa/0020107-1000)
