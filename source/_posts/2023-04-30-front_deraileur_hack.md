@@ -1,7 +1,7 @@
 ---
 title: 公路山地前拨兼容
 date: 2023-04-30 20:30:27
-tags: day-hack
+tags: hack
 mathjax: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Repair git repo history
 date: 2021-03-21 12:37:58
-tags:
+tags: 技术
 ---
 
 Sometimes you mess up with your git repo history, and want a quick fix.

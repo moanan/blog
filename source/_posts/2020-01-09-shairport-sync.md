@@ -1,7 +1,7 @@
 ---
 title: 树莓派airplay热点
 date: 2020-01-09 08:13:30
-tags:
+tags: 技术
 ---
 
 闲置一套非常古老的索尼音响，可以放磁带、CD、广播的那种。幸好它还支持音频输入，所以索性连上树莓派，用[shairport-sync](https://github.com/mikebrady/shairport-sync)打造一个airplay无线音响。
