@@ -5,6 +5,8 @@ tags: 拆哪
 mathjax: true
 ---
 
+一个漂亮的电机。
+
 <!--more-->
 
 {% asset_img IMG_9979.JPG 350 %}
