@@ -12,6 +12,18 @@ mathjax: true
 {% asset_img IMG_4373.jpg 350 %}
 {% asset_img IMG_4374.jpg 350 %}
 {% asset_img IMG_4398.jpg 350 %}
-
-
+{% asset_img IMG_4399.jpg 350 %}
+{% asset_img IMG_4400.jpg 350 %}
+{% asset_img IMG_4401.jpg 350 %}
+{% asset_img IMG_4402.jpg 350 %}
+{% asset_img IMG_4403.jpg 350 %}
+{% asset_img IMG_4404.jpg 350 %}
+{% asset_img IMG_4405.jpg 350 %}
+{% asset_img IMG_4406.jpg 350 %}
+{% asset_img IMG_4407.jpg 350 %}
 收集到了不少电机、电磁阀、锅炉。对我最有价值的还是两台磨豆机。稍加改造就又是一台好磨豆机了！
+{% asset_img IMG_4408.jpg 350 %}
+{% asset_img IMG_4409.jpg 350 %}
+{% asset_img IMG_4410.jpg 350 %}
+{% asset_img IMG_4411.jpg 350 %}
+
