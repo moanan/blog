@@ -8,6 +8,7 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  017  |  230625  |  08  |   150  |   148.8 |     128.9 (13.4%)   |   790-810 |  8'43''(15s) |  M  |
 |  016  |  230520  |  07  |   123  |   122.3 |     102.9 (15.8%)   |   740-770 |   9'31''(15s) |  L  |
 |  016  |  230508  |  06  |   124  |   121.3 |     103.6 (14.6%)   |   740-770 |   9'00''(15s) |  L  |
 |  015  |  230419  |  03  |   150  |   146.0 |     126.6 (13.6%)   |   650-750 |  16'01''(20s) |  L  |
@@ -32,6 +33,7 @@ mathjax: true
 
 |  编号  |    名称                 |    品种        |      产地                  |   处理        |    口味    | 
 |  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
+|   08  |    瑰夏			     |         |                    |    日晒   	  |           |
 |   07  |    惠兰			     |      哥伦比亚   |   哥伦比亚                 |    水洗   	  |           |
 |   06  |    Baroida			 |      		  |   New Guinea, Baroida     |    水洗   	  |           |
 |   05  |    Kisiizi			 |      		  |   Uganda, Kisiizi         |    日晒   	  |      青草   |
@@ -39,6 +41,16 @@ mathjax: true
 |   03  |    Monsooned Malabar   |      Arabica   |   India, Malabar coast  |    Monsooned   |   五谷，坚果   |
 |   02  |    AB Plus             |      Arabica   |   Kenia, Mount Kenia    |  Fully washed  |   香茅   |
 |   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana   |    Natural     |   花果香   |
+
+
+
+
+## [08-]()
+日本
+
+豆子质量不错，残次豆很少。
+
+
 
 
 ## [07-哥伦比亚惠兰](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
