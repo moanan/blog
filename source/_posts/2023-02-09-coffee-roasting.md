@@ -8,6 +8,7 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  019  |  230712  |  02  |   150  |   145.2 |     127.6 (12.1%)   |   750-800 |   8'03''(10s) |  L  |
 |  018  |  230704  |  08  |   150  |   148.0 |     129.3 (12.6%)   |   750-800 |   9'33''(10s) |  ML |
 |  017  |  230625  |  08  |   150  |   148.8 |     128.9 (13.4%)   |   790-810 |   8'43''(15s) |  M  |
 |  016  |  230520  |  07  |   123  |   122.3 |     102.9 (15.8%)   |   740-770 |   9'31''(15s) |  L  |
@@ -32,10 +33,10 @@ mathjax: true
 
 # 豆子
 
-|  编号  |    名称                 |    品种        |      产地                  |   处理        |    口味    | 
+|  编号  |    名称                |    品种        |      产地                  |   处理        |    口味    | 
 |  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
-|   08  |    瑰夏			     |         |                    |    日晒   	  |           |
-|   07  |    惠兰			     |      哥伦比亚   |   哥伦比亚                 |    水洗   	  |           |
+|   08  |    瑰夏			     |         		  |   Ethiopia                 |    日晒   	  |   花果香   |
+|   07  |    惠兰			     |      哥伦比亚   |   Colombia                 |    水洗   	  |           |
 |   06  |    Baroida			 |      		  |   New Guinea, Baroida     |    水洗   	  |           |
 |   05  |    Kisiizi			 |      		  |   Uganda, Kisiizi         |    日晒   	  |      青草   |
 |   04  |    Gedebe			     |      耶加雪菲   |   Ethiopia               |    日晒   	  |      	    |
@@ -43,15 +44,15 @@ mathjax: true
 |   02  |    AB Plus             |      Arabica   |   Kenia, Mount Kenia    |  Fully washed  |   香茅   |
 |   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana   |    Natural     |   花果香   |
 
+{% asset_img roasting.webp 1000 %}
 
 
+# 记录
 
-## [08-]()
-日本
+## [08-埃塞尔比亚瑰夏](https://coffee-market.stores.jp/items/6300d38a5d05ec40991af9d7)
+今年去日本开会发现的宝藏咖啡店[The Coffee Market Lab](https://coffee-market.net/lab-2)，店内有3台迷你烘豆机，可以定制烘豆！生豆选择很丰富，忍不住带了500g瑰夏回家自己烘。马上就要实现瑰夏自由啦！
 
-豆子质量不错，残次豆很少。
-
-
+豆子质量很好，残次豆非常少。喝到了久违的瑰夏，简直是爆香。甚至有种从咖啡的颜色就能看出好喝的好感。同事华尔特评价也很高，说是我最成功的一次。
 
 
 ## [07-哥伦比亚惠兰](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
@@ -94,44 +95,6 @@ Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig 
 Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
 Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
-
-# 步骤
-
-- 调残次豆
-- 称重
-- 放豆（容量小不用热机）
-- 脱水期：中火，慢速保持，比较轻松
-- 梅納期：火力稍微调高，速度稍微加快
-- （银皮开始变深褐色时接近一爆）
-- 發展期：一爆后快速翻动帮助散热，时间越长风味越明显
-- 一爆接近中间时关火，用吹球吹走烟雾，转动不要停
-- 倒出到冷却盘降温，扇凉
-- 放一两个小时再装
-
-
-## 注意事项
-- 每锅不要超过15分钟，正常10分钟左右
-- 注意区分：银皮烧掉是单点弄烟，水蒸气凝结是均匀水雾
-- 中间可以吹风机吹走银皮，要用热风
-- 最好状态是维持
-- 下豆：最关键的步骤！要抓前置量，靠经验
-- 戴上N95口罩阻挡烟雾中的有害物质
-
-
-## 准备
-- 防热手套
-- 一块湿抹布
-- 计时器
-- 密封袋
-- 冷却盘
-- 扇子/风扇/电吹风
-
-
-## 参考
-[KOGU烘豆流程](https://youtu.be/83mkgcTO_eY)
-
-
-# 记录
 
 
 ## #011
@@ -182,3 +145,39 @@ Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
 爆了大概20多秒才关火，发展有点过了头，感觉是中深烘了。原本的目标其实是浅烘，10分钟左右下豆。。
 
 下次吧，下次一定会更好！
+
+
+# 步骤
+
+- 调残次豆
+- 称重
+- 放豆（容量小不用热机）
+- 脱水期：中火，慢速保持，比较轻松
+- 梅納期：火力稍微调高，速度稍微加快
+- （银皮开始变深褐色时接近一爆）
+- 發展期：一爆后快速翻动帮助散热，时间越长风味越明显
+- 一爆接近中间时关火，用吹球吹走烟雾，转动不要停
+- 倒出到冷却盘降温，扇凉
+- 放一两个小时再装
+
+
+## 注意事项
+- 每锅不要超过15分钟，正常10分钟左右
+- 注意区分：银皮烧掉是单点弄烟，水蒸气凝结是均匀水雾
+- 中间可以吹风机吹走银皮，要用热风
+- 最好状态是维持
+- 下豆：最关键的步骤！要抓前置量，靠经验
+- 戴上N95口罩阻挡烟雾中的有害物质
+
+
+## 准备
+- 防热手套
+- 一块湿抹布
+- 计时器
+- 密封袋
+- 冷却盘
+- 扇子/风扇/电吹风
+
+
+## 参考
+[KOGU烘豆流程](https://youtu.be/83mkgcTO_eY)
