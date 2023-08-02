@@ -8,6 +8,7 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  024  |  230802  |  02  |   200  |   193.4 |     167.6 (13.3%)   |   750-800 |  11'37''(15s) |  L  |
 |  023  |  230725  |  03  |   120  |   115.0 |      97.8 (15.0%)   |   600-700 |  10'41''(120s)|  D  |
 |  022  |  230715  |  02  |   120  |   118.0 |     101.3 (14.2%)   |   650-750 |  12'08''(120s)|  C  |
 |  021  |  230715  |  10  |   122  |   120.6 |     106.2 (11.9%)   |   700-750 |   9'54''(10s) |  ML  |
@@ -115,6 +116,10 @@ Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig 
 Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
 Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
+
+
+## 024
+第一次尝试一次烘200g生豆，小烘豆机确实有点勉强，加热功率不够，虽然用了更猛的火力，一爆时间也还是延长到了12分多，并且一爆后零零星星的，不像之前一样关火后加速旋转能听到一爆密集。没有达到一爆密集，烘焙程度确实是最浅的一次，不知道味道怎么样。
 
 ## 023
 第二次深烘！印度的巨型豆，没抓好下豆时间，真的烘深了。
