@@ -86,23 +86,14 @@ git clone --single-branch --branch gh-pages git@github.com:moanan/blog.git .depl
 ```
 
 ** Deploy **
+zsh setting to disable the `rm` confirmation
+`setopt rm_starsilent`
+
 
 ```bash
 hexo clean
 hexo generate
 rm -rf .deploy_git/*
-cp -r public/* .deploy_git/
-cd .deploy_git
-git add *
-git commit -m "Site_updated_manually"
-git push
-cd ..
-```
-
-```bash
-hexo clean
-hexo generate
-y | rm -rf .deploy_git/*
 cp -r public/* .deploy_git/
 cd .deploy_git
 git add *
