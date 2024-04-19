@@ -9,3 +9,9 @@ tags: hack
 <!--more-->
 
 {% asset_img Screenshot.png 350 %}
+
+{% asset_img IMG_0531.JPG 350 %}
+
+{% asset_img IMG_0534.JPG 350 %}
+
+{% asset_img IMG_0537.JPG 350 %}
