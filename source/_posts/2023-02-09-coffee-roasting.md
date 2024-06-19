@@ -8,6 +8,7 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  037  |  240619  |  16  |   150  |   147.2 |     128.1 (13.0%)   |   180-240 |  7'05''(15)   | L  |
 |  036  |  240608  |  15  |   100  |    99.5 |      83.7 (15.9%)   |   200-240 |  15'00''(??)  |  MD |
 |  035  |  240520  |  14  |   200  |   196.8 |     177.8 ( 9.7%)   |   160-240 |  10'??''(??)  |  M  |
 |  034  |  240427  |  13  |   200  |   195.0 |     164.7 (15.5%)   |   160-240 |  14'??''(??)  |  M  |
@@ -50,9 +51,10 @@ mathjax: true
 
 # 豆子
 
-|  编号  |    名称                |    品种        |      产地                  |   处理        |    口味    | 
+|  编号  |    名称                |    品种        |      产地                  |   处理        |    风味    | 
 |  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
-|   15  |    尖身波旁              |         		  |        |       	  |      	|
+|   16  |    肯尼亚AA              |    SL28/SL34  |   Kenya, Kirinyaga Deerfruit Manor |     水洗  	 |    莓果香、葡萄柚、乌梅酸甜 	|
+|   15  |    尖身波旁              |       		  |        |       	  |      	|
 |   14  |    果丁丁              |         		  |        |       	  |      	|
 |   13  |    花魁7.0              |         		  |        |       	  |      	|
 |   12  |    花魁8.0              |         		  |        |       	  |      	|
@@ -132,6 +134,27 @@ Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig 
 Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
 Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
+
+
+## 037
+烘豆机保修内返修了，卖家说换了电热丝，但我感觉收到的就完全是一台新机器，因为商标贴纸都贴倒了。。。Anyway，现试烘150g，测一下温度曲线。温度曲线显示正常，不像原先在后期有好几次失温的现象，温度上升温度，只有在3分钟左右时间有一次降温。
+
+这次还尝试用降噪耳机听一爆（网友的这个建议思路很好—），果然有效果，抽油烟机的声音听不到了。但下豆感觉可能早了，不知道是不是误判了一爆。
+
+尝试新温度曲线：
+
+|  时刻   |  温度   |  持续时间 |  
+|  ---    |   ---  |   ---   |
+|  	0 min |  180°  |  1 min  | 
+|  	1 min |  190°  |  1 min  | 
+|  	2 min |  200°  |  1 min  | 
+|  	3 min |  210°  |  1 min  | 
+|  	4 min |  220°  |  1 min  | 
+|  	5 min |  230°  |  1 min  | 
+|  	6 min |  240°  |  4 min  | 
+|  	10 min |  结束  |  0 min  |  
+
+7min25s时，温度达到215°，预感有一爆，提前下豆，结束烘焙。
 
 
 
