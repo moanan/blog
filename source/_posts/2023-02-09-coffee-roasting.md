@@ -4,10 +4,11 @@ date: 2023-02-09 20:30:27
 tags: 记录
 mathjax: true
 ---
-
+100g 99.9g 68.8g，200度7min，240度剩下，8min45s一爆，20s下豆，M。
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  042  |  240806  |  19  |   100  |    99.9 |      86.8 (13.1%)   |   200-240 |  8'45''(20)   |  M  |
 |  041  |  240730  |  18  |   100  |    99.5 |      83.2 (16.4%)   |   190-230 |  9'50''(15)   |  ML |
 |  040  |  240721  |  17  |   150  |   148.1 |     130.5 (11.9%)   |   160-240 |  7'40''(15)   |  L  |
 |  039  |  240714  |  17  |   150  |   146.7 |     123.2 (16.0%)   |   160-240 |  9'00''(30)   |  D  |
@@ -57,8 +58,9 @@ mathjax: true
 
 |  编号  |    名称                |    品种        |      产地                  |   处理        |    风味    | 
 |  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
-|   18  |    瑰夏     |      |    |       	 |     	|
-|   17  |    恰恰蕾     |    阿拉比卡  |   埃塞俄比亚，Gedeb恰恰蕾村 |     厌氧日晒G1  	 |     	|
+|   19  |    Java                |     卡杜拉      |      玻利维亚，卡拉纳维      |     日晒     |    蜜桃、伯爵红茶、青柑    |
+|   18  |    瑰夏                 |               |                        |       	 |     	|
+|   17  |    恰恰蕾                |    阿拉比卡  |   埃塞俄比亚，Gedeb恰恰蕾村 |     厌氧日晒G1  	 |     	|
 |   16  |    肯尼亚AA              |    SL28/SL34  |   Kenya, Kirinyaga Deerfruit Manor |     水洗  	 |    莓果香、葡萄柚、乌梅酸甜 	|
 |   15  |    尖身波旁              |       		  |        |       	  |      	|
 |   14  |    果丁丁              |         		  |        |       	  |      	|
@@ -140,6 +142,21 @@ Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig 
 Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
 Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
+
+
+## 042
+新买了Java豆。多年前上课用过Java，后来了解到Java曾经濒危，今天终于见到本尊了。
+
+豆子质量很高，几乎没有任何瑕疵豆，并且大小均匀。
+
+豆子烘好后有浓郁的甜玉米香味。非常好喝。
+
+|  时刻   |  温度   |  持续时间 |  
+|  ---    |   ---  |   ---   |
+|  	0 min |  200°  |  7 min  | 
+|  	7 min |  240°  |  3 min  | 
+|  10 min |  结束  |  0 min  | 
+
 
 ## 040
 尝试一个新的烘焙曲线，结果温度测量发现，之前温度反复升降的问题又出现了。。。
