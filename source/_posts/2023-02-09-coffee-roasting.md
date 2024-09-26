@@ -7,6 +7,8 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  049  |  240926  |  19  |   101  |   101.0 |      87.6 (13.2%)   |   180-230 |  7'48''(15)  |  L  |
+|  048  |  240926  |  21  |   120  |   116.2 |      93.2 (19.8%)   |   180-230 |  6'10''(20)  |  D  |
 |  047  |  240909  |  19  |   100  |    98.4 |      81.3 (17.4%)   |   200-240 | 13'00''(180)  |  C  |
 |  046  |  240908  |  xx  |   101  |    99.2 |      85.5 (13.8%)   |   200-240 |  9'00''(20)   |  L  |
 |  045  |  240904  |  20  |   100  |   100.0 |      85.1 (14.9%)   |   200-240 | 10'25''(35)   |  M  |
@@ -62,7 +64,7 @@ mathjax: true
 
 |  编号  |    名称                |    品种        |      产地                  |   处理        |    风味    | 
 |  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
-|   19  |    PWN黄金曼特宁           |     阿拉比卡      |      印尼      |     湿刨     |    巧克力、焦糖、薄荷、果酸    |
+|   20  |    PWN黄金曼特宁           |     阿拉比卡      |      印尼      |     湿刨     |    巧克力、焦糖、薄荷、果酸    |
 |   19  |    Java                |     卡杜拉      |      玻利维亚，卡拉纳维      |     日晒     |    蜜桃、伯爵红茶、青柑    |
 |   18  |    瑰夏                 |               |                        |       	 |     	|
 |   17  |    恰恰蕾                |    阿拉比卡  |   埃塞俄比亚，Gedeb恰恰蕾村 |     厌氧日晒G1  	 |     	|
@@ -147,6 +149,34 @@ Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig 
 Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
 Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
+
+
+## 049
+再接再厉。
+
+这次浅烘还算成功。没有戴降噪耳机，反而能清晰听到一爆。
+
+|  时刻   |  温度   |  持续时间 |  
+|  ---    |   ---  |   ---   |
+|  	0 min |  180°  |  3 min  | 
+|  	3 min |  200°  |  3 min  | 
+|   6 min |  230°  |  4 min  | 
+|  10 min |  结束  |  0 min  | 
+
+
+## 048
+烘豆机再次发生温度大幅震荡的故障，看来是没救了，需要改变烘焙曲线手工调节ROR使得温度平稳。
+
+这次还把风力调低为1档，温升很快，没想到在6分多钟的时候温度到达230度并没有降温，并且马上就一爆了。。。发展20秒后直接成中深烘。
+
+从厨房出来写个笔记，发现没下豆，直接干成深烘hhhhhhh 翻车！
+
+|  时刻   |  温度   |  持续时间 |  
+|  ---    |   ---  |   ---   |
+|  	0 min |  180°  |  3 min  | 
+|  	3 min |  230°  |  7 min  | 
+|  10 min |  240°  |  1 min  | 
+|  11 min |  结束  |  0 min  | 
 
 
 ## 042
