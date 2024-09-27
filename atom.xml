@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mo-an.net/"/>
-  <updated>2024-04-19T14:50:27.318Z</updated>
+  <updated>2024-07-30T12:29:23.239Z</updated>
   <id>https://mo-an.net/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu22.04 Gnome VNC setup</title>
+    <link href="https://mo-an.net/2024/07/25/2024-07-25-vnc_22.04/"/>
+    <id>https://mo-an.net/2024/07/25/2024-07-25-vnc_22.04/</id>
+    <published>2024-07-25T21:49:15.000Z</published>
+    <updated>2024-07-30T12:29:23.239Z</updated>
+    
+    <content type="html"><![CDATA[<p>Setting up a VNC server for Ubuntu 22.04 with gnome can be frustrating, as there are limited resources online to properly set it up. Below is how I made it work eventually.</p><span id="more"></span><h2 id="installation"><a href="#installation" class="headerlink" title="installation"></a>installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tigherVNC</span></span><br><span class="line">sudo apt install tigervnc-standalone-server tigervnc-tools xfonts-100dpi xfonts-75dpi</span><br><span class="line"></span><br><span class="line"><span class="comment"># noVNC</span></span><br><span class="line">wget https://github.com/novnc/noVNC/archive/refs/tags/v1.5.0.zip</span><br><span class="line">uzip noVNC-1.5.0.zip</span><br><span class="line"><span class="built_in">cd</span> noVNC-1.5.0/utils</span><br><span class="line">bash novnc_proxy</span><br></pre></td></tr></table></figure><h2 id="launch-VNC-service"><a href="#launch-VNC-service" class="headerlink" title="launch VNC service"></a>launch VNC service</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tigervncserver -xstartup /usr/bin/gnome-session</span><br><span class="line">./noVNC-1.5.0/utils/novnc_proxy --vnc localhost:5901</span><br><span class="line"></span><br><span class="line"><span class="comment"># some useful commands for vnc:</span></span><br><span class="line">vncserver -list</span><br><span class="line">vncserver -<span class="built_in">kill</span> :1</span><br></pre></td></tr></table></figure><p>Reboot once if black screen shown.</p><h2 id="connect-from-client-machine"><a href="#connect-from-client-machine" class="headerlink" title="connect from client machine"></a>connect from client machine</h2><p>In web browser, visit your noVNC address, e.g.:<a href="http://192.168.199.168:6080/vnc.html?host=kitty-ThinkPad-Edge-E320&amp;port=6080``">http://192.168.199.168:6080/vnc.html?host=kitty-ThinkPad-Edge-E320&amp;port=6080``</a></p><p>You might need to set the <code>Host</code> to your server IP address manully, then click connect. Here you go!</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Setting up a VNC server for Ubuntu 22.04 with gnome can be frustrating, as there are limited resources online to properly set it up. Below is how I made it work eventually.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux USB设备调试</title>
+    <link href="https://mo-an.net/2024/07/25/2024-08-09-usb_device_config/"/>
+    <id>https://mo-an.net/2024/07/25/2024-08-09-usb_device_config/</id>
+    <published>2024-07-25T21:49:15.000Z</published>
+    <updated>2024-08-13T02:55:36.500Z</updated>
+    
+    <content type="html"><![CDATA[<p>usb外设调试</p><span id="more"></span><p>KERNEL==”ttyUSB*”,KERNELS==”3-1.3”,ATTRS{idVendor}==”0403”, ATTRS{idProduct}==”6001”, MODE:=”0777”,SYMLINK+=”lglove”</p><h2 id="端口绑定-usb-rules"><a href="#端口绑定-usb-rules" class="headerlink" title="端口绑定 usb rules"></a>端口绑定 usb rules</h2><h3 id="只有一种硬件地址的设备"><a href="#只有一种硬件地址的设备" class="headerlink" title="只有一种硬件地址的设备"></a>只有一种硬件地址的设备</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">例如显示usb信息为：</span></span><br><span class="line">lsusb</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bus 001 Device 010: ID 10c4:8108 Cygnal Integrated Products, Inc.</span><br></pre></td></tr></table></figure><p>则<code>idVendor</code>是<code>10c4</code>，<code>idProduct</code>是<code>8108</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入/etc/udev/rules.d目录</span></span><br><span class="line">cd /etc/udev/rules.d</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建新的规则</span></span><br><span class="line">sudo touch foo.rules</span><br><span class="line"><span class="meta">#</span><span class="bash"> 编辑规则</span></span><br><span class="line">sudo vim foo.rules</span><br></pre></td></tr></table></figure><p>输入：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KERNEL==&quot;ttyUSB*&quot;, ATTRS&#123;idVendor&#125;==&quot;10c4&quot;, ATTRS&#123;idProduct&#125;==&quot;8108&quot;, MODE:=&quot;0777&quot;,SYMLINK+=&quot;foo&quot;</span><br></pre></td></tr></table></figure><p>匹配sys中内核名为<code>ttyUSB*</code>的设备，属性匹配依据生产商编号<code>idVendor</code>和产品号<code>idProduct</code>，设定读写权限为<code>0777</code>，<code>SYMLINK</code>为将该usb设备映射为其他别名的设备<code>foo</code>.</p><p>重启串口后拔插设备即可。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service udev reload</span><br><span class="line">sudo service udev restart</span><br><span class="line">sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger</span><br></pre></td></tr></table></figure></p><p>输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /dev | grep ttyUSB</span><br></pre></td></tr></table></figure><br>可以看到映射关系<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrwxrwxrwx   1 root root             7 Aug 12 15:35 foo -&gt; ttyUSB0</span><br></pre></td></tr></table></figure></p><h3 id="有多个相同硬件地址的设备"><a href="#有多个相同硬件地址的设备" class="headerlink" title="有多个相同硬件地址的设备"></a>有多个相同硬件地址的设备</h3><p>如果购买了两个相同的串口设备，比如都是<code>ch341</code>(ID是<code>1a86:7523</code>)，用上面的方法就无法区分和绑定了。我们可以通过<code>KERNELS</code>的差异来绑定</p><h4 id="使用KERNELS来区分"><a href="#使用KERNELS来区分" class="headerlink" title="使用KERNELS来区分"></a>使用KERNELS来区分</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">udevadm info --attribute-walk --name=/dev/ttyUSB0 | grep KERNELS</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">KERNELS==&quot;input16&quot;</span><br><span class="line">    KERNELS==&quot;0003:10C4:8108.0005&quot;</span><br><span class="line">    KERNELS==&quot;1-4.4:1.0&quot;</span><br><span class="line">    KERNELS==&quot;1-4.4&quot;</span><br><span class="line">    KERNELS==&quot;1-4&quot;</span><br><span class="line">    KERNELS==&quot;usb1&quot;</span><br><span class="line">    KERNELS==&quot;0000:00:14.0&quot;</span><br><span class="line">    KERNELS==&quot;pci0000:00&quot;</span><br></pre></td></tr></table></figure><p>如结果为上面显示的，则添加的规则判断为去掉冒号前，即 <code>KERNELS==&quot;1-4.4&quot;</code>  ，完整规则为：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KERNEL==&quot;ttyUSB*&quot;,KERNELS==&quot;1-4.4&quot;,ATTRS&#123;idVendor&#125;==&quot;10c4&quot;, ATTRS&#123;idProduct&#125;==&quot;8108&quot;, MODE:=&quot;0777&quot;,SYMLINK+=&quot;foo&quot;</span><br></pre></td></tr></table></figure><!-- #### 使用devpath来区分根据USB在设备的序号，devpath<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">udevadm info --attribute-walk --name=/dev/ttyUSB0 | grep devpath</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Udevadm info starts with the device specified by the devpath and then</span><br><span class="line">    ATTRS&#123;devpath&#125;==&quot;3&quot;</span><br><span class="line">    ATTRS&#123;devpath&#125;==&quot;0&quot;</span><br></pre></td></tr></table></figure><p>如结果为上面显示的，则添加的规则判断为去掉冒号前，即 <code>ATTRS&#123;devpath&#125;==&quot;3&quot;</code> ，另一种完整规则为：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">KERNEL==&quot;ttyUSB*&quot;,ATTRS&#123;devpath&#125;==&quot;3&quot;,ATTRS&#123;idVendor&#125;==&quot;10c4&quot;,ATTRS&#123;idProduct&#125;==&quot;8108&quot;,MODE:=&quot;0777&quot;,SYMLINK+=&quot;foo&quot;</span><br><span class="line">``` --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 常用调试命令</span></span></span><br><span class="line">```bash</span><br><span class="line">lsusb -t</span><br><span class="line">usb-devices</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="传输速率"><a href="#传输速率" class="headerlink" title="传输速率"></a>传输速率</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;usb外设调试&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>天下苦座杆下滑久已</title>
@@ -121,9 +157,9 @@
     <link href="https://mo-an.net/2023/02/09/2023-02-09-coffee-roasting/"/>
     <id>https://mo-an.net/2023/02/09/2023-02-09-coffee-roasting/</id>
     <published>2023-02-09T20:30:27.000Z</published>
-    <updated>2024-06-19T14:21:11.086Z</updated>
+    <updated>2024-09-26T14:15:05.016Z</updated>
     
-    <content type="html"><![CDATA[<table><thead><tr><th>序号</th><th>日期</th><th>豆子</th><th>始重 g</th><th>挑豆 g</th><th>终重 g （脱水）</th><th>温度 C</th><th>一爆 （发展）</th><th>程度</th></tr></thead><tbody><tr><td>037</td><td>240619</td><td>16</td><td>150</td><td>147.2</td><td>128.1 (13.0%)</td><td>180-240</td><td>7’05’’(15)</td><td>L</td></tr><tr><td>036</td><td>240608</td><td>15</td><td>100</td><td>99.5</td><td>83.7 (15.9%)</td><td>200-240</td><td>15’00’’(??)</td><td>MD</td></tr><tr><td>035</td><td>240520</td><td>14</td><td>200</td><td>196.8</td><td>177.8 ( 9.7%)</td><td>160-240</td><td>10’??’’(??)</td><td>M</td></tr><tr><td>034</td><td>240427</td><td>13</td><td>200</td><td>195.0</td><td>164.7 (15.5%)</td><td>160-240</td><td>14’??’’(??)</td><td>M</td></tr><tr><td>033</td><td>240419</td><td>14</td><td>200</td><td>195.7</td><td>175.3 (10.4%)</td><td>200-240</td><td>6’30’’(30)</td><td>M</td></tr><tr><td>032</td><td>240409</td><td>13</td><td>100</td><td>95.7</td><td>81.6 (14.7%)</td><td>160-240</td><td>12’15’’(15)</td><td>ML</td></tr><tr><td>031</td><td>240408</td><td>13</td><td>100</td><td>95.1</td><td>83.8 (11.9%)</td><td>160-240</td><td>9’25’’(20)</td><td>L</td></tr><tr><td>030</td><td>240303</td><td>12</td><td>101</td><td>100.4</td><td>86.7 (13.6%)</td><td>160-240</td><td>11’00’’(30)</td><td>M</td></tr><tr><td>029</td><td>240303</td><td>11</td><td>100</td><td>93.2</td><td>78.2 (16.1%)</td><td>160-240</td><td>7’40’’(150)</td><td>MD</td></tr><tr><td>028</td><td>240302</td><td>11</td><td>100</td><td>94.2</td><td>80.9 (14.1%)</td><td>160-240</td><td>10’30’’(30)</td><td>M</td></tr><tr><td>027</td><td>230826</td><td>02</td><td>175</td><td>172.2</td><td>148.9 (13.5%)</td><td>750-800</td><td>9’16’’(20s)</td><td>ML</td></tr><tr><td>026</td><td>230826</td><td>03</td><td>175</td><td>172.3</td><td>150.8 (12.4%)</td><td>650-750</td><td>13’06’’(60s)</td><td>C</td></tr><tr><td>025</td><td>230813</td><td>03</td><td>120</td><td>118.3</td><td>102.8 (13.1%)</td><td>650-750</td><td>9’23’’(30s)</td><td>MC</td></tr><tr><td>024</td><td>230802</td><td>02</td><td>200</td><td>193.4</td><td>167.6 (13.3%)</td><td>750-800</td><td>11’37’’(15s)</td><td>L</td></tr><tr><td>023</td><td>230725</td><td>03</td><td>120</td><td>115.0</td><td>97.8 (15.0%)</td><td>600-700</td><td>10’41’’(120s)</td><td>D</td></tr><tr><td>022</td><td>230715</td><td>02</td><td>120</td><td>118.0</td><td>101.3 (14.2%)</td><td>650-750</td><td>12’08’’(120s)</td><td>C</td></tr><tr><td>021</td><td>230715</td><td>10</td><td>122</td><td>120.6</td><td>106.2 (11.9%)</td><td>700-750</td><td>9’54’’(10s)</td><td>ML</td></tr><tr><td>020</td><td>230715</td><td>09</td><td>122</td><td>119.7</td><td>104.7 (12.5%)</td><td>650-700</td><td>8’34’’(10s)</td><td>L</td></tr><tr><td>019</td><td>230712</td><td>02</td><td>150</td><td>145.2</td><td>127.6 (12.1%)</td><td>750-800</td><td>8’03’’(10s)</td><td>L</td></tr><tr><td>018</td><td>230704</td><td>08</td><td>150</td><td>148.0</td><td>129.3 (12.6%)</td><td>750-800</td><td>9’33’’(10s)</td><td>ML</td></tr><tr><td>017</td><td>230625</td><td>08</td><td>150</td><td>148.8</td><td>128.9 (13.4%)</td><td>790-810</td><td>8’43’’(15s)</td><td>M</td></tr><tr><td>016</td><td>230520</td><td>07</td><td>123</td><td>122.3</td><td>102.9 (15.8%)</td><td>740-770</td><td>9’31’’(15s)</td><td>L</td></tr><tr><td>016</td><td>230508</td><td>06</td><td>124</td><td>121.3</td><td>103.6 (14.6%)</td><td>740-770</td><td>9’00’’(15s)</td><td>L</td></tr><tr><td>015</td><td>230419</td><td>03</td><td>150</td><td>146.0</td><td>126.6 (13.6%)</td><td>650-750</td><td>16’01’’(20s)</td><td>L</td></tr><tr><td>014</td><td>230411</td><td>05</td><td>122</td><td>116.9</td><td>104.0 (11.0%)</td><td>700-800</td><td>11’23’’(15s)</td><td>ML</td></tr><tr><td>012</td><td>230407</td><td>04</td><td>122</td><td>119.2</td><td>102.8 (13.8%)</td><td>700-800</td><td>10’15’’(15s)</td><td>M</td></tr><tr><td>011</td><td>230327</td><td>03</td><td>N/A</td><td>151.8</td><td>131.0 (13.7%)</td><td>775-800</td><td>11’41’’(20s)</td><td>M</td></tr><tr><td>010</td><td>230318</td><td>03</td><td>150</td><td>146.2</td><td>127.4 (14.8%)</td><td>775-800</td><td>9’22’’(10s)</td><td>L</td></tr><tr><td>009</td><td>230311</td><td>01</td><td>150</td><td>144.7</td><td>121.3 (19.3%)</td><td>775-800</td><td>11’27’’(15s)</td><td>ML</td></tr><tr><td>008</td><td>230305</td><td>02</td><td>150</td><td>144.3</td><td>126.3 (14.3%)</td><td>750-800</td><td>11’50’’(15s)</td><td>L</td></tr><tr><td>007</td><td>230303</td><td>02</td><td>150</td><td>147.0</td><td>128.7 (12.4%)</td><td>700-800</td><td>11’17’’(20s)</td><td>M</td></tr><tr><td>006</td><td>230223</td><td>01</td><td>150</td><td>144.0</td><td>123.6 (14.2%)</td><td>700-750</td><td>13’32’’(20s)</td><td>M</td></tr><tr><td>005</td><td>230223</td><td>01</td><td>150</td><td>142.6</td><td>123.7 (13.3%)</td><td>600-700</td><td>16’55’’(20s)</td><td>M</td></tr><tr><td>004</td><td>230221</td><td>01</td><td>150</td><td>144.4</td><td>127.5 (11.7%)</td><td>450-600</td><td>19’30’’(15s)</td><td>L</td></tr><tr><td>003</td><td>230211</td><td>01</td><td>100</td><td>96.1</td><td>83.0 (13.6%)</td><td>N/A</td><td>6’37’’(15s)</td><td>L</td></tr><tr><td>002</td><td>230211</td><td>01</td><td>100</td><td>95.6</td><td>82.7 (13.5%)</td><td>N/A</td><td>7’40’’(15s)</td><td>L</td></tr><tr><td>001</td><td>230209</td><td>01</td><td>100</td><td>96.9</td><td>82.1 (15.3%)</td><td>N/A</td><td>14’50’’(20s)</td><td>MD</td></tr></tbody></table><span id="more"></span><h1 id="豆子"><a href="#豆子" class="headerlink" title="豆子"></a>豆子</h1><table><thead><tr><th>编号</th><th>名称</th><th>品种</th><th>产地</th><th>处理</th><th>风味</th></tr></thead><tbody><tr><td>16</td><td>肯尼亚AA</td><td>SL28/SL34</td><td>Kenya, Kirinyaga Deerfruit Manor</td><td>水洗</td><td>莓果香、葡萄柚、乌梅酸甜</td></tr><tr><td>15</td><td>尖身波旁</td><td></td><td></td><td></td><td></td></tr><tr><td>14</td><td>果丁丁</td><td></td><td></td><td></td><td></td></tr><tr><td>13</td><td>花魁7.0</td><td></td><td></td><td></td><td></td></tr><tr><td>12</td><td>花魁8.0</td><td></td><td></td><td></td><td></td></tr><tr><td>11</td><td>吉吉乌拉嘎</td><td></td><td>Ethiopia, 吉吉乌拉嘎</td><td>日晒G1</td><td></td></tr><tr><td>10</td><td>耶加雪菲Dumerso</td><td></td><td>Ethiopia</td><td>水洗</td><td></td></tr><tr><td>09</td><td>耶加雪菲Dumerso</td><td></td><td>Ethiopia</td><td>日晒</td><td></td></tr><tr><td>08</td><td>瑰夏</td><td></td><td>Ethiopia</td><td>日晒</td><td>花果香</td></tr><tr><td>07</td><td>惠兰</td><td>哥伦比亚</td><td>Colombia</td><td>水洗</td><td></td></tr><tr><td>06</td><td>Baroida</td><td></td><td>New Guinea, Baroida</td><td>水洗</td><td></td></tr><tr><td>05</td><td>Kisiizi</td><td></td><td>Uganda, Kisiizi</td><td>日晒</td><td>青草</td></tr><tr><td>04</td><td>Gedebe</td><td>耶加雪菲</td><td>Ethiopia</td><td>日晒</td><td></td></tr><tr><td>03</td><td>Monsooned Malabar</td><td>Arabica</td><td>India, Malabar coast</td><td>Monsooned</td><td>五谷，坚果</td></tr><tr><td>02</td><td>AB Plus</td><td>Arabica</td><td>Kenia, Mount Kenia</td><td>Fully washed</td><td>香茅，果冻</td></tr><tr><td>01</td><td>Zege Forest Grow</td><td>Arabica</td><td>Ethiopia, Lake Tana</td><td>Natural</td><td>花果香</td></tr></tbody></table><img src="/2023/02/09/2023-02-09-coffee-roasting/roasting.webp" class="" width="1000"><h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1><h2 id="10-耶加雪菲水洗"><a href="#10-耶加雪菲水洗" class="headerlink" title="10-耶加雪菲水洗"></a><a href="">10-耶加雪菲水洗</a></h2><p>和09号豆是同一种，成色确实差不多，但处理方法不同，一个是日晒一个是水洗。生豆颜色上更偏绿色，不像日晒的那么黄，可能是晒黑了吧？</p><p>不知道是温度计不准还是因为水洗的豆更耐热，比09号豆明显温度更高时间更久达到1爆。下豆的前置量没把握好，比预期的浅烘稍稍深了一点。</p><!-- 【图】 --><h2 id="09-耶加雪菲日晒"><a href="#09-耶加雪菲日晒" class="headerlink" title="09-耶加雪菲日晒"></a><a href="">09-耶加雪菲日晒</a></h2><p>豆子质量一般，残次豆不少，大小不一，有不少很小很小的豆</p><h2 id="08-埃塞尔比亚瑰夏"><a href="#08-埃塞尔比亚瑰夏" class="headerlink" title="08-埃塞尔比亚瑰夏"></a><a href="https://coffee-market.stores.jp/items/6300d38a5d05ec40991af9d7">08-埃塞尔比亚瑰夏</a></h2><p>2023年去日本开会发现的宝藏咖啡店<a href="https://coffee-market.net/lab-2">The Coffee Market Lab</a>，店内有3台迷你烘豆机，可以定制烘豆！生豆选择很丰富，忍不住带了500g瑰夏回家自己烘。马上就要实现瑰夏自由啦！</p><p>豆子质量很好，残次豆非常少。喝到了久违的瑰夏，简直是爆香。甚至有种从咖啡的颜色就能看出好喝的好感。同事华尔特评价也很高，说是我最成功的一次。</p><h2 id="07-哥伦比亚惠兰"><a href="#07-哥伦比亚惠兰" class="headerlink" title="07-哥伦比亚惠兰"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">07-哥伦比亚惠兰</a></h2><p>豆子质量不错，几乎没有残次豆，豆粒较大。</p><h2 id="06-巴布亚新几内亚Baroida庄园"><a href="#06-巴布亚新几内亚Baroida庄园" class="headerlink" title="06-巴布亚新几内亚Baroida庄园"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">06-巴布亚新几内亚Baroida庄园</a></h2><p>生豆有一种让人不愉悦的脚臭味。。。虽然是水洗的豆，烘的过程中有不少银皮掉落，也是有点迷。。。</p><h2 id="05-乌干达Kisiizi"><a href="#05-乌干达Kisiizi" class="headerlink" title="05-乌干达Kisiizi"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">05-乌干达Kisiizi</a></h2><h2 id="04-耶加雪菲Gedeb"><a href="#04-耶加雪菲Gedeb" class="headerlink" title="04-耶加雪菲Gedeb"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">04-耶加雪菲Gedeb</a></h2><h2 id="03-India"><a href="#03-India" class="headerlink" title="03-India"></a><a href="https://www.docklands-coffee.de/indien-monsooned-malabar-aa/0020107-1000">03-India</a></h2><p>Er ist im Aroma und Geschmack etwas Besonderes, denn seine Aufbereitung erfolgt völlig anders als bei anderen Kaffees. Die Gründe dafür liegen in der Transportgeschichte von Kaffee.</p><ul><li>Kaffeesorte: Monsooned Malabar</li><li>Klassifizierung: AA</li><li>Varietät: S 795 (100% Arabica)</li><li>Anbauland: Indien</li><li>Anbaugebiet: Malabarküste, Bundesstaat Kerala (im Südwesten Indiens)</li><li>Anbauhöhe: 1100-1200 m ü.M.</li></ul><h2 id="02-Kenia"><a href="#02-Kenia" class="headerlink" title="02-Kenia"></a><a href="https://www.docklands-coffee.de/kenia-mount-kenya-selection/0020113-1000">02-Kenia</a></h2><p>Das Mount-Kenya-Massiv stellt für die afrikanische Flora und Fauna einen bemerkenswert artenreichen Lebensraum dar. Das tropisch-feuchte Hochgebirgs-Klima lässt einzigartige Pflanzenarten gedeihen. Große Niederschlagsmengen (es regnet an rund 200 Tagen im Jahr) und die fruchtbaren vulkanischen Böden am Fuß des Massivs bieten für den Kaffeeanbau hervorragende Bedingungen. Während der Bereich oberhalb von 3200m Höhe zum Mount-Kenya-Nationalpark gehört, werden rund um das Bergmassiv bis ca. 1900m ü.M. Premium-Kaffeesorten angebaut. Es werden ausschließlich tiefrote Kaffeekirschen per Hand geerntet. </p><p>Der besonders fruchtige und ausgewogene Kaffee mit einer angenehmen Süße besticht durch weinähnlichen Beerenaromen. Er hat eine mittlere bis stark ausgeprägte Säure, hat einen aromareichen, kraftvollen Körper und ist rundum ausgewogen.</p><ul><li>Kaffeesorte: Mount Kenya</li><li>Klassifizierung: AB Plus</li><li>Varietät:  Typica, Bourbon (100% Arabica)</li><li>nbaugebiet: an den nordöstlichen Berghängen des Mount Kenya / Kenia</li><li>Anbauhöhe: 1650 – 1800m ü.M.</li></ul><h2 id="01-Ethiopia"><a href="#01-Ethiopia" class="headerlink" title="01-Ethiopia"></a><a href="https://www.docklands-coffee.de/aethiopien-zege-lake-tana-coffee/0020125-1000">01-Ethiopia</a></h2><p>Rund um den Tanasee wächst seit Urzeiten Kaffee. Dennoch gehört diese Region nicht zu den klassischen Anbaugebieten Äthiopiens. Ursprunglich waren es Waldkaffees, aber der Holzeinschlag der letzten Jahrzehnten hat leider dafür gesorgt, daß dieser historische Waldkaffee rund um den Tanasee fast nicht mehr vorkommt. Eine Ausnahme stellt die Halbinsel Zege dar. Es ist das größte, noch zusammenhängende Waldgebiet am Tanasee in dem der Kaffee in seiner Ursprungsform gedeiht. Zu verdanken hat er das seiner einzigartigen „heiligen“ Herkunft, so unsere Recherchen.<br>“Betre Maryam”, der Name des Heiligen, teilte einst seinen Priesterstab in drei Teile. Aus dem Kopfteil entstanden die ersten Kaffeepflanzen. In einem der sieben Klöster von Zege ist diese einmalige Geschichte in Wandbildnissen verewigt. Zudem existiert auch ein altes Buch indem diese besondere Begebenheit niedergeschrieben wurde. Noch heute gibt es auf Zege aus diesen historisch religiösen Gründen keine echte Landkultivierung im herkömmlichen Sinne. So schützt der „heilige“ Kaffee den Wald und der Wald den “heiligen” Kaffee. Kaffee ist dort wirklich ein besonderes Gut.<br>Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig mit der Kaffeekultivierung für den Eigenbedarf bzw. für den lokalen Markt. Es handelt sich hierbei um die unterschiedlichsten Qualitäten. Gesammelt und verwendet wird eigentlich alles. In den letzten vier Jahren (Erntezyklen) haben wir die Ernte und Aufbereitung in Zusammenarbeit mit den einheimischen Kaffeeanbauern und Klöstern optimiert, um einen wunderbaren Zege Waldkaffee zu kreieren. Dieser im Verlauf der Zeit entstandene Kaffee von höchster Qualität hat bereits wichtige Partner gefunden. InterAmerican Coffee, von der Neumann Gruppe (weltweit größter Rohkaffeehändler), beteiligt sich finanziell, logistisch und technisch an diesem außergewöhnlichen Kaffeeprojekt. Das erst ermöglicht diesem Kaffee seinen verdienten internationalen Auftritt. Unterstützt und gefördert wird dieses Kaffeeprojekt auch durch World-Habitat-Society, die sich seit Jahren vor Ort auf Zege für den Schutz des Waldes, der Regionalentwicklung und dem nachhaltigen Tourismus sowie für den Erhalt und die Restaurierung der Klöster und seiner Malkunst, die zum Teil aus dem 12. Jahrhundert stammen, einsetzt. In all diesen Punkten wird sich zukünftig unser Zege Waldkaffee einbringen. Denn durch diese Projekte wird die Region nachhaltig gestärkt und ermöglicht somit auch in Zukunft die Anfertigung dieses wunderbaren und zugleich einzigartigen Zege Waldkaffees mit „heiliger“ Herkunft.<br>Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.</p><p>Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.</p><h2 id="037"><a href="#037" class="headerlink" title="037"></a>037</h2><p>烘豆机保修内返修了，卖家说换了电热丝，但我感觉收到的就完全是一台新机器，因为商标贴纸都贴倒了。。。Anyway，现试烘150g，测一下温度曲线。温度曲线显示正常，不像原先在后期有好几次失温的现象，温度上升温度，只有在3分钟左右时间有一次降温。</p><p>这次还尝试用降噪耳机听一爆（网友的这个建议思路很好—），果然有效果，抽油烟机的声音听不到了。但下豆感觉可能早了，不知道是不是误判了一爆。</p><p>尝试新温度曲线：</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>180°</td><td>1 min</td></tr><tr><td>1 min</td><td>190°</td><td>1 min</td></tr><tr><td>2 min</td><td>200°</td><td>1 min</td></tr><tr><td>3 min</td><td>210°</td><td>1 min</td></tr><tr><td>4 min</td><td>220°</td><td>1 min</td></tr><tr><td>5 min</td><td>230°</td><td>1 min</td></tr><tr><td>6 min</td><td>240°</td><td>4 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><p>7min25s时，温度达到215°，预感有一爆，提前下豆，结束烘焙。</p><h2 id="036"><a href="#036" class="headerlink" title="036"></a>036</h2><p>称少了豆子（100g），改了温度曲线（上来就200°），没想到还是没听到一爆。不出所料，脱水率还挺高的，说明已经烘透彻了。不确定是不是腔内温度不够，是需要升级装备测一下腔内温度了。</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>200°</td><td>1 min</td></tr><tr><td>1 min</td><td>210°</td><td>1 min</td></tr><tr><td>2 min</td><td>220°</td><td>1 min</td></tr><tr><td>3 min</td><td>230°</td><td>1 min</td></tr><tr><td>4 min</td><td>240°</td><td>16 min</td></tr><tr><td>15 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="035"><a href="#035" class="headerlink" title="035"></a>035</h2><p>听不清一爆，根据颜色判断在10min时候下豆。</p><p>发现一个现象，烘豆机的计时不准确，估计是电路成本太低了计时器太差。</p><p>这次测试了一个新的（设定）温度曲线，感觉还不错，适合200g的豆量：</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>160°</td><td>3 min</td></tr><tr><td>3 min</td><td>180°</td><td>1 min</td></tr><tr><td>4 min</td><td>200°</td><td>1 min</td></tr><tr><td>5 min</td><td>210°</td><td>1 min</td></tr><tr><td>6 min</td><td>220°</td><td>1 min</td></tr><tr><td>7 min</td><td>230°</td><td>1 min</td></tr><tr><td>8 min</td><td>240°</td><td>2 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="033"><a href="#033" class="headerlink" title="033"></a>033</h2><p>第一次试一锅烘 200g 豆子，果然翻车了。因为担心升温不够，初始温度就设置成了 200°，而不是 160°。然后 5min 内就升到了 240°。没想到烘豆机还是很给力的，直接 6min30s 干到一爆。。。发展时间太少了，脱水率也创下了新低，恐怕不能充分发掘豆子的潜力。</p><h2 id="031"><a href="#031" class="headerlink" title="031"></a>031</h2><p>新的热风式烘豆机已经用了几次，慢慢有点心得了，目前的温度（设定）曲线为：160度5min，然后每分钟升20°，到220°，然后每分钟升10°，到240°。</p><p>后续再打算 DIY 一个豆仓温度计。</p><h2 id="024"><a href="#024" class="headerlink" title="024"></a>024</h2><p>第一次尝试一次烘200g生豆，小烘豆机确实有点勉强，加热功率不够，虽然用了更猛的火力，一爆时间也还是延长到了12分多，并且一爆后零零星星的，不像之前一样关火后加速旋转能听到一爆密集。没有达到一爆密集，烘焙程度确实是最浅的一次，不知道味道怎么样。</p><p>（更新）浅烘更突出了草本植物的清香，酸味更明亮，但我可能还是更喜欢中浅烘那种甜甜的花香。</p><h2 id="023"><a href="#023" class="headerlink" title="023"></a>023</h2><p>第二次深烘！印度的巨型豆，没抓好下豆时间，真的烘深了。</p><p>本来打算和上一支一样，一爆120秒之后下豆，搞个city roast。没想到一爆断断续续的持续不停，几乎都感受不到一爆密集。一爆快结束的时候，二爆竟然无缝连接。第一次听到二爆的声音，更清脆，没有一爆这么沉闷。确定是二爆后就知道已经晚了，city roast没了，所以赶紧关火准备加速摇摆准备下豆。关火后二爆还持续了一小会，并且产生的烟雾很大，甚至看到了油脂在豆的表面沸腾。。。</p><p>深烘的豆是真的黑啊，而且黑得发亮，像比较好看的那种黑人皮肤的颜色（不知道怎么描述）。油脂已经覆满表面了，不是想上一支city roast的豆养了几天之后才看到有油脂溢出。</p><h2 id="022"><a href="#022" class="headerlink" title="022"></a>022</h2><p>第一次深烘！严格来说是city roast，还不是dark roast，因为没有二爆，也没有表面厚厚的油脂。从浅烘的15秒发展时间拉长到2分钟，下豆后差点没被香晕。实在太香了！</p><h2 id="011"><a href="#011" class="headerlink" title="#011"></a>#011</h2><p>国内买的生豆套装漂洋过海终于终于到了，这次有8种不同的豆，一段时间咖啡自由了！</p><h2 id="010"><a href="#010" class="headerlink" title="#010"></a>#010</h2><p>新豆子。豆子倒出来的一瞬间简直惊艳！生豆是象牙色的，巨大，和烘好的肯尼亚AB一般大。给人一种印度大象的错觉。</p><p>烘焙出来也不是烂俗的花果香，而是有食欲的杂粮香气。</p><h2 id="007"><a href="#007" class="headerlink" title="#007"></a>#007</h2><p>终于要烘第二支豆啦！肯尼亚AB豆果然大了不少。因为是水洗，银皮少了很多。</p><p>这次温度控制也更有经验了，前半段温度在700-750度之间，在6分钟时感觉火力逐渐变小听不清声音，于是挑高火力到800度左右，这个时候温度探针明显被烧红。在10分钟时又补了一点火力。最后在11分17秒一爆。</p><h2 id="006"><a href="#006" class="headerlink" title="#006"></a>#006</h2><p>这次温度控制更好了一点，13分半实现一爆。但是由于开窗太大，风比较大，火力不稳定，热量总被吹走，所以后半段把床关小后火力才比较足。这次脱水率更高一点，不知道是不是这个缘故，一爆声音特别洪亮，非常好辨认。</p><p>咖啡成色也很好，和上次相似。</p><h2 id="005"><a href="#005" class="headerlink" title="#005"></a>#005</h2><p>这次温度控制更有经验一点了，探针温度浮动在600-700度之间。5分钟的时候银皮开始脱落，当时自我感觉良好。可是到9分钟到时候豆子还只是微微发黄就有点心虚了，并且感觉火力稍微小了一点，听不清楚声音。我的这个露营炉头在火大时会发出突突声。于是提高了一点火力加快转速，终于在16分55秒听到一爆（第三声），然后再全速旋转20秒钟下豆。</p><p>虽然时间长了一点，但豆子品相看着很不错，是我想要的中烘的模样。脱水率也在13%左右，和最开始3次烘焙这支豆子一致（说明#004真的不行。。。），所以总的来说这次结果我还是比较满意的。</p><h2 id="004"><a href="#004" class="headerlink" title="#004"></a>#004</h2><p>温度探针到了。第一次使用，很失败。。</p><p>探针是伸到辐射网下面，贴着网的，所以也比较靠近火源，测的并不是网笼内的温度。刚开始时担心火太大，于是调小了一点，温度读数在400度左右。8分钟过后一点反应也没有，我才加大火力控制在600度左右，又持续了8分钟还是没有一爆，于是再加大了一点火力，最后终于在19分30秒模糊听到一爆。。这次其实多称了50g的豆，不知道是不是也有影响。</p><p>这次主要也是试温度，下次打算试试把目标温度控制在550－600度，希望可以在10分钟一爆。</p><h2 id="003"><a href="#003" class="headerlink" title="#003"></a>#003</h2><p>这次希望继续微调火力实现10分钟左右下豆。没想到火力更大了，不到7分钟就下豆了。。。这次调节火力是在开火听到声音后的平行位置再多开大了一点，下一次试试平行位置。不对，下一次应该买温度探针。</p><h2 id="002"><a href="#002" class="headerlink" title="#002"></a>#002</h2><p>第一次烘焙时火力太小所以时间有点长，这次尝试加大火力，结果8分钟就下豆了，又有点太大了。</p><p>这次可以判断一爆了，发展时间为15s，达到了浅烘的目标。</p><h2 id="001"><a href="#001" class="headerlink" title="#001"></a>#001</h2><p>第一次烘豆实在太兴奋了！</p><p>因为用的是露营气罐，火力没有掌握好，13分钟才加大火力，15分钟10秒才关火下豆。</p><p>判断一爆很困难，听起来像柴火的声音，并不像爆米花（爆米花是什么声音？），难道已经是二爆了？？</p><p>爆了大概20多秒才关火，发展有点过了头，感觉是中深烘了。原本的目标其实是浅烘，10分钟左右下豆。。</p><p>下次吧，下次一定会更好！</p><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul><li>调残次豆</li><li>称重</li><li>放豆（容量小不用热机）</li><li>脱水期：中火，慢速保持，比较轻松</li><li>梅納期：火力稍微调高，速度稍微加快</li><li>（银皮开始变深褐色时接近一爆）</li><li>發展期：一爆后快速翻动帮助散热，时间越长风味越明显</li><li>一爆接近中间时关火，用吹球吹走烟雾，转动不要停</li><li>倒出到冷却盘降温，扇凉</li><li>放一两个小时再装</li></ul><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li>每锅不要超过15分钟，正常10分钟左右</li><li>注意区分：银皮烧掉是单点弄烟，水蒸气凝结是均匀水雾</li><li>中间可以吹风机吹走银皮，要用热风</li><li>最好状态是维持</li><li>下豆：最关键的步骤！要抓前置量，靠经验</li><li>戴上N95口罩阻挡烟雾中的有害物质</li></ul><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul><li>防热手套</li><li>一块湿抹布</li><li>计时器</li><li>密封袋</li><li>冷却盘</li><li>扇子/风扇/电吹风</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://youtu.be/83mkgcTO_eY">KOGU烘豆流程</a></p>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th>序号</th><th>日期</th><th>豆子</th><th>始重 g</th><th>挑豆 g</th><th>终重 g （脱水）</th><th>温度 C</th><th>一爆 （发展）</th><th>程度</th></tr></thead><tbody><tr><td>049</td><td>240926</td><td>19</td><td>101</td><td>101.0</td><td>87.6 (13.2%)</td><td>180-230</td><td>7’48’’(15)</td><td>L</td></tr><tr><td>048</td><td>240926</td><td>21</td><td>120</td><td>116.2</td><td>93.2 (19.8%)</td><td>180-230</td><td>6’10’’(20)</td><td>D</td></tr><tr><td>047</td><td>240909</td><td>19</td><td>100</td><td>98.4</td><td>81.3 (17.4%)</td><td>200-240</td><td>13’00’’(180)</td><td>C</td></tr><tr><td>046</td><td>240908</td><td>xx</td><td>101</td><td>99.2</td><td>85.5 (13.8%)</td><td>200-240</td><td>9’00’’(20)</td><td>L</td></tr><tr><td>045</td><td>240904</td><td>20</td><td>100</td><td>100.0</td><td>85.1 (14.9%)</td><td>200-240</td><td>10’25’’(35)</td><td>M</td></tr><tr><td>044</td><td>240817</td><td>16</td><td>100</td><td>96.2</td><td>84.0 (12.7%)</td><td>200-240</td><td>8’40’’(15)</td><td>L</td></tr><tr><td>043</td><td>240811</td><td>19</td><td>100</td><td>100.0</td><td>87.3 (12.7%)</td><td>200-240</td><td>8’45’’(15)</td><td>ML</td></tr><tr><td>042</td><td>240806</td><td>19</td><td>100</td><td>99.9</td><td>86.8 (13.1%)</td><td>200-240</td><td>8’45’’(20)</td><td>M</td></tr><tr><td>041</td><td>240730</td><td>18</td><td>100</td><td>99.5</td><td>83.2 (16.4%)</td><td>190-230</td><td>9’50’’(15)</td><td>ML</td></tr><tr><td>040</td><td>240721</td><td>17</td><td>150</td><td>148.1</td><td>130.5 (11.9%)</td><td>160-240</td><td>7’40’’(15)</td><td>L</td></tr><tr><td>039</td><td>240714</td><td>17</td><td>150</td><td>146.7</td><td>123.2 (16.0%)</td><td>160-240</td><td>9’00’’(30)</td><td>D</td></tr><tr><td>038</td><td>240630</td><td>16</td><td>120</td><td>117.7</td><td>101.4 (13.8%)</td><td>180-240</td><td>7’05’’(45)</td><td>M</td></tr><tr><td>037</td><td>240619</td><td>16</td><td>150</td><td>147.2</td><td>128.1 (13.0%)</td><td>180-240</td><td>7’05’’(15)</td><td>L</td></tr><tr><td>036</td><td>240608</td><td>15</td><td>100</td><td>99.5</td><td>83.7 (15.9%)</td><td>200-240</td><td>15’00’’(??)</td><td>MD</td></tr><tr><td>035</td><td>240520</td><td>14</td><td>200</td><td>196.8</td><td>177.8 ( 9.7%)</td><td>160-240</td><td>10’??’’(??)</td><td>M</td></tr><tr><td>034</td><td>240427</td><td>13</td><td>200</td><td>195.0</td><td>164.7 (15.5%)</td><td>160-240</td><td>14’??’’(??)</td><td>M</td></tr><tr><td>033</td><td>240419</td><td>14</td><td>200</td><td>195.7</td><td>175.3 (10.4%)</td><td>200-240</td><td>6’30’’(30)</td><td>M</td></tr><tr><td>032</td><td>240409</td><td>13</td><td>100</td><td>95.7</td><td>81.6 (14.7%)</td><td>160-240</td><td>12’15’’(15)</td><td>ML</td></tr><tr><td>031</td><td>240408</td><td>13</td><td>100</td><td>95.1</td><td>83.8 (11.9%)</td><td>160-240</td><td>9’25’’(20)</td><td>L</td></tr><tr><td>030</td><td>240303</td><td>12</td><td>101</td><td>100.4</td><td>86.7 (13.6%)</td><td>160-240</td><td>11’00’’(30)</td><td>M</td></tr><tr><td>029</td><td>240303</td><td>11</td><td>100</td><td>93.2</td><td>78.2 (16.1%)</td><td>160-240</td><td>7’40’’(150)</td><td>MD</td></tr><tr><td>028</td><td>240302</td><td>11</td><td>100</td><td>94.2</td><td>80.9 (14.1%)</td><td>160-240</td><td>10’30’’(30)</td><td>M</td></tr><tr><td>027</td><td>230826</td><td>02</td><td>175</td><td>172.2</td><td>148.9 (13.5%)</td><td>750-800</td><td>9’16’’(20)</td><td>ML</td></tr><tr><td>026</td><td>230826</td><td>03</td><td>175</td><td>172.3</td><td>150.8 (12.4%)</td><td>650-750</td><td>13’06’’(60)</td><td>C</td></tr><tr><td>025</td><td>230813</td><td>03</td><td>120</td><td>118.3</td><td>102.8 (13.1%)</td><td>650-750</td><td>9’23’’(30)</td><td>MC</td></tr><tr><td>024</td><td>230802</td><td>02</td><td>200</td><td>193.4</td><td>167.6 (13.3%)</td><td>750-800</td><td>11’37’’(15)</td><td>L</td></tr><tr><td>023</td><td>230725</td><td>03</td><td>120</td><td>115.0</td><td>97.8 (15.0%)</td><td>600-700</td><td>10’41’’(120)</td><td>D</td></tr><tr><td>022</td><td>230715</td><td>02</td><td>120</td><td>118.0</td><td>101.3 (14.2%)</td><td>650-750</td><td>12’08’’(120)</td><td>C</td></tr><tr><td>021</td><td>230715</td><td>10</td><td>122</td><td>120.6</td><td>106.2 (11.9%)</td><td>700-750</td><td>9’54’’(10)</td><td>ML</td></tr><tr><td>020</td><td>230715</td><td>09</td><td>122</td><td>119.7</td><td>104.7 (12.5%)</td><td>650-700</td><td>8’34’’(10)</td><td>L</td></tr><tr><td>019</td><td>230712</td><td>02</td><td>150</td><td>145.2</td><td>127.6 (12.1%)</td><td>750-800</td><td>8’03’’(10)</td><td>L</td></tr><tr><td>018</td><td>230704</td><td>08</td><td>150</td><td>148.0</td><td>129.3 (12.6%)</td><td>750-800</td><td>9’33’’(10)</td><td>ML</td></tr><tr><td>017</td><td>230625</td><td>08</td><td>150</td><td>148.8</td><td>128.9 (13.4%)</td><td>790-810</td><td>8’43’’(15)</td><td>M</td></tr><tr><td>016</td><td>230520</td><td>07</td><td>123</td><td>122.3</td><td>102.9 (15.8%)</td><td>740-770</td><td>9’31’’(15)</td><td>L</td></tr><tr><td>016</td><td>230508</td><td>06</td><td>124</td><td>121.3</td><td>103.6 (14.6%)</td><td>740-770</td><td>9’00’’(15)</td><td>L</td></tr><tr><td>015</td><td>230419</td><td>03</td><td>150</td><td>146.0</td><td>126.6 (13.6%)</td><td>650-750</td><td>16’01’’(20)</td><td>L</td></tr><tr><td>014</td><td>230411</td><td>05</td><td>122</td><td>116.9</td><td>104.0 (11.0%)</td><td>700-800</td><td>11’23’’(15)</td><td>ML</td></tr><tr><td>012</td><td>230407</td><td>04</td><td>122</td><td>119.2</td><td>102.8 (13.8%)</td><td>700-800</td><td>10’15’’(15)</td><td>M</td></tr><tr><td>011</td><td>230327</td><td>03</td><td>N/A</td><td>151.8</td><td>131.0 (13.7%)</td><td>775-800</td><td>11’41’’(20)</td><td>M</td></tr><tr><td>010</td><td>230318</td><td>03</td><td>150</td><td>146.2</td><td>127.4 (14.8%)</td><td>775-800</td><td>9’22’’(10)</td><td>L</td></tr><tr><td>009</td><td>230311</td><td>01</td><td>150</td><td>144.7</td><td>121.3 (19.3%)</td><td>775-800</td><td>11’27’’(15)</td><td>ML</td></tr><tr><td>008</td><td>230305</td><td>02</td><td>150</td><td>144.3</td><td>126.3 (14.3%)</td><td>750-800</td><td>11’50’’(15)</td><td>L</td></tr><tr><td>007</td><td>230303</td><td>02</td><td>150</td><td>147.0</td><td>128.7 (12.4%)</td><td>700-800</td><td>11’17’’(20)</td><td>M</td></tr><tr><td>006</td><td>230223</td><td>01</td><td>150</td><td>144.0</td><td>123.6 (14.2%)</td><td>700-750</td><td>13’32’’(20)</td><td>M</td></tr><tr><td>005</td><td>230223</td><td>01</td><td>150</td><td>142.6</td><td>123.7 (13.3%)</td><td>600-700</td><td>16’55’’(20)</td><td>M</td></tr><tr><td>004</td><td>230221</td><td>01</td><td>150</td><td>144.4</td><td>127.5 (11.7%)</td><td>450-600</td><td>19’30’’(15)</td><td>L</td></tr><tr><td>003</td><td>230211</td><td>01</td><td>100</td><td>96.1</td><td>83.0 (13.6%)</td><td>N/A</td><td>6’37’’(15)</td><td>L</td></tr><tr><td>002</td><td>230211</td><td>01</td><td>100</td><td>95.6</td><td>82.7 (13.5%)</td><td>N/A</td><td>7’40’’(15)</td><td>L</td></tr><tr><td>001</td><td>230209</td><td>01</td><td>100</td><td>96.9</td><td>82.1 (15.3%)</td><td>N/A</td><td>14’50’’(20)</td><td>MD</td></tr></tbody></table><span id="more"></span><h1 id="豆子"><a href="#豆子" class="headerlink" title="豆子"></a>豆子</h1><table><thead><tr><th>编号</th><th>名称</th><th>品种</th><th>产地</th><th>处理</th><th>风味</th></tr></thead><tbody><tr><td>20</td><td>PWN黄金曼特宁</td><td>阿拉比卡</td><td>印尼</td><td>湿刨</td><td>巧克力、焦糖、薄荷、果酸</td></tr><tr><td>19</td><td>Java</td><td>卡杜拉</td><td>玻利维亚，卡拉纳维</td><td>日晒</td><td>蜜桃、伯爵红茶、青柑</td></tr><tr><td>18</td><td>瑰夏</td><td></td><td></td><td></td><td></td></tr><tr><td>17</td><td>恰恰蕾</td><td>阿拉比卡</td><td>埃塞俄比亚，Gedeb恰恰蕾村</td><td>厌氧日晒G1</td><td></td></tr><tr><td>16</td><td>肯尼亚AA</td><td>SL28/SL34</td><td>Kenya, Kirinyaga Deerfruit Manor</td><td>水洗</td><td>莓果香、葡萄柚、乌梅酸甜</td></tr><tr><td>15</td><td>尖身波旁</td><td></td><td></td><td></td><td></td></tr><tr><td>14</td><td>果丁丁</td><td></td><td></td><td></td><td></td></tr><tr><td>13</td><td>花魁7.0</td><td></td><td></td><td></td><td></td></tr><tr><td>12</td><td>花魁8.0</td><td></td><td></td><td></td><td></td></tr><tr><td>11</td><td>吉吉乌拉嘎</td><td></td><td>Ethiopia, 吉吉乌拉嘎</td><td>日晒G1</td><td></td></tr><tr><td>10</td><td>耶加雪菲Dumerso</td><td></td><td>Ethiopia</td><td>水洗</td><td></td></tr><tr><td>09</td><td>耶加雪菲Dumerso</td><td></td><td>Ethiopia</td><td>日晒</td><td></td></tr><tr><td>08</td><td>瑰夏</td><td></td><td>Ethiopia</td><td>日晒</td><td>花果香</td></tr><tr><td>07</td><td>惠兰</td><td>哥伦比亚</td><td>Colombia</td><td>水洗</td><td></td></tr><tr><td>06</td><td>Baroida</td><td></td><td>New Guinea, Baroida</td><td>水洗</td><td></td></tr><tr><td>05</td><td>Kisiizi</td><td></td><td>Uganda, Kisiizi</td><td>日晒</td><td>青草</td></tr><tr><td>04</td><td>Gedebe</td><td>耶加雪菲</td><td>Ethiopia</td><td>日晒</td><td></td></tr><tr><td>03</td><td>Monsooned Malabar</td><td>Arabica</td><td>India, Malabar coast</td><td>Monsooned</td><td>五谷，坚果</td></tr><tr><td>02</td><td>AB Plus</td><td>Arabica</td><td>Kenia, Mount Kenia</td><td>Fully washed</td><td>香茅，果冻</td></tr><tr><td>01</td><td>Zege Forest Grow</td><td>Arabica</td><td>Ethiopia, Lake Tana</td><td>Natural</td><td>花果香</td></tr></tbody></table><img src="/2023/02/09/2023-02-09-coffee-roasting/roasting.webp" class="" width="1000"><h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1><h2 id="10-耶加雪菲水洗"><a href="#10-耶加雪菲水洗" class="headerlink" title="10-耶加雪菲水洗"></a><a href="">10-耶加雪菲水洗</a></h2><p>和09号豆是同一种，成色确实差不多，但处理方法不同，一个是日晒一个是水洗。生豆颜色上更偏绿色，不像日晒的那么黄，可能是晒黑了吧？</p><p>不知道是温度计不准还是因为水洗的豆更耐热，比09号豆明显温度更高时间更久达到1爆。下豆的前置量没把握好，比预期的浅烘稍稍深了一点。</p><!-- 【图】 --><h2 id="09-耶加雪菲日晒"><a href="#09-耶加雪菲日晒" class="headerlink" title="09-耶加雪菲日晒"></a><a href="">09-耶加雪菲日晒</a></h2><p>豆子质量一般，残次豆不少，大小不一，有不少很小很小的豆</p><h2 id="08-埃塞尔比亚瑰夏"><a href="#08-埃塞尔比亚瑰夏" class="headerlink" title="08-埃塞尔比亚瑰夏"></a><a href="https://coffee-market.stores.jp/items/6300d38a5d05ec40991af9d7">08-埃塞尔比亚瑰夏</a></h2><p>2023年去日本开会发现的宝藏咖啡店<a href="https://coffee-market.net/lab-2">The Coffee Market Lab</a>，店内有3台迷你烘豆机，可以定制烘豆！生豆选择很丰富，忍不住带了500g瑰夏回家自己烘。马上就要实现瑰夏自由啦！</p><p>豆子质量很好，残次豆非常少。喝到了久违的瑰夏，简直是爆香。甚至有种从咖啡的颜色就能看出好喝的好感。同事华尔特评价也很高，说是我最成功的一次。</p><h2 id="07-哥伦比亚惠兰"><a href="#07-哥伦比亚惠兰" class="headerlink" title="07-哥伦比亚惠兰"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">07-哥伦比亚惠兰</a></h2><p>豆子质量不错，几乎没有残次豆，豆粒较大。</p><h2 id="06-巴布亚新几内亚Baroida庄园"><a href="#06-巴布亚新几内亚Baroida庄园" class="headerlink" title="06-巴布亚新几内亚Baroida庄园"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">06-巴布亚新几内亚Baroida庄园</a></h2><p>生豆有一种让人不愉悦的脚臭味。。。虽然是水洗的豆，烘的过程中有不少银皮掉落，也是有点迷。。。</p><h2 id="05-乌干达Kisiizi"><a href="#05-乌干达Kisiizi" class="headerlink" title="05-乌干达Kisiizi"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">05-乌干达Kisiizi</a></h2><h2 id="04-耶加雪菲Gedeb"><a href="#04-耶加雪菲Gedeb" class="headerlink" title="04-耶加雪菲Gedeb"></a><a href="https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr">04-耶加雪菲Gedeb</a></h2><h2 id="03-India"><a href="#03-India" class="headerlink" title="03-India"></a><a href="https://www.docklands-coffee.de/indien-monsooned-malabar-aa/0020107-1000">03-India</a></h2><p>Er ist im Aroma und Geschmack etwas Besonderes, denn seine Aufbereitung erfolgt völlig anders als bei anderen Kaffees. Die Gründe dafür liegen in der Transportgeschichte von Kaffee.</p><ul><li>Kaffeesorte: Monsooned Malabar</li><li>Klassifizierung: AA</li><li>Varietät: S 795 (100% Arabica)</li><li>Anbauland: Indien</li><li>Anbaugebiet: Malabarküste, Bundesstaat Kerala (im Südwesten Indiens)</li><li>Anbauhöhe: 1100-1200 m ü.M.</li></ul><h2 id="02-Kenia"><a href="#02-Kenia" class="headerlink" title="02-Kenia"></a><a href="https://www.docklands-coffee.de/kenia-mount-kenya-selection/0020113-1000">02-Kenia</a></h2><p>Das Mount-Kenya-Massiv stellt für die afrikanische Flora und Fauna einen bemerkenswert artenreichen Lebensraum dar. Das tropisch-feuchte Hochgebirgs-Klima lässt einzigartige Pflanzenarten gedeihen. Große Niederschlagsmengen (es regnet an rund 200 Tagen im Jahr) und die fruchtbaren vulkanischen Böden am Fuß des Massivs bieten für den Kaffeeanbau hervorragende Bedingungen. Während der Bereich oberhalb von 3200m Höhe zum Mount-Kenya-Nationalpark gehört, werden rund um das Bergmassiv bis ca. 1900m ü.M. Premium-Kaffeesorten angebaut. Es werden ausschließlich tiefrote Kaffeekirschen per Hand geerntet. </p><p>Der besonders fruchtige und ausgewogene Kaffee mit einer angenehmen Süße besticht durch weinähnlichen Beerenaromen. Er hat eine mittlere bis stark ausgeprägte Säure, hat einen aromareichen, kraftvollen Körper und ist rundum ausgewogen.</p><ul><li>Kaffeesorte: Mount Kenya</li><li>Klassifizierung: AB Plus</li><li>Varietät:  Typica, Bourbon (100% Arabica)</li><li>nbaugebiet: an den nordöstlichen Berghängen des Mount Kenya / Kenia</li><li>Anbauhöhe: 1650 – 1800m ü.M.</li></ul><h2 id="01-Ethiopia"><a href="#01-Ethiopia" class="headerlink" title="01-Ethiopia"></a><a href="https://www.docklands-coffee.de/aethiopien-zege-lake-tana-coffee/0020125-1000">01-Ethiopia</a></h2><p>Rund um den Tanasee wächst seit Urzeiten Kaffee. Dennoch gehört diese Region nicht zu den klassischen Anbaugebieten Äthiopiens. Ursprunglich waren es Waldkaffees, aber der Holzeinschlag der letzten Jahrzehnten hat leider dafür gesorgt, daß dieser historische Waldkaffee rund um den Tanasee fast nicht mehr vorkommt. Eine Ausnahme stellt die Halbinsel Zege dar. Es ist das größte, noch zusammenhängende Waldgebiet am Tanasee in dem der Kaffee in seiner Ursprungsform gedeiht. Zu verdanken hat er das seiner einzigartigen „heiligen“ Herkunft, so unsere Recherchen.<br>“Betre Maryam”, der Name des Heiligen, teilte einst seinen Priesterstab in drei Teile. Aus dem Kopfteil entstanden die ersten Kaffeepflanzen. In einem der sieben Klöster von Zege ist diese einmalige Geschichte in Wandbildnissen verewigt. Zudem existiert auch ein altes Buch indem diese besondere Begebenheit niedergeschrieben wurde. Noch heute gibt es auf Zege aus diesen historisch religiösen Gründen keine echte Landkultivierung im herkömmlichen Sinne. So schützt der „heilige“ Kaffee den Wald und der Wald den “heiligen” Kaffee. Kaffee ist dort wirklich ein besonderes Gut.<br>Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig mit der Kaffeekultivierung für den Eigenbedarf bzw. für den lokalen Markt. Es handelt sich hierbei um die unterschiedlichsten Qualitäten. Gesammelt und verwendet wird eigentlich alles. In den letzten vier Jahren (Erntezyklen) haben wir die Ernte und Aufbereitung in Zusammenarbeit mit den einheimischen Kaffeeanbauern und Klöstern optimiert, um einen wunderbaren Zege Waldkaffee zu kreieren. Dieser im Verlauf der Zeit entstandene Kaffee von höchster Qualität hat bereits wichtige Partner gefunden. InterAmerican Coffee, von der Neumann Gruppe (weltweit größter Rohkaffeehändler), beteiligt sich finanziell, logistisch und technisch an diesem außergewöhnlichen Kaffeeprojekt. Das erst ermöglicht diesem Kaffee seinen verdienten internationalen Auftritt. Unterstützt und gefördert wird dieses Kaffeeprojekt auch durch World-Habitat-Society, die sich seit Jahren vor Ort auf Zege für den Schutz des Waldes, der Regionalentwicklung und dem nachhaltigen Tourismus sowie für den Erhalt und die Restaurierung der Klöster und seiner Malkunst, die zum Teil aus dem 12. Jahrhundert stammen, einsetzt. In all diesen Punkten wird sich zukünftig unser Zege Waldkaffee einbringen. Denn durch diese Projekte wird die Region nachhaltig gestärkt und ermöglicht somit auch in Zukunft die Anfertigung dieses wunderbaren und zugleich einzigartigen Zege Waldkaffees mit „heiliger“ Herkunft.<br>Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.</p><p>Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.</p><h2 id="049"><a href="#049" class="headerlink" title="049"></a>049</h2><p>再接再厉。</p><p>这次浅烘还算成功。没有戴降噪耳机，反而能清晰听到一爆。</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>180°</td><td>3 min</td></tr><tr><td>3 min</td><td>200°</td><td>3 min</td></tr><tr><td>6 min</td><td>230°</td><td>4 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="048"><a href="#048" class="headerlink" title="048"></a>048</h2><p>烘豆机再次发生温度大幅震荡的故障，看来是没救了，需要改变烘焙曲线手工调节ROR使得温度平稳。</p><p>这次还把风力调低为1档，温升很快，没想到在6分多钟的时候温度到达230度并没有降温，并且马上就一爆了。。。发展20秒后直接成中深烘。</p><p>从厨房出来写个笔记，发现没下豆，直接干成深烘hhhhhhh 翻车！</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>180°</td><td>3 min</td></tr><tr><td>3 min</td><td>230°</td><td>7 min</td></tr><tr><td>10 min</td><td>240°</td><td>1 min</td></tr><tr><td>11 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="042"><a href="#042" class="headerlink" title="042"></a>042</h2><p>新买了Java豆。多年前上课用过Java，后来了解到Java曾经濒危，今天终于见到本尊了。</p><p>豆子质量很高，几乎没有任何瑕疵豆，并且大小均匀。</p><p>豆子烘好后有浓郁的甜玉米香味。非常好喝。</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>200°</td><td>7 min</td></tr><tr><td>7 min</td><td>240°</td><td>3 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="040"><a href="#040" class="headerlink" title="040"></a>040</h2><p>尝试一个新的烘焙曲线，结果温度测量发现，之前温度反复升降的问题又出现了。。。</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>190°</td><td>5 min</td></tr><tr><td>5 min</td><td>210°</td><td>3 min</td></tr><tr><td>8 min</td><td>230°</td><td>2 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="039"><a href="#039" class="headerlink" title="039"></a>039</h2><p>豆子有明显的发酵味道，酸酸的，看来果然是厌氧的豆子。豆子大小不一，瑕疵不少，也很符合埃塞小农经济的特点。</p><p>根据上两次的经验，决定更新一下温度曲线，从160°开始加热，目标在10min左右下豆。感觉在9min时发生一爆，但声音还是很难听清。看颜色已经很漂亮了，所以赶紧在30s后结束下豆。没想到还是一不小心烘过了，想要浅烘的，变成深烘了。。。</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>160°</td><td>1 min</td></tr><tr><td>1 min</td><td>170°</td><td>1 min</td></tr><tr><td>2 min</td><td>180°</td><td>1 min</td></tr><tr><td>3 min</td><td>190°</td><td>1 min</td></tr><tr><td>4 min</td><td>200°</td><td>1 min</td></tr><tr><td>5 min</td><td>210°</td><td>1 min</td></tr><tr><td>6 min</td><td>220°</td><td>1 min</td></tr><tr><td>7 min</td><td>230°</td><td>1 min</td></tr><tr><td>8 min</td><td>240°</td><td>2 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="038"><a href="#038" class="headerlink" title="038"></a>038</h2><p>由于用了上一次的豆和上一次的温度曲线，一爆的时间惊人的相近，说明上一次并没有听错。和直火烘豆不同，在降温阶段豆子余热迅速被吹走，几乎不会继续爆。</p><h2 id="037"><a href="#037" class="headerlink" title="037"></a>037</h2><p>烘豆机保修内返修了，卖家说换了电热丝，但我感觉收到的就完全是一台新机器，因为商标贴纸都贴倒了。。。Anyway，现试烘150g，测一下温度曲线。温度曲线显示正常，不像原先在后期有好几次失温的现象，温度上升温度，只有在3分钟左右时间有一次降温。</p><p>这次还尝试用降噪耳机听一爆（网友的这个建议思路很好—），果然有效果，抽油烟机的声音听不到了。但下豆感觉可能早了，不知道是不是误判了一爆。</p><p>尝试新温度曲线：</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>180°</td><td>1 min</td></tr><tr><td>1 min</td><td>190°</td><td>1 min</td></tr><tr><td>2 min</td><td>200°</td><td>1 min</td></tr><tr><td>3 min</td><td>210°</td><td>1 min</td></tr><tr><td>4 min</td><td>220°</td><td>1 min</td></tr><tr><td>5 min</td><td>230°</td><td>1 min</td></tr><tr><td>6 min</td><td>240°</td><td>4 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><p>7min25s时，温度达到215°，预感有一爆，提前下豆，结束烘焙。</p><p>挑豆的时候发现，很多都是“空心”的，比例大概有10%-20%这样，多到我不敢挑走，还是挺奇怪的。</p><h2 id="036"><a href="#036" class="headerlink" title="036"></a>036</h2><p>称少了豆子（100g），改了温度曲线（上来就200°），没想到还是没听到一爆。不出所料，脱水率还挺高的，说明已经烘透彻了。不确定是不是腔内温度不够，是需要升级装备测一下腔内温度了。</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>200°</td><td>1 min</td></tr><tr><td>1 min</td><td>210°</td><td>1 min</td></tr><tr><td>2 min</td><td>220°</td><td>1 min</td></tr><tr><td>3 min</td><td>230°</td><td>1 min</td></tr><tr><td>4 min</td><td>240°</td><td>16 min</td></tr><tr><td>15 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="035"><a href="#035" class="headerlink" title="035"></a>035</h2><p>听不清一爆，根据颜色判断在10min时候下豆。</p><p>发现一个现象，烘豆机的计时不准确，估计是电路成本太低了计时器太差。</p><p>这次测试了一个新的（设定）温度曲线，感觉还不错，适合200g的豆量：</p><table><thead><tr><th>时刻</th><th>温度</th><th>持续时间</th></tr></thead><tbody><tr><td>0 min</td><td>160°</td><td>3 min</td></tr><tr><td>3 min</td><td>180°</td><td>1 min</td></tr><tr><td>4 min</td><td>200°</td><td>1 min</td></tr><tr><td>5 min</td><td>210°</td><td>1 min</td></tr><tr><td>6 min</td><td>220°</td><td>1 min</td></tr><tr><td>7 min</td><td>230°</td><td>1 min</td></tr><tr><td>8 min</td><td>240°</td><td>2 min</td></tr><tr><td>10 min</td><td>结束</td><td>0 min</td></tr></tbody></table><h2 id="033"><a href="#033" class="headerlink" title="033"></a>033</h2><p>第一次试一锅烘 200g 豆子，果然翻车了。因为担心升温不够，初始温度就设置成了 200°，而不是 160°。然后 5min 内就升到了 240°。没想到烘豆机还是很给力的，直接 6min30s 干到一爆。。。发展时间太少了，脱水率也创下了新低，恐怕不能充分发掘豆子的潜力。</p><h2 id="031"><a href="#031" class="headerlink" title="031"></a>031</h2><p>新的热风式烘豆机已经用了几次，慢慢有点心得了，目前的温度（设定）曲线为：160度5min，然后每分钟升20°，到220°，然后每分钟升10°，到240°。</p><p>后续再打算 DIY 一个豆仓温度计。</p><h2 id="024"><a href="#024" class="headerlink" title="024"></a>024</h2><p>第一次尝试一次烘200g生豆，小烘豆机确实有点勉强，加热功率不够，虽然用了更猛的火力，一爆时间也还是延长到了12分多，并且一爆后零零星星的，不像之前一样关火后加速旋转能听到一爆密集。没有达到一爆密集，烘焙程度确实是最浅的一次，不知道味道怎么样。</p><p>（更新）浅烘更突出了草本植物的清香，酸味更明亮，但我可能还是更喜欢中浅烘那种甜甜的花香。</p><h2 id="023"><a href="#023" class="headerlink" title="023"></a>023</h2><p>第二次深烘！印度的巨型豆，没抓好下豆时间，真的烘深了。</p><p>本来打算和上一支一样，一爆120秒之后下豆，搞个city roast。没想到一爆断断续续的持续不停，几乎都感受不到一爆密集。一爆快结束的时候，二爆竟然无缝连接。第一次听到二爆的声音，更清脆，没有一爆这么沉闷。确定是二爆后就知道已经晚了，city roast没了，所以赶紧关火准备加速摇摆准备下豆。关火后二爆还持续了一小会，并且产生的烟雾很大，甚至看到了油脂在豆的表面沸腾。。。</p><p>深烘的豆是真的黑啊，而且黑得发亮，像比较好看的那种黑人皮肤的颜色（不知道怎么描述）。油脂已经覆满表面了，不是想上一支city roast的豆养了几天之后才看到有油脂溢出。</p><h2 id="022"><a href="#022" class="headerlink" title="022"></a>022</h2><p>第一次深烘！严格来说是city roast，还不是dark roast，因为没有二爆，也没有表面厚厚的油脂。从浅烘的15秒发展时间拉长到2分钟，下豆后差点没被香晕。实在太香了！</p><h2 id="011"><a href="#011" class="headerlink" title="#011"></a>#011</h2><p>国内买的生豆套装漂洋过海终于终于到了，这次有8种不同的豆，一段时间咖啡自由了！</p><h2 id="010"><a href="#010" class="headerlink" title="#010"></a>#010</h2><p>新豆子。豆子倒出来的一瞬间简直惊艳！生豆是象牙色的，巨大，和烘好的肯尼亚AB一般大。给人一种印度大象的错觉。</p><p>烘焙出来也不是烂俗的花果香，而是有食欲的杂粮香气。</p><h2 id="007"><a href="#007" class="headerlink" title="#007"></a>#007</h2><p>终于要烘第二支豆啦！肯尼亚AB豆果然大了不少。因为是水洗，银皮少了很多。</p><p>这次温度控制也更有经验了，前半段温度在700-750度之间，在6分钟时感觉火力逐渐变小听不清声音，于是挑高火力到800度左右，这个时候温度探针明显被烧红。在10分钟时又补了一点火力。最后在11分17秒一爆。</p><h2 id="006"><a href="#006" class="headerlink" title="#006"></a>#006</h2><p>这次温度控制更好了一点，13分半实现一爆。但是由于开窗太大，风比较大，火力不稳定，热量总被吹走，所以后半段把床关小后火力才比较足。这次脱水率更高一点，不知道是不是这个缘故，一爆声音特别洪亮，非常好辨认。</p><p>咖啡成色也很好，和上次相似。</p><h2 id="005"><a href="#005" class="headerlink" title="#005"></a>#005</h2><p>这次温度控制更有经验一点了，探针温度浮动在600-700度之间。5分钟的时候银皮开始脱落，当时自我感觉良好。可是到9分钟到时候豆子还只是微微发黄就有点心虚了，并且感觉火力稍微小了一点，听不清楚声音。我的这个露营炉头在火大时会发出突突声。于是提高了一点火力加快转速，终于在16分55秒听到一爆（第三声），然后再全速旋转20秒钟下豆。</p><p>虽然时间长了一点，但豆子品相看着很不错，是我想要的中烘的模样。脱水率也在13%左右，和最开始3次烘焙这支豆子一致（说明#004真的不行。。。），所以总的来说这次结果我还是比较满意的。</p><h2 id="004"><a href="#004" class="headerlink" title="#004"></a>#004</h2><p>温度探针到了。第一次使用，很失败。。</p><p>探针是伸到辐射网下面，贴着网的，所以也比较靠近火源，测的并不是网笼内的温度。刚开始时担心火太大，于是调小了一点，温度读数在400度左右。8分钟过后一点反应也没有，我才加大火力控制在600度左右，又持续了8分钟还是没有一爆，于是再加大了一点火力，最后终于在19分30秒模糊听到一爆。。这次其实多称了50g的豆，不知道是不是也有影响。</p><p>这次主要也是试温度，下次打算试试把目标温度控制在550－600度，希望可以在10分钟一爆。</p><h2 id="003"><a href="#003" class="headerlink" title="#003"></a>#003</h2><p>这次希望继续微调火力实现10分钟左右下豆。没想到火力更大了，不到7分钟就下豆了。。。这次调节火力是在开火听到声音后的平行位置再多开大了一点，下一次试试平行位置。不对，下一次应该买温度探针。</p><h2 id="002"><a href="#002" class="headerlink" title="#002"></a>#002</h2><p>第一次烘焙时火力太小所以时间有点长，这次尝试加大火力，结果8分钟就下豆了，又有点太大了。</p><p>这次可以判断一爆了，发展时间为15s，达到了浅烘的目标。</p><h2 id="001"><a href="#001" class="headerlink" title="#001"></a>#001</h2><p>第一次烘豆实在太兴奋了！</p><p>因为用的是露营气罐，火力没有掌握好，13分钟才加大火力，15分钟10秒才关火下豆。</p><p>判断一爆很困难，听起来像柴火的声音，并不像爆米花（爆米花是什么声音？），难道已经是二爆了？？</p><p>爆了大概20多秒才关火，发展有点过了头，感觉是中深烘了。原本的目标其实是浅烘，10分钟左右下豆。。</p><p>下次吧，下次一定会更好！</p><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul><li>调残次豆</li><li>称重</li><li>放豆（容量小不用热机）</li><li>脱水期：中火，慢速保持，比较轻松</li><li>梅納期：火力稍微调高，速度稍微加快</li><li>（银皮开始变深褐色时接近一爆）</li><li>發展期：一爆后快速翻动帮助散热，时间越长风味越明显</li><li>一爆接近中间时关火，用吹球吹走烟雾，转动不要停</li><li>倒出到冷却盘降温，扇凉</li><li>放一两个小时再装</li></ul><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li>每锅不要超过15分钟，正常10分钟左右</li><li>注意区分：银皮烧掉是单点弄烟，水蒸气凝结是均匀水雾</li><li>中间可以吹风机吹走银皮，要用热风</li><li>最好状态是维持</li><li>下豆：最关键的步骤！要抓前置量，靠经验</li><li>戴上N95口罩阻挡烟雾中的有害物质</li></ul><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul><li>防热手套</li><li>一块湿抹布</li><li>计时器</li><li>密封袋</li><li>冷却盘</li><li>扇子/风扇/电吹风</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://youtu.be/83mkgcTO_eY">KOGU烘豆流程</a></p>]]></content>
     
     <summary type="html">
     
@@ -142,6 +178,138 @@
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;049&lt;/td&gt;
+&lt;td&gt;240926&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;101&lt;/td&gt;
+&lt;td&gt;101.0&lt;/td&gt;
+&lt;td&gt;87.6 (13.2%)&lt;/td&gt;
+&lt;td&gt;180-230&lt;/td&gt;
+&lt;td&gt;7’48’’(15)&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;048&lt;/td&gt;
+&lt;td&gt;240926&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;120&lt;/td&gt;
+&lt;td&gt;116.2&lt;/td&gt;
+&lt;td&gt;93.2 (19.8%)&lt;/td&gt;
+&lt;td&gt;180-230&lt;/td&gt;
+&lt;td&gt;6’10’’(20)&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;047&lt;/td&gt;
+&lt;td&gt;240909&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;98.4&lt;/td&gt;
+&lt;td&gt;81.3 (17.4%)&lt;/td&gt;
+&lt;td&gt;200-240&lt;/td&gt;
+&lt;td&gt;13’00’’(180)&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;046&lt;/td&gt;
+&lt;td&gt;240908&lt;/td&gt;
+&lt;td&gt;xx&lt;/td&gt;
+&lt;td&gt;101&lt;/td&gt;
+&lt;td&gt;99.2&lt;/td&gt;
+&lt;td&gt;85.5 (13.8%)&lt;/td&gt;
+&lt;td&gt;200-240&lt;/td&gt;
+&lt;td&gt;9’00’’(20)&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;045&lt;/td&gt;
+&lt;td&gt;240904&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;100.0&lt;/td&gt;
+&lt;td&gt;85.1 (14.9%)&lt;/td&gt;
+&lt;td&gt;200-240&lt;/td&gt;
+&lt;td&gt;10’25’’(35)&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;044&lt;/td&gt;
+&lt;td&gt;240817&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;96.2&lt;/td&gt;
+&lt;td&gt;84.0 (12.7%)&lt;/td&gt;
+&lt;td&gt;200-240&lt;/td&gt;
+&lt;td&gt;8’40’’(15)&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;043&lt;/td&gt;
+&lt;td&gt;240811&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;100.0&lt;/td&gt;
+&lt;td&gt;87.3 (12.7%)&lt;/td&gt;
+&lt;td&gt;200-240&lt;/td&gt;
+&lt;td&gt;8’45’’(15)&lt;/td&gt;
+&lt;td&gt;ML&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;042&lt;/td&gt;
+&lt;td&gt;240806&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;99.9&lt;/td&gt;
+&lt;td&gt;86.8 (13.1%)&lt;/td&gt;
+&lt;td&gt;200-240&lt;/td&gt;
+&lt;td&gt;8’45’’(20)&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;041&lt;/td&gt;
+&lt;td&gt;240730&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;99.5&lt;/td&gt;
+&lt;td&gt;83.2 (16.4%)&lt;/td&gt;
+&lt;td&gt;190-230&lt;/td&gt;
+&lt;td&gt;9’50’’(15)&lt;/td&gt;
+&lt;td&gt;ML&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;040&lt;/td&gt;
+&lt;td&gt;240721&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;150&lt;/td&gt;
+&lt;td&gt;148.1&lt;/td&gt;
+&lt;td&gt;130.5 (11.9%)&lt;/td&gt;
+&lt;td&gt;160-240&lt;/td&gt;
+&lt;td&gt;7’40’’(15)&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;039&lt;/td&gt;
+&lt;td&gt;240714&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;150&lt;/td&gt;
+&lt;td&gt;146.7&lt;/td&gt;
+&lt;td&gt;123.2 (16.0%)&lt;/td&gt;
+&lt;td&gt;160-240&lt;/td&gt;
+&lt;td&gt;9’00’’(30)&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;038&lt;/td&gt;
+&lt;td&gt;240630&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;120&lt;/td&gt;
+&lt;td&gt;117.7&lt;/td&gt;
+&lt;td&gt;101.4 (13.8%)&lt;/td&gt;
+&lt;td&gt;180-240&lt;/td&gt;
+&lt;td&gt;7’05’’(45)&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;037&lt;/td&gt;
 &lt;td&gt;240619&lt;/td&gt;
@@ -260,7 +428,7 @@
 &lt;td&gt;172.2&lt;/td&gt;
 &lt;td&gt;148.9 (13.5%)&lt;/td&gt;
 &lt;td&gt;750-800&lt;/td&gt;
-&lt;td&gt;9’16’’(20s)&lt;/td&gt;
+&lt;td&gt;9’16’’(20)&lt;/td&gt;
 &lt;td&gt;ML&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -271,7 +439,7 @@
 &lt;td&gt;172.3&lt;/td&gt;
 &lt;td&gt;150.8 (12.4%)&lt;/td&gt;
 &lt;td&gt;650-750&lt;/td&gt;
-&lt;td&gt;13’06’’(60s)&lt;/td&gt;
+&lt;td&gt;13’06’’(60)&lt;/td&gt;
 &lt;td&gt;C&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -282,7 +450,7 @@
 &lt;td&gt;118.3&lt;/td&gt;
 &lt;td&gt;102.8 (13.1%)&lt;/td&gt;
 &lt;td&gt;650-750&lt;/td&gt;
-&lt;td&gt;9’23’’(30s)&lt;/td&gt;
+&lt;td&gt;9’23’’(30)&lt;/td&gt;
 &lt;td&gt;MC&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -293,7 +461,7 @@
 &lt;td&gt;193.4&lt;/td&gt;
 &lt;td&gt;167.6 (13.3%)&lt;/td&gt;
 &lt;td&gt;750-800&lt;/td&gt;
-&lt;td&gt;11’37’’(15s)&lt;/td&gt;
+&lt;td&gt;11’37’’(15)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -304,7 +472,7 @@
 &lt;td&gt;115.0&lt;/td&gt;
 &lt;td&gt;97.8 (15.0%)&lt;/td&gt;
 &lt;td&gt;600-700&lt;/td&gt;
-&lt;td&gt;10’41’’(120s)&lt;/td&gt;
+&lt;td&gt;10’41’’(120)&lt;/td&gt;
 &lt;td&gt;D&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -315,7 +483,7 @@
 &lt;td&gt;118.0&lt;/td&gt;
 &lt;td&gt;101.3 (14.2%)&lt;/td&gt;
 &lt;td&gt;650-750&lt;/td&gt;
-&lt;td&gt;12’08’’(120s)&lt;/td&gt;
+&lt;td&gt;12’08’’(120)&lt;/td&gt;
 &lt;td&gt;C&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -326,7 +494,7 @@
 &lt;td&gt;120.6&lt;/td&gt;
 &lt;td&gt;106.2 (11.9%)&lt;/td&gt;
 &lt;td&gt;700-750&lt;/td&gt;
-&lt;td&gt;9’54’’(10s)&lt;/td&gt;
+&lt;td&gt;9’54’’(10)&lt;/td&gt;
 &lt;td&gt;ML&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -337,7 +505,7 @@
 &lt;td&gt;119.7&lt;/td&gt;
 &lt;td&gt;104.7 (12.5%)&lt;/td&gt;
 &lt;td&gt;650-700&lt;/td&gt;
-&lt;td&gt;8’34’’(10s)&lt;/td&gt;
+&lt;td&gt;8’34’’(10)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -348,7 +516,7 @@
 &lt;td&gt;145.2&lt;/td&gt;
 &lt;td&gt;127.6 (12.1%)&lt;/td&gt;
 &lt;td&gt;750-800&lt;/td&gt;
-&lt;td&gt;8’03’’(10s)&lt;/td&gt;
+&lt;td&gt;8’03’’(10)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -359,7 +527,7 @@
 &lt;td&gt;148.0&lt;/td&gt;
 &lt;td&gt;129.3 (12.6%)&lt;/td&gt;
 &lt;td&gt;750-800&lt;/td&gt;
-&lt;td&gt;9’33’’(10s)&lt;/td&gt;
+&lt;td&gt;9’33’’(10)&lt;/td&gt;
 &lt;td&gt;ML&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -370,7 +538,7 @@
 &lt;td&gt;148.8&lt;/td&gt;
 &lt;td&gt;128.9 (13.4%)&lt;/td&gt;
 &lt;td&gt;790-810&lt;/td&gt;
-&lt;td&gt;8’43’’(15s)&lt;/td&gt;
+&lt;td&gt;8’43’’(15)&lt;/td&gt;
 &lt;td&gt;M&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -381,7 +549,7 @@
 &lt;td&gt;122.3&lt;/td&gt;
 &lt;td&gt;102.9 (15.8%)&lt;/td&gt;
 &lt;td&gt;740-770&lt;/td&gt;
-&lt;td&gt;9’31’’(15s)&lt;/td&gt;
+&lt;td&gt;9’31’’(15)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -392,7 +560,7 @@
 &lt;td&gt;121.3&lt;/td&gt;
 &lt;td&gt;103.6 (14.6%)&lt;/td&gt;
 &lt;td&gt;740-770&lt;/td&gt;
-&lt;td&gt;9’00’’(15s)&lt;/td&gt;
+&lt;td&gt;9’00’’(15)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -403,7 +571,7 @@
 &lt;td&gt;146.0&lt;/td&gt;
 &lt;td&gt;126.6 (13.6%)&lt;/td&gt;
 &lt;td&gt;650-750&lt;/td&gt;
-&lt;td&gt;16’01’’(20s)&lt;/td&gt;
+&lt;td&gt;16’01’’(20)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -414,7 +582,7 @@
 &lt;td&gt;116.9&lt;/td&gt;
 &lt;td&gt;104.0 (11.0%)&lt;/td&gt;
 &lt;td&gt;700-800&lt;/td&gt;
-&lt;td&gt;11’23’’(15s)&lt;/td&gt;
+&lt;td&gt;11’23’’(15)&lt;/td&gt;
 &lt;td&gt;ML&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -425,7 +593,7 @@
 &lt;td&gt;119.2&lt;/td&gt;
 &lt;td&gt;102.8 (13.8%)&lt;/td&gt;
 &lt;td&gt;700-800&lt;/td&gt;
-&lt;td&gt;10’15’’(15s)&lt;/td&gt;
+&lt;td&gt;10’15’’(15)&lt;/td&gt;
 &lt;td&gt;M&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -436,7 +604,7 @@
 &lt;td&gt;151.8&lt;/td&gt;
 &lt;td&gt;131.0 (13.7%)&lt;/td&gt;
 &lt;td&gt;775-800&lt;/td&gt;
-&lt;td&gt;11’41’’(20s)&lt;/td&gt;
+&lt;td&gt;11’41’’(20)&lt;/td&gt;
 &lt;td&gt;M&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -447,7 +615,7 @@
 &lt;td&gt;146.2&lt;/td&gt;
 &lt;td&gt;127.4 (14.8%)&lt;/td&gt;
 &lt;td&gt;775-800&lt;/td&gt;
-&lt;td&gt;9’22’’(10s)&lt;/td&gt;
+&lt;td&gt;9’22’’(10)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -458,7 +626,7 @@
 &lt;td&gt;144.7&lt;/td&gt;
 &lt;td&gt;121.3 (19.3%)&lt;/td&gt;
 &lt;td&gt;775-800&lt;/td&gt;
-&lt;td&gt;11’27’’(15s)&lt;/td&gt;
+&lt;td&gt;11’27’’(15)&lt;/td&gt;
 &lt;td&gt;ML&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -469,7 +637,7 @@
 &lt;td&gt;144.3&lt;/td&gt;
 &lt;td&gt;126.3 (14.3%)&lt;/td&gt;
 &lt;td&gt;750-800&lt;/td&gt;
-&lt;td&gt;11’50’’(15s)&lt;/td&gt;
+&lt;td&gt;11’50’’(15)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -480,7 +648,7 @@
 &lt;td&gt;147.0&lt;/td&gt;
 &lt;td&gt;128.7 (12.4%)&lt;/td&gt;
 &lt;td&gt;700-800&lt;/td&gt;
-&lt;td&gt;11’17’’(20s)&lt;/td&gt;
+&lt;td&gt;11’17’’(20)&lt;/td&gt;
 &lt;td&gt;M&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -491,7 +659,7 @@
 &lt;td&gt;144.0&lt;/td&gt;
 &lt;td&gt;123.6 (14.2%)&lt;/td&gt;
 &lt;td&gt;700-750&lt;/td&gt;
-&lt;td&gt;13’32’’(20s)&lt;/td&gt;
+&lt;td&gt;13’32’’(20)&lt;/td&gt;
 &lt;td&gt;M&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -502,7 +670,7 @@
 &lt;td&gt;142.6&lt;/td&gt;
 &lt;td&gt;123.7 (13.3%)&lt;/td&gt;
 &lt;td&gt;600-700&lt;/td&gt;
-&lt;td&gt;16’55’’(20s)&lt;/td&gt;
+&lt;td&gt;16’55’’(20)&lt;/td&gt;
 &lt;td&gt;M&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -513,7 +681,7 @@
 &lt;td&gt;144.4&lt;/td&gt;
 &lt;td&gt;127.5 (11.7%)&lt;/td&gt;
 &lt;td&gt;450-600&lt;/td&gt;
-&lt;td&gt;19’30’’(15s)&lt;/td&gt;
+&lt;td&gt;19’30’’(15)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -524,7 +692,7 @@
 &lt;td&gt;96.1&lt;/td&gt;
 &lt;td&gt;83.0 (13.6%)&lt;/td&gt;
 &lt;td&gt;N/A&lt;/td&gt;
-&lt;td&gt;6’37’’(15s)&lt;/td&gt;
+&lt;td&gt;6’37’’(15)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -535,7 +703,7 @@
 &lt;td&gt;95.6&lt;/td&gt;
 &lt;td&gt;82.7 (13.5%)&lt;/td&gt;
 &lt;td&gt;N/A&lt;/td&gt;
-&lt;td&gt;7’40’’(15s)&lt;/td&gt;
+&lt;td&gt;7’40’’(15)&lt;/td&gt;
 &lt;td&gt;L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -546,7 +714,7 @@
 &lt;td&gt;96.9&lt;/td&gt;
 &lt;td&gt;82.1 (15.3%)&lt;/td&gt;
 &lt;td&gt;N/A&lt;/td&gt;
-&lt;td&gt;14’50’’(20s)&lt;/td&gt;
+&lt;td&gt;14’50’’(20)&lt;/td&gt;
 &lt;td&gt;MD&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -867,46 +1035,6 @@
     
     
       <category term="hack" scheme="https://mo-an.net/tags/hack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高效(音)视频编辑-ffmpeg</title>
-    <link href="https://mo-an.net/2020/09/03/2020-09-03-ffmpeg/"/>
-    <id>https://mo-an.net/2020/09/03/2020-09-03-ffmpeg/</id>
-    <published>2020-09-03T22:00:34.000Z</published>
-    <updated>2023-05-05T20:48:06.904Z</updated>
-    
-    <content type="html"><![CDATA[<p>日常的音视频剪辑通常只需要最简单的裁剪、转码，不需要做任何特效。这种情况下任何商用视频编辑软件都显得臃肿、低效。一行命令能解决的事情，为什么要在商业软件中加载无数插件、解码、渲染、编码…</p><span id="more"></span><p><a href="https://ffmpeg.org/">ffmpeg</a>号称<strong>A complete, cross-platform solution to record, convert and stream audio and video.</strong>相当强大。</p><h2 id="去除视频中的音轨"><a href="#去除视频中的音轨" class="headerlink" title="去除视频中的音轨"></a>去除视频中的音轨</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> ./*.mp4; <span class="keyword">do</span> ffmpeg -i <span class="string">&quot;<span class="variable">$f</span>&quot;</span> -c copy -an <span class="string">&quot;<span class="variable">$&#123;f%.mp4&#125;</span>.silent.mp4&quot;</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure><h2 id="视频变速"><a href="#视频变速" class="headerlink" title="视频变速"></a>视频变速</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -filter:v <span class="string">&quot;setpts=0.25*PTS&quot;</span> output.mp4</span><br></pre></td></tr></table></figure><p>这个方法将视频中的时间轴x0.25，相当于加速了4倍。（注：音频速度不受影响)</p><h2 id="制作gif图"><a href="#制作gif图" class="headerlink" title="制作gif图"></a>制作gif图</h2><p><a href="https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality">将视频导出gif</a>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -t 4.5 -i input.mp4 -vf <span class="string">&quot;fps=15,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&quot;</span> -loop 0 output.gif</span><br></pre></td></tr></table></figure></p><p><a href="https://stackoverflow.com/questions/3688870/create-animated-gif-from-a-set-of-jpeg-images">将图片合成gif</a>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f image2 -framerate 9 -i image_%003d.png -vf output.gif</span><br></pre></td></tr></table></figure></p><h2 id="视频压缩"><a href="#视频压缩" class="headerlink" title="视频压缩"></a>视频压缩</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 压缩码率（默认压缩比）</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> ./*.MP4; <span class="keyword">do</span> ffmpeg -i <span class="string">&quot;<span class="variable">$f</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;f%.MP4&#125;</span>_low_bit_rate.mp4&quot;</span>; <span class="keyword">done</span></span><br><span class="line">// 压缩分辨率，如将4k视频压缩为1080p</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> ./*.MP4; <span class="keyword">do</span> ffmpeg -i <span class="string">&quot;<span class="variable">$f</span>&quot;</span> -vf scale=1080:-2 <span class="string">&quot;<span class="variable">$&#123;f%.MP4&#125;</span>_1080p_preview.mp4&quot;</span>; <span class="keyword">done</span></span><br><span class="line">// 也可以压缩图片</span><br><span class="line">ffmpeg -i input.jpg -vf scale=320:-2 output_320.png</span><br></pre></td></tr></table></figure><h2 id="crop（裁剪像素尺寸）"><a href="#crop（裁剪像素尺寸）" class="headerlink" title="crop（裁剪像素尺寸）"></a>crop（裁剪像素尺寸）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i in.mp4 -filter:v <span class="string">&quot;crop=out_w:out_h:x:y&quot;</span> out.mp4</span><br></pre></td></tr></table></figure><p>其中</p><ul><li>out_w is the width of the output rectangle</li><li>out_h is the height of the output rectangle</li><li>x and y specify the top left corner of the output rectangle</li></ul><h2 id="trim（裁剪起止时间）"><a href="#trim（裁剪起止时间）" class="headerlink" title="trim（裁剪起止时间）"></a>trim（裁剪起止时间）</h2><p><a href="https://www.arj.no/2018/05/18/trimvideo/">无损裁剪</a>，非常快：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 从01:19:27至02:18:51</span><br><span class="line">ffmpeg -i input.mp4 -ss 01:19:27 -to 02:18:51 -c:v copy -c:a copy output.mp4</span><br><span class="line">// 从1min:10sec开始，视频长度为1min5sec</span><br><span class="line">ffmpeg -i input.mp4 -ss 00:01:10 -t 00:01:05 -c:v copy -c:a copy output.mp4</span><br></pre></td></tr></table></figure></p><p>由于视频编码有<a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">关键帧</a>的概念，并不是每一帧都保留完整的图像信息，因此精确的无损的<a href="https://superuser.com/questions/459313/how-to-cut-at-exact-frames-using-ffmpeg">按帧裁剪</a>是不可能的。近似的按帧裁剪可以实现：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -ss 5.32 -i input.mp4 -c:v libx264 -c:a aac -frames:v 60 out.mp4</span><br></pre></td></tr></table></figure><br>其中5.23为帧数除以fps，如视频从133帧开始，原始播放速度为25fps。</p><p>如果确实需要精确的按帧裁剪，可以用matlab或者Pr。</p><h2 id="在视频下方标记帧数"><a href="#在视频下方标记帧数" class="headerlink" title="在视频下方标记帧数"></a>在视频下方标记帧数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.MP4 -vf <span class="string">&quot;drawtext=fontfile=Arial.ttf: text=%&#123;n&#125;: x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000099&quot;</span> -y output.mp4</span><br><span class="line">// or</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> $(find . -name <span class="string">&quot;*.MP4&quot;</span>); <span class="keyword">do</span> ffmpeg -i <span class="variable">$f</span> -vf <span class="string">&quot;drawtext=fontfile=Arial.ttf: text=%&#123;n&#125;: x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000099&quot;</span> -y <span class="string">&quot;<span class="variable">$&#123;f%.MP4&#125;</span>_frame_labeled_preview.mp4&quot;</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure><h2 id="连接视频"><a href="#连接视频" class="headerlink" title="连接视频"></a>连接视频</h2><p>很多摄像机会在视频文件将要超过4GB时将文件分割，录制视频到下一个4GB以内的视频文件中。如果拍30分钟的4k视频，很容易就有几十GB的视频文件。通常我会将压缩后的视频文件们<a href="https://trac.ffmpeg.org/wiki/Concatenate">合成</a>一个文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f concat -safe 0 -i &lt;(<span class="keyword">for</span> f <span class="keyword">in</span> ./*.MP4; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">&quot;file &#x27;<span class="variable">$PWD</span>/<span class="variable">$f</span>&#x27;&quot;</span>; <span class="keyword">done</span>) -c copy output.MP4</span><br></pre></td></tr></table></figure></p><h2 id="视频消抖"><a href="#视频消抖" class="headerlink" title="视频消抖"></a>视频消抖</h2><p>环波导师的一个项目：<a href="http://public.hronopik.de/vid.stab/features.php?lang=en">http://public.hronopik.de/vid.stab/features.php?lang=en</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// example</span><br><span class="line">./ffmpeg/ffmpeg -i DSCN1274.MP4 -vf vidstabdetect=stepsize=32:shakiness=10:accuracy=10:result=transform_vectors.trf -f null -</span><br><span class="line">./ffmpeg/ffmpeg -i DSCN1274.MP4 -vf vidstabtransform=input=<span class="string">&quot;transform_vectors.trf&quot;</span>:zoom=1:smoothing=30,unsharp=5:5:0.8:3:3:0.4 -vcodec libx264 -preset slow -tune film -crf 18 -acodec copy <span class="string">&quot;stabilized.mp4&quot;</span></span><br></pre></td></tr></table></figure><br><strong>Stabilize plugin</strong></p><p>Extracts relative transformations of subsequent frames (used for stabilization together with the transform filter in a second pass) Generates a file with relative transform information (translation, rotation) about subsequent frames.</p><p>Options:</p><ul><li>‘result’ path to the file used to write the transforms (def:inputfile.stab)</li><li>‘shakiness’ how shaky is the video and how quick is the camera? 1: little (fast) 10: very strong/quick (slow) (def: 4)</li><li>‘accuracy’ accuracy of detection process (&gt;=shakiness) 1: low (fast) 15: high (slow) (def: 4)</li><li>‘stepsize’ stepsize of search process, region around minimum is scanned with 1 pixel resolution (def: 6)</li><li>‘algo’ 0: brute force (translation only); 1: small measurement fields (def)</li><li>‘mincontrast’ below this contrast a field is discarded (0-1) (def: 0.3)</li><li>‘tripod’ virtual tripod mode (if &gt;0): motion is compared to a reference frame (frame # is the value) (def: 0) &lt;— NEW</li><li>‘show’ 0: draw nothing (def); 1,2: show fields and transforms in the resulting frames. Consider the ‘preview’ filter</li><li>‘help’ print this help message</li></ul><p><strong>Transform plugin</strong></p><p>Transforms each frame according to transformations given in an input file (e.g. translation, rotate). Reads a file with transform information for each frame and applies them.</p><p>Options</p><ul><li>‘input’ path to the file used to read the transforms (def: inputfile.stab)</li><li>‘smoothing’ number of frames*2 + 1 used for lowpass filtering used for stabilizing (def: 10)</li><li>‘maxshift’ maximal number of pixels to translate image (def: -1 no limit)</li><li>‘maxangle’ maximal angle in rad to rotate image (def: -1 no limit)</li><li>‘crop’ 0: keep border (def), 1: black background</li><li>‘invert’ 1: invert transforms(def: 0)</li><li>‘relative’ consider transforms as 0: absolute, 1: relative (def)</li><li>‘zoom’ percentage to zoom &gt;0: zoom in, &lt;0 zoom out (def: 0)</li><li>‘optzoom’ 0: nothing, 1: determine optimal zoom (def) i.e. no (or only little) border should be visible. Note that the value given at ‘zoom’ is added to the here calculated one</li><li>‘interpol’ type of interpolation: 0: no interpolation, 1: linear (horizontal) (def), 2: bi-linear 3: quadratic</li><li>‘sharpen’ amount of sharpening: 0: no sharpening (def: 0.8) uses filter unsharp with 5x5 matrix</li><li>‘tripod’ virtual tripod mode (=relative=0:smoothing=0) &lt;— NEW</li><li>‘help’ print this help message</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;日常的音视频剪辑通常只需要最简单的裁剪、转码，不需要做任何特效。这种情况下任何商用视频编辑软件都显得臃肿、低效。一行命令能解决的事情，为什么要在商业软件中加载无数插件、解码、渲染、编码…&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://mo-an.net/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置用于机器人项目的树莓派</title>
-    <link href="https://mo-an.net/2020/04/05/2020-04-05-RPI-setup/"/>
-    <id>https://mo-an.net/2020/04/05/2020-04-05-RPI-setup/</id>
-    <published>2020-04-05T11:53:00.000Z</published>
-    <updated>2023-05-05T20:48:11.258Z</updated>
-    
-    <content type="html"><![CDATA[<p>虽然树莓派的初衷是教育领域，但它丰富的GPIO接口，廉价却完整的硬件构架使其成为了最受欢迎的机器人系统开发平台之一。废话说完了，下面开始正题。</p><span id="more"></span><h2 id="使用需求"><a href="#使用需求" class="headerlink" title="使用需求"></a>使用需求</h2><p>在官方Raspbian桌面系统下进行开发有很多局限性：交互界面不友好、趁手的软件不支持、桌面系统占用大量CPU周期……因此，我的使用原则是在本地（Mac）进行开发，远程部署至树莓派运行，同时需要将数据传回本地。整个过程尽可能简洁。</p><h2 id="安装Raspbian系统（参考资料）"><a href="#安装Raspbian系统（参考资料）" class="headerlink" title="安装Raspbian系统（参考资料）"></a>安装Raspbian系统<a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md">（参考资料）</a></h2><ul><li>下载最新的<a href="https://www.raspberrypi.org/downloads/raspbian/">系统镜像</a>。如果桌面系统不是必要，则推荐使用Lite版本。（可以减少不必要的系统中断，使对运行速度要求高的程序更稳定）</li><li>解压得到.img文件。</li><li>Mac插入Micro SD卡。</li><li>运行<code>diskutil list</code>，找到SD卡对应的盘位，如<code>/dev/disk2</code></li><li>弹出SD卡<code>diskutil unmountDisk /dev/diskN</code>。<br>其中<code>N</code>为SD卡的盘位。</li><li>烧录<code>sudo dd bs=1m if=path_of_your_image.img of=/dev/rdiskN conv=sync</code>。<br>其中<code>N</code>为SD卡的盘位。<br>其中<code>path_of_your_image.img</code>为系统镜像地址。<br>这一步骤需要好几分钟，可以通过<code>Ctrl+T</code>查看进度。</li><li>弹出SD卡<code>sudo diskutil eject /dev/rdiskN</code>。</li></ul><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>新安装的系统配置有4种情况：</p><table><thead><tr><th></th><th style="text-align:center">有显示器键鼠</th><th style="text-align:center">无显示器键鼠</th></tr></thead><tbody><tr><td>有桌面系统</td><td style="text-align:center">A</td><td style="text-align:center">B</td></tr><tr><td>无桌面系统</td><td style="text-align:center">C</td><td style="text-align:center">D</td></tr></tbody></table><p>下面的配置以<code>C</code>情况为例。</p><h3 id="安全配置"><a href="#安全配置" class="headerlink" title="安全配置"></a>安全配置</h3><p>——2022-12-18-更新——<br>最新的Raspberry Pi OS在第一次启动时默认要求用户设置个人账户，不会再有pi这种奇怪的账户了，可以忽略本章剩下的内容。</p><p>树莓派与显示器键鼠连接，第一次开机后使用默认用户名密码登录。（由于地球人都知道用户名密码，所以这个树莓派不被攻击是不科学的。）登录后首先要做的是删除默认<code>pi</code>用户。</p><ul><li>添加用户<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser your_username</span><br></pre></td></tr></table></figure></li><li>将新用户添加至sudo组<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser your_username sudo</span><br></pre></td></tr></table></figure></li><li>检查是否添加成功，并切换至root用户<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure></li><li>更改root密码<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config // Option 1</span><br><span class="line">// OR</span><br><span class="line">passwd // Option 2</span><br></pre></td></tr></table></figure></li><li><p>删除<code>pi</code>用户</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span> </span><br><span class="line"><span class="comment"># then log in with your_username</span></span><br><span class="line">sudo deluser -remove-home pi </span><br><span class="line"><span class="comment"># the /home/pi will be removed</span></span><br></pre></td></tr></table></figure><p>注：如果安装的是带桌面系统的镜像，<code>pi</code>无法直接删除，因为默认登陆用户<code>pi</code>始终运行图形界面。一个简单的方法是通过<code>sudo raspi-config</code>关闭桌面系统，重启后登陆新用户，再运行上述命令删除<code>pi</code>用户。此时可以在此打开桌面系统。</p></li><li><p>sudo取消密码输入<br>编辑文件<code>/etc/sudoers</code>，添加一行<code>your_username ALL=(ALL:ALL) NOPASSWD:ALL</code>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/sudoers</span><br></pre></td></tr></table></figure></li></ul><h3 id="网络连接（参考资料）"><a href="#网络连接（参考资料）" class="headerlink" title="网络连接（参考资料）"></a>网络连接<a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">（参考资料）</a></h3><p>（如果树莓派与路由器通过网线直连，步骤1-3可以跳过。）</p><ul><li>通过<code>sudo raspi-config</code>打开SSH通道，如果需要远程登陆桌面系统，则同时打开VNC通道。</li><li>通过<code>sudo raspi-config</code>链接wifi。</li><li>查看树莓派获得的IP地址<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></li><li>本地（Mac）通过ssh连接树莓派<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh your_username@192.168.0.xxx</span><br></pre></td></tr></table></figure></li><li><p>如果不想每次ssh都输入密码，可以将本地的ssh公钥传至树莓派（这条命令在本地而不是树莓派上执行）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i &lt;USERNAME&gt;@&lt;IP-ADDRESS&gt;</span><br></pre></td></tr></table></figure></li><li><p>如果树莓派重装系统后第一次ssh登陆时有冲突：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line">The fingerprint <span class="keyword">for</span> the ECDSA key sent by the remote host is</span><br><span class="line">SHA256:8AYVimIa4f5PlRiqxa6E/ylMj8iKQSqq9pmrqJyUFLs.</span><br><span class="line">Please contact your system administrator.</span><br><span class="line">Add correct host key <span class="keyword">in</span> /Users/anmo/.ssh/known_hosts to get rid of this message.</span><br><span class="line">Offending ECDSA key <span class="keyword">in</span> /Users/anmo/.ssh/known_hosts:7</span><br><span class="line">ECDSA host key <span class="keyword">for</span> 192.168.2.14 has changed and you have requested strict checking.</span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure><p>则可以在本地电脑上删除旧的密钥：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -R &lt;IP_of_your_Raspberry_Pi&gt;</span><br></pre></td></tr></table></figure></li></ul><h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><p>树莓派作为机器人控制系统，需要频繁调试代码，传输至树莓派上编译运行，并将数据取回本地。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="VS-Code-Remote-SSH-Extension"><a href="#VS-Code-Remote-SSH-Extension" class="headerlink" title="VS Code + Remote - SSH Extension"></a>VS Code + Remote - SSH Extension</h4><p>目前最尊贵的方法，没有之一。</p><p>如果使用C++ gdb debug需要sudo权限时，</p><ul><li>创建一个可执行文件<code>/home/pi/gdb</code></li><li>写入<code></code>sudo /usr/bin/gdb “$@”`</li><li>在<code>launch.json</code>中设置<code>&quot;miDebuggerPath&quot;: &quot;/home/pi/gdb&quot;</code></li></ul><!-- profiling可使用`sudo apt-get install valgrind kcachegrind` --><h4 id="Sublime-Text-3-SFTP"><a href="#Sublime-Text-3-SFTP" class="headerlink" title="Sublime Text 3 + SFTP"></a>Sublime Text 3 + SFTP</h4><p>我曾今的方案是<a href="https://www.sublimetext.com/">Sublime Text 3</a> + <a href="https://codexns.io/product/sftp_for_sublime">SFTP</a>。这个方案可以实现一个快捷键完成代码上传，不需要切换窗口。</p><ul><li>在<code>Sublime Text 3</code>环境下添加<code>package SFTP</code></li><li>在代码目录新建配置文件<a href="/2020/04/05/2020-04-05-RPI-setup/sftp-config" title="sftp-config.json">sftp-config.json</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;host&quot;: &quot;your_RPI_IP_address&quot;,</span><br><span class="line">&quot;user&quot;: &quot;your_username&quot;,</span><br><span class="line">&quot;password&quot;: &quot;your_password&quot;,</span><br><span class="line">&#x2F;&#x2F;&quot;port&quot;: &quot;22&quot;,</span><br><span class="line">&quot;remote_path&quot;: &quot;&#x2F;home&#x2F;your_username&#x2F;your_destination&#x2F;&quot;,</span><br></pre></td></tr></table></figure></li><li>编辑代码后，通过快捷键将当前文件传输至树莓派指定的文件夹中</li><li><code>ctrl+cmd+(u, f)</code> current file, <code>ctrl+cmd+(u, n)</code> opened files, <code>ctrl+cmd+(u, r)</code> entire folder</li><li>最后切换窗口至命令行，ssh登陆树莓派编译运行程序</li></ul><h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><p>通常我将树莓派生成的数据保存在树莓派，再通过<a href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories">rsycn</a>同步至本地：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -azvP your_username@192.168.0.2:/home/your_username/data/ /Users/anmo/Documents/lso/rawData</span><br></pre></td></tr></table></figure></p><p>如果有调试需要，也可以利用<code>piping</code>将数据引导至本地文件或直接进行后处理：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh your_username@192.168.0.38 ./a.out | python plot.py</span><br></pre></td></tr></table></figure></p><h2 id="实时操作系统"><a href="#实时操作系统" class="headerlink" title="实时操作系统"></a>实时操作系统</h2><p>树莓派系统不是实时操作系统，无法满足确定的（deterministic）低延时响应。目前可以通过安装精简系统、安装RT_Preempt补丁的方式尽可能提高实时性。</p><ul><li>以Linux内核版本<a href="https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2019-07-12/">4.19</a>为例，按照上述配置方式安装<a href="https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2019-07-12/">精简版Raspbian系统</a></li><li>（以下步骤在树莓派上操作）</li><li>下载编译好的RT_Preempt补丁（也可以<a href="https://lemariva.com/blog/2019/09/raspberry-pi-4b-preempt-rt-kernel-419y-performance-test">自己编译</a>）并安装<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">wget https://github.com/lemariva/RT-Tools-RPi/raw/master/preempt-rt/kernel_4_19_59-rt23-v7l%2B/rt-kernel.tgz</span><br><span class="line">tar xzf rt-kernel.tgz</span><br><span class="line"><span class="built_in">cd</span> boot</span><br><span class="line">sudo cp -rd * /boot/</span><br><span class="line"><span class="built_in">cd</span> ../lib</span><br><span class="line">sudo cp -dr * /lib/</span><br><span class="line"><span class="built_in">cd</span> ../overlays</span><br><span class="line">sudo cp -d * /boot/overlays</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">sudo cp -d bcm* /boot/</span><br></pre></td></tr></table></figure></li><li>将<code>kernel=kernel7_rt.img</code>添加一行到<code>/boot/config.txt</code>:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Add the option: kernel&#x3D;kernel7_rt.img</span><br><span class="line">sudo nano &#x2F;boot&#x2F;config.txt</span><br></pre></td></tr></table></figure></li><li>重启树莓派，查看补丁是否安装成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ uname -r</span><br><span class="line"><span class="comment"># you should see: 4.19.59-rt23-v7l+</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="超频-锁频"><a href="#超频-锁频" class="headerlink" title="超频/锁频"></a>超频/锁频</h2><p><a href="https://magpi.raspberrypi.org/articles/how-to-overclock-raspberry-pi-4">超频</a>可以获得性能提升，代价是功率与<a href="https://qengineering.eu/overclocking-the-raspberry-pi-4.html">散热</a>。锁频可以保证CPU频率不随负荷动态调整，在实时操作系统中有重要意义。</p><p>⚠️请使用散热片！<br>⚠️以下操作将使保修无效！</p><ul><li>编辑配置文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nano /boot/config.txt</span><br><span class="line"><span class="comment"># Add your lines at the end.</span></span><br><span class="line">over_voltage = 2</span><br><span class="line">arm_freq = 1750<span class="comment"># 超频至1750MHz</span></span><br><span class="line">force_turbo = 1 <span class="comment"># 锁频</span></span><br></pre></td></tr></table></figure></li><li>重启<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reboot</span><br></pre></td></tr></table></figure></li><li>查看运行状态<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CPU 频率</span></span><br><span class="line">cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq</span><br><span class="line"><span class="comment"># CPU 温度</span></span><br><span class="line">cat /sys/class/thermal/thermal_zone0/temp</span><br><span class="line"><span class="comment"># 可以自动刷新 watch -n 1 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="安装实用工具"><a href="#安装实用工具" class="headerlink" title="安装实用工具"></a>安装实用工具</h2><ul><li>GPIO工具：<a href="http://wiringpi.com/">Wiring Pi</a>虽然还不错，但毕竟不再维护了，性能也稍差。我更习惯使用<a href="https://www.airspayce.com/mikem/bcm2835/">bcm2835</a>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.68.tar.gz</span><br><span class="line">tar zxvf bcm2835-1.68.tar.gz</span><br><span class="line">rm bcm2835-1.68.tar.gz</span><br><span class="line"><span class="built_in">cd</span> bcm2835-1.68</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make check</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></li></ul><!-- ## 安装实用工具 -->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;虽然树莓派的初衷是教育领域，但它丰富的GPIO接口，廉价却完整的硬件构架使其成为了最受欢迎的机器人系统开发平台之一。废话说完了，下面开始正题。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://mo-an.net/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
