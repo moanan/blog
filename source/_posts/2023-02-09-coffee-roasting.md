@@ -7,6 +7,7 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）    |  温度 C    |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |     ---   |      ---      | --- |
+|  052  |  241024  |  20  |   100  |    99.7 |      81.0 (18.7%)   |   180-230 | 12'45''(45)  |  D  |
 |  051  |  241018  |  21  |   125  |   123.5 |     110.2 (10.8%)   |   180-230 |  9'15''(20)  |  M  |
 |  050  |  241008  |  16  |   132  |   126.7 |     112.3 (11.4%)   |   180-230 |  9'10''(15)  |  L  |
 |  049  |  240926  |  19  |   101  |   101.0 |      87.6 (13.2%)   |   180-230 |  7'48''(15)  |  L  |
@@ -152,6 +153,11 @@ Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig 
 Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
 Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
+
+
+
+## 052
+越来越受不了这个烘豆机了，温度曲线琢磨不透，这次前8分钟温度一直过山车，后面爬升异常缓慢，10min都还升不到200度，直到下豆也只升到210多度。
 
 
 ## 050
