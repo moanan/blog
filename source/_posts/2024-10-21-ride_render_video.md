@@ -61,6 +61,15 @@ ffmpeg -f concat -safe 0 -i <(for f in ./*.MP4; do echo "file '$PWD/$f'"; done) 
 - `overlay.mp4`即为输出的显示码表数据的视频
 
 ## google map路径渲染
+- 下载安装google earth pro，并打开运行
+- file -> open `.gpx`文件
+- Preferences -> Touring，打勾`fly along lines`，编辑`camera tilt angle`， `canmera range`，`elevation exaggeration`等相关选项
+- 左边栏选择Temporary Places -> GPS device，右键单击选择`get info`，修改名字`foo`
+- 将`foo`展开目录下`Track`下的光标名字修改为空
+- 单击左边栏中间最右边的小按钮，即开始播放路径预览，调整相关参数直至满意
+- 点击地图左下角的`录制`按钮，然后点击`播放`路径按钮，最后点击`保存`按钮，此时左边菜单栏新增一个Tour
+- 点击新出现的Tour，Tools -> movie maker，设置导出的视频参数，导出视频，结束
+
 {% youtube ZUS-b0iVxnC6cVoQ %}
 
 
