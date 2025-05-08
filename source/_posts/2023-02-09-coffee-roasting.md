@@ -7,8 +7,11 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）   |   温度 C   |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |    ---    |      ---      | --- |
-|  063  |  250413  |  22  |   100  |    98.3 |      83.4 (15.2%)   |      -213 | 12'25''(15)   |  ML |
-|  062  |  250407  |  22  |   100  |    98.6 |      85.8 (13.0%)   |      -210 |  9'47''(15)   |  L  |
+|  066  |  250508  |  21  |   100  |    98.6 |      87.5 (11.3%)   |      -213 |  9'00''(17)   |  ML  |
+|  065  |  250421  |  20  |   100  |    99.8 |      86.2 (13.6%)   |      -219 |  6'41''(60)   |  L  |
+|  064  |  250418  |  22  |   100  |    99.9 |      87.8 (12.1%)   |      -210 | 10'17''(20)   |  L  |
+|  063  |  250413  |  23  |   100  |    98.3 |      83.4 (15.2%)   |      -213 | 12'25''(15)   |  ML |
+|  062  |  250407  |  23  |   100  |    98.6 |      85.8 (13.0%)   |      -210 |  9'47''(15)   |  L  |
 |  061  |  250327  |  20  |   100  |    99.4 |      81.4 (18.1%)   |      -234 | 15'20''(20)   |  MD |
 |  060  |  250316  |  22  |   100  |    99.7 |      88.3 (11.4%)   |      -209 |  9'20''(10)   |  ML |
 |  059  |  250224  |  21  |   100  |    96.3 |      84.9 (xx.6%)   |     0-210 |  8'10''(10)   |  ML |
@@ -166,6 +169,10 @@ Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig 
 Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
 
 Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
+
+
+## 065
+第一次用曲线跟随，感觉PID没设置好，很快就下豆了。。
 
 
 ## 060
