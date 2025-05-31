@@ -7,7 +7,8 @@ mathjax: true
 
 |  序号  |   日期   |  豆子 |  始重 g |  挑豆 g |    终重 g （脱水）   |   温度 C   |   一爆 （发展） | 程度 | 
 |  ---  |   ---    |  --- |   ---  |   ---   |        ---          |    ---    |      ---      | --- |
-|  067  |  250522  |  23  |   100  |    99.8 |      85.4 (14.4%)   |      -213 | 12'06''(15)   |  M  |
+|  068  |  250531  |  23  |   100  |    98.7 |      85.3 (13.5%)   |      -213 |  9'47''(15)   |  L  |
+|  067  |  250522  |  23  |   100  |    99.8 |      85.4 (14.4%)   |      -212 | 12'06''(15)   |  M  |
 |  066  |  250508  |  21  |   100  |    98.6 |      87.5 (11.3%)   |      -213 |  9'00''(17)   |  ML |
 |  065  |  250421  |  20  |   100  |    99.8 |      86.2 (13.6%)   |      -219 |  6'41''(60)   |  L  |
 |  064  |  250418  |  22  |   100  |    99.9 |      87.8 (12.1%)   |      -210 | 10'17''(20)   |  L  |
@@ -109,72 +110,20 @@ mathjax: true
 {% asset_img roasting.webp 1000 %}
 
 
-# 记录
+# 烘豆记录
 
-## [10-耶加雪菲水洗]()
-和09号豆是同一种，成色确实差不多，但处理方法不同，一个是日晒一个是水洗。生豆颜色上更偏绿色，不像日晒的那么黄，可能是晒黑了吧？
+## 068
+继续采用手动调节的方式，将火力控制颗粒度从5%调节为1%，实现更准确的温控：
+- 风力70启动，全程保持不变
+- 火力35启动，从2min时刻开始，直到6min，每间隔30s，提高1点火力值，火力值达到39；
+- 从6min时刻开始，直到10min，每间隔1min，提高1点火力值，火力值达到44；
 
-不知道是温度计不准还是因为水洗的豆更耐热，比09号豆明显温度更高时间更久达到1爆。下豆的前置量没把握好，比预期的浅烘稍稍深了一点。
-
-<!-- 【图】 -->
-
-
-## [09-耶加雪菲日晒]()
-豆子质量一般，残次豆不少，大小不一，有不少很小很小的豆
-
-
-
-## [08-埃塞尔比亚瑰夏](https://coffee-market.stores.jp/items/6300d38a5d05ec40991af9d7)
-2023年去日本开会发现的宝藏咖啡店[The Coffee Market Lab](https://coffee-market.net/lab-2)，店内有3台迷你烘豆机，可以定制烘豆！生豆选择很丰富，忍不住带了500g瑰夏回家自己烘。马上就要实现瑰夏自由啦！
-
-豆子质量很好，残次豆非常少。喝到了久违的瑰夏，简直是爆香。甚至有种从咖啡的颜色就能看出好喝的好感。同事华尔特评价也很高，说是我最成功的一次。
-
-
-## [07-哥伦比亚惠兰](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
-豆子质量不错，几乎没有残次豆，豆粒较大。
-
-
-## [06-巴布亚新几内亚Baroida庄园](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
-生豆有一种让人不愉悦的脚臭味。。。虽然是水洗的豆，烘的过程中有不少银皮掉落，也是有点迷。。。
-
-
-## [05-乌干达Kisiizi](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
-
-
-## [04-耶加雪菲Gedeb](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
-
-
-## [03-India](https://www.docklands-coffee.de/indien-monsooned-malabar-aa/0020107-1000)
-Er ist im Aroma und Geschmack etwas Besonderes, denn seine Aufbereitung erfolgt völlig anders als bei anderen Kaffees. Die Gründe dafür liegen in der Transportgeschichte von Kaffee.
-- Kaffeesorte: Monsooned Malabar
-- Klassifizierung: AA
-- Varietät: S 795 (100% Arabica)
-- Anbauland: Indien
-- Anbaugebiet: Malabarküste, Bundesstaat Kerala (im Südwesten Indiens)
-- Anbauhöhe: 1100-1200 m ü.M.
-
-## [02-Kenia](https://www.docklands-coffee.de/kenia-mount-kenya-selection/0020113-1000)
-Das Mount-Kenya-Massiv stellt für die afrikanische Flora und Fauna einen bemerkenswert artenreichen Lebensraum dar. Das tropisch-feuchte Hochgebirgs-Klima lässt einzigartige Pflanzenarten gedeihen. Große Niederschlagsmengen (es regnet an rund 200 Tagen im Jahr) und die fruchtbaren vulkanischen Böden am Fuß des Massivs bieten für den Kaffeeanbau hervorragende Bedingungen. Während der Bereich oberhalb von 3200m Höhe zum Mount-Kenya-Nationalpark gehört, werden rund um das Bergmassiv bis ca. 1900m ü.M. Premium-Kaffeesorten angebaut. Es werden ausschließlich tiefrote Kaffeekirschen per Hand geerntet. 
-
-Der besonders fruchtige und ausgewogene Kaffee mit einer angenehmen Süße besticht durch weinähnlichen Beerenaromen. Er hat eine mittlere bis stark ausgeprägte Säure, hat einen aromareichen, kraftvollen Körper und ist rundum ausgewogen.
-- Kaffeesorte: Mount Kenya
-- Klassifizierung: AB Plus
-- Varietät:  Typica, Bourbon (100% Arabica)
-- nbaugebiet: an den nordöstlichen Berghängen des Mount Kenya / Kenia
-- Anbauhöhe: 1650 – 1800m ü.M.
-
-## [01-Ethiopia](https://www.docklands-coffee.de/aethiopien-zege-lake-tana-coffee/0020125-1000)
-Rund um den Tanasee wächst seit Urzeiten Kaffee. Dennoch gehört diese Region nicht zu den klassischen Anbaugebieten Äthiopiens. Ursprunglich waren es Waldkaffees, aber der Holzeinschlag der letzten Jahrzehnten hat leider dafür gesorgt, daß dieser historische Waldkaffee rund um den Tanasee fast nicht mehr vorkommt. Eine Ausnahme stellt die Halbinsel Zege dar. Es ist das größte, noch zusammenhängende Waldgebiet am Tanasee in dem der Kaffee in seiner Ursprungsform gedeiht. Zu verdanken hat er das seiner einzigartigen „heiligen“ Herkunft, so unsere Recherchen.
-"Betre Maryam", der Name des Heiligen, teilte einst seinen Priesterstab in drei Teile. Aus dem Kopfteil entstanden die ersten Kaffeepflanzen. In einem der sieben Klöster von Zege ist diese einmalige Geschichte in Wandbildnissen verewigt. Zudem existiert auch ein altes Buch indem diese besondere Begebenheit niedergeschrieben wurde. Noch heute gibt es auf Zege aus diesen historisch religiösen Gründen keine echte Landkultivierung im herkömmlichen Sinne. So schützt der „heilige“ Kaffee den Wald und der Wald den "heiligen" Kaffee. Kaffee ist dort wirklich ein besonderes Gut.
-Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig mit der Kaffeekultivierung für den Eigenbedarf bzw. für den lokalen Markt. Es handelt sich hierbei um die unterschiedlichsten Qualitäten. Gesammelt und verwendet wird eigentlich alles. In den letzten vier Jahren (Erntezyklen) haben wir die Ernte und Aufbereitung in Zusammenarbeit mit den einheimischen Kaffeeanbauern und Klöstern optimiert, um einen wunderbaren Zege Waldkaffee zu kreieren. Dieser im Verlauf der Zeit entstandene Kaffee von höchster Qualität hat bereits wichtige Partner gefunden. InterAmerican Coffee, von der Neumann Gruppe (weltweit größter Rohkaffeehändler), beteiligt sich finanziell, logistisch und technisch an diesem außergewöhnlichen Kaffeeprojekt. Das erst ermöglicht diesem Kaffee seinen verdienten internationalen Auftritt. Unterstützt und gefördert wird dieses Kaffeeprojekt auch durch World-Habitat-Society, die sich seit Jahren vor Ort auf Zege für den Schutz des Waldes, der Regionalentwicklung und dem nachhaltigen Tourismus sowie für den Erhalt und die Restaurierung der Klöster und seiner Malkunst, die zum Teil aus dem 12. Jahrhundert stammen, einsetzt. In all diesen Punkten wird sich zukünftig unser Zege Waldkaffee einbringen. Denn durch diese Projekte wird die Region nachhaltig gestärkt und ermöglicht somit auch in Zukunft die Anfertigung dieses wunderbaren und zugleich einzigartigen Zege Waldkaffees mit „heiliger“ Herkunft.
-Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
-
-Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
-
+<!-- 图 -->
 
 ## 065
 第一次用曲线跟随，感觉PID没设置好，很快就下豆了。。
 
+<!-- 图 -->
 
 ## 060
 控制柜改造完成！玻璃管聚热改造完成！风扇70起步，加热35起步，体验手动Artisan！
@@ -406,6 +355,69 @@ Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
 爆了大概20多秒才关火，发展有点过了头，感觉是中深烘了。原本的目标其实是浅烘，10分钟左右下豆。。
 
 下次吧，下次一定会更好！
+
+
+# 豆子记录
+
+## [10-耶加雪菲水洗]()
+和09号豆是同一种，成色确实差不多，但处理方法不同，一个是日晒一个是水洗。生豆颜色上更偏绿色，不像日晒的那么黄，可能是晒黑了吧？
+
+不知道是温度计不准还是因为水洗的豆更耐热，比09号豆明显温度更高时间更久达到1爆。下豆的前置量没把握好，比预期的浅烘稍稍深了一点。
+
+<!-- 【图】 -->
+
+
+## [09-耶加雪菲日晒]()
+豆子质量一般，残次豆不少，大小不一，有不少很小很小的豆
+
+
+
+## [08-埃塞尔比亚瑰夏](https://coffee-market.stores.jp/items/6300d38a5d05ec40991af9d7)
+2023年去日本开会发现的宝藏咖啡店[The Coffee Market Lab](https://coffee-market.net/lab-2)，店内有3台迷你烘豆机，可以定制烘豆！生豆选择很丰富，忍不住带了500g瑰夏回家自己烘。马上就要实现瑰夏自由啦！
+
+豆子质量很好，残次豆非常少。喝到了久违的瑰夏，简直是爆香。甚至有种从咖啡的颜色就能看出好喝的好感。同事华尔特评价也很高，说是我最成功的一次。
+
+
+## [07-哥伦比亚惠兰](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
+豆子质量不错，几乎没有残次豆，豆粒较大。
+
+
+## [06-巴布亚新几内亚Baroida庄园](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
+生豆有一种让人不愉悦的脚臭味。。。虽然是水洗的豆，烘的过程中有不少银皮掉落，也是有点迷。。。
+
+
+## [05-乌干达Kisiizi](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
+
+
+## [04-耶加雪菲Gedeb](https://m.tb.cn/h.UHImCFM?tk=XIgHdPCOLlr)
+
+
+## [03-India](https://www.docklands-coffee.de/indien-monsooned-malabar-aa/0020107-1000)
+Er ist im Aroma und Geschmack etwas Besonderes, denn seine Aufbereitung erfolgt völlig anders als bei anderen Kaffees. Die Gründe dafür liegen in der Transportgeschichte von Kaffee.
+- Kaffeesorte: Monsooned Malabar
+- Klassifizierung: AA
+- Varietät: S 795 (100% Arabica)
+- Anbauland: Indien
+- Anbaugebiet: Malabarküste, Bundesstaat Kerala (im Südwesten Indiens)
+- Anbauhöhe: 1100-1200 m ü.M.
+
+## [02-Kenia](https://www.docklands-coffee.de/kenia-mount-kenya-selection/0020113-1000)
+Das Mount-Kenya-Massiv stellt für die afrikanische Flora und Fauna einen bemerkenswert artenreichen Lebensraum dar. Das tropisch-feuchte Hochgebirgs-Klima lässt einzigartige Pflanzenarten gedeihen. Große Niederschlagsmengen (es regnet an rund 200 Tagen im Jahr) und die fruchtbaren vulkanischen Böden am Fuß des Massivs bieten für den Kaffeeanbau hervorragende Bedingungen. Während der Bereich oberhalb von 3200m Höhe zum Mount-Kenya-Nationalpark gehört, werden rund um das Bergmassiv bis ca. 1900m ü.M. Premium-Kaffeesorten angebaut. Es werden ausschließlich tiefrote Kaffeekirschen per Hand geerntet. 
+
+Der besonders fruchtige und ausgewogene Kaffee mit einer angenehmen Süße besticht durch weinähnlichen Beerenaromen. Er hat eine mittlere bis stark ausgeprägte Säure, hat einen aromareichen, kraftvollen Körper und ist rundum ausgewogen.
+- Kaffeesorte: Mount Kenya
+- Klassifizierung: AB Plus
+- Varietät:  Typica, Bourbon (100% Arabica)
+- nbaugebiet: an den nordöstlichen Berghängen des Mount Kenya / Kenia
+- Anbauhöhe: 1650 – 1800m ü.M.
+
+## [01-Ethiopia](https://www.docklands-coffee.de/aethiopien-zege-lake-tana-coffee/0020125-1000)
+Rund um den Tanasee wächst seit Urzeiten Kaffee. Dennoch gehört diese Region nicht zu den klassischen Anbaugebieten Äthiopiens. Ursprunglich waren es Waldkaffees, aber der Holzeinschlag der letzten Jahrzehnten hat leider dafür gesorgt, daß dieser historische Waldkaffee rund um den Tanasee fast nicht mehr vorkommt. Eine Ausnahme stellt die Halbinsel Zege dar. Es ist das größte, noch zusammenhängende Waldgebiet am Tanasee in dem der Kaffee in seiner Ursprungsform gedeiht. Zu verdanken hat er das seiner einzigartigen „heiligen“ Herkunft, so unsere Recherchen.
+"Betre Maryam", der Name des Heiligen, teilte einst seinen Priesterstab in drei Teile. Aus dem Kopfteil entstanden die ersten Kaffeepflanzen. In einem der sieben Klöster von Zege ist diese einmalige Geschichte in Wandbildnissen verewigt. Zudem existiert auch ein altes Buch indem diese besondere Begebenheit niedergeschrieben wurde. Noch heute gibt es auf Zege aus diesen historisch religiösen Gründen keine echte Landkultivierung im herkömmlichen Sinne. So schützt der „heilige“ Kaffee den Wald und der Wald den "heiligen" Kaffee. Kaffee ist dort wirklich ein besonderes Gut.
+Traditionell beschäftigen sich die Einheimischen und die Klöster ehrfürchtig mit der Kaffeekultivierung für den Eigenbedarf bzw. für den lokalen Markt. Es handelt sich hierbei um die unterschiedlichsten Qualitäten. Gesammelt und verwendet wird eigentlich alles. In den letzten vier Jahren (Erntezyklen) haben wir die Ernte und Aufbereitung in Zusammenarbeit mit den einheimischen Kaffeeanbauern und Klöstern optimiert, um einen wunderbaren Zege Waldkaffee zu kreieren. Dieser im Verlauf der Zeit entstandene Kaffee von höchster Qualität hat bereits wichtige Partner gefunden. InterAmerican Coffee, von der Neumann Gruppe (weltweit größter Rohkaffeehändler), beteiligt sich finanziell, logistisch und technisch an diesem außergewöhnlichen Kaffeeprojekt. Das erst ermöglicht diesem Kaffee seinen verdienten internationalen Auftritt. Unterstützt und gefördert wird dieses Kaffeeprojekt auch durch World-Habitat-Society, die sich seit Jahren vor Ort auf Zege für den Schutz des Waldes, der Regionalentwicklung und dem nachhaltigen Tourismus sowie für den Erhalt und die Restaurierung der Klöster und seiner Malkunst, die zum Teil aus dem 12. Jahrhundert stammen, einsetzt. In all diesen Punkten wird sich zukünftig unser Zege Waldkaffee einbringen. Denn durch diese Projekte wird die Region nachhaltig gestärkt und ermöglicht somit auch in Zukunft die Anfertigung dieses wunderbaren und zugleich einzigartigen Zege Waldkaffees mit „heiliger“ Herkunft.
+Zege Information: Größe der Halbinsel ca. 3,5 x 5 km – Die Einwohnerzahl insgesamt liegt bei ca. 9500, wovon ca. 3000 im einzigem Dorfgebiet „Afaf“ leben. Sieben Klöster gibt es auf Zege. Die Kaffeeanbauhöhe liegt bei 1850 m und die Erntezeit ist Februar und März. Zege Waldkaffee ist ein Exklusiv-Produkt von Stefan E. Bös und InterAmerican Coffee GmbH in Zusammenarbeit mit allen sieben Klöstern und den Einheimischen von Zege.
+
+Ausgewogen rund, mit fülligem Körper und samtig weicher Würze.
 
 
 # 步骤
