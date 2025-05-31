@@ -81,31 +81,31 @@ mathjax: true
 
 # 豆子
 
-|  编号  |    名称                |    品种        |      产地                  |   处理        |    风味    | 
-|  ---  |     ---                |      ---       |   ---                     |    ---       |     ---    |
-|   23  |    西达摩                 |           |      Ethiopia      |     日晒     |       |
-|   22  |    ALO                 |     74158      |      Ethiopia, Bombe      |     水洗     |       |
-|   21  |    小红莓(Mini-Ruby AB) |  Batian & SL28 & SL34  |   Kenya, Kericho     |      水洗        |   小红莓、柠檬、焦糖、绿茶    |
-|   20  |    PWN黄金曼特宁         |     阿拉比卡      |      印尼      |     湿刨     |    巧克力、焦糖、薄荷、果酸    |
-|   19  |    Java                |     卡杜拉      |      玻利维亚，卡拉纳维      |     日晒     |    蜜桃、伯爵红茶、青柑    |
-|   18  |    瑰夏                 |               |                        |       	 |     	|
-|   17  |    恰恰蕾                |    阿拉比卡  |   埃塞俄比亚，Gedeb恰恰蕾村 |     厌氧日晒G1  	 |     	|
-|   16  |    肯尼亚AA              |    SL28/SL34  |   Kenya, Kirinyaga Deerfruit Manor |     水洗  	 |    莓果香、葡萄柚、乌梅酸甜 	|
+|  编号  |    名称                |    品种        |           产地             |     处理        |    风味    | 
+|  ---  |     ---                |      ---       |   ---                     |     ---       |     ---    |
+|   23  |    西达摩                 |               |      Ethiopia            |     日晒       |       |
+|   22  |    ALO                 |     74158      |      Ethiopia, Bombe      |     水洗       |       |
+|   21  | 小红莓(Mini-Ruby AB)  | Batian & SL28 & SL34 |   Kenya, Kericho      |      水洗      |   小红莓、柠檬、焦糖、绿茶    |
+|   20  |    PWN黄金曼特宁         |     阿拉比卡     |          印尼             |      湿刨     |    巧克力、焦糖、薄荷、果酸    |
+|   19  |    Java                 |     卡杜拉      |      玻利维亚，卡拉纳维     |     日晒       |    蜜桃、伯爵红茶、青柑    |
+|   18  |    瑰夏                 |                 |                          |       	      |      	|
+|   17  |    恰恰蕾                |    阿拉比卡    |   埃塞俄比亚，Gedeb恰恰蕾村   |     厌氧日晒G1  |     	|
+|   16  |    肯尼亚AA              |    SL28/SL34  |   Kenya, Kirinyaga Deerfruit Manor |  水洗  |    莓果香、葡萄柚、乌梅酸甜 	|
 |   15  |    尖身波旁              |       		  |        |       	  |      	|
 |   14  |    果丁丁              |         		  |        |       	  |      	|
 |   13  |    花魁7.0              |         		  |        |       	  |      	|
 |   12  |    花魁8.0              |         		  |        |       	  |      	|
-|   11  |    吉吉乌拉嘎           |         		  |   Ethiopia, 吉吉乌拉嘎     |    日晒G1   	  |      	|
-|   10  |    耶加雪菲Dumerso      |         		  |   Ethiopia                 |    水洗   	  |      	|
-|   09  |    耶加雪菲Dumerso		 |         		  |   Ethiopia                 |    日晒   	  |      	|
-|   08  |    瑰夏			     |         		  |   Ethiopia                 |    日晒   	  |   花果香   |
+|   11  |    吉吉乌拉嘎           |         		  |   Ethiopia, 吉吉乌拉嘎      |     日晒G1   	  |      	|
+|   10  |    耶加雪菲Dumerso      |         		  |   Ethiopia                |    水洗   	  |      	|
+|   09  |    耶加雪菲Dumerso		 |         		  |   Ethiopia                |    日晒   	  |      	|
+|   08  |    瑰夏			     |         		  |   Ethiopia                |    日晒   	  |   花果香   |
 |   07  |    惠兰			     |      哥伦比亚   |   Colombia                 |    水洗   	  |           |
 |   06  |    Baroida			 |      		  |   New Guinea, Baroida     |    水洗   	  |           |
 |   05  |    Kisiizi			 |      		  |   Uganda, Kisiizi         |    日晒   	  |      青草   |
-|   04  |    Gedebe			     |      耶加雪菲   |   Ethiopia               |    日晒   	  |      	    |
-|   03  |    Monsooned Malabar   |      Arabica   |   India, Malabar coast  |    Monsooned   |   五谷，坚果   |
-|   02  |    AB Plus             |      Arabica   |   Kenia, Mount Kenia    |  Fully washed  |   香茅，果冻   |
-|   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana   |    Natural     |   花果香   |
+|   04  |    Gedebe			     |      耶加雪菲   |   Ethiopia                |    日晒   	  |      	    |
+|   03  |    Monsooned Malabar   |      Arabica   |   India, Malabar coast   |    Monsooned   |   五谷，坚果   |
+|   02  |    AB Plus             |      Arabica   |   Kenia, Mount Kenia     |  Fully washed  |   香茅，果冻   |
+|   01  |    Zege Forest Grow    |      Arabica   |   Ethiopia, Lake Tana    |    Natural     |   花果香   |
 
 {% asset_img roasting.webp 1000 %}
 
@@ -118,7 +118,7 @@ mathjax: true
 - 火力35启动，从2min时刻开始，直到6min，每间隔30s，提高1点火力值，火力值达到39；
 - 从6min时刻开始，直到10min，每间隔1min，提高1点火力值，火力值达到44；
 
-<!-- 图 -->
+{% asset_img Screenshot1.png 1000 %}
 
 ## 065
 第一次用曲线跟随，感觉PID没设置好，很快就下豆了。。
