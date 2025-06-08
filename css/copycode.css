@@ -18,6 +18,8 @@
     user-select: none;
     -webkit-appearance: none;
     color: #808080;
+    -webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
     transition: opacity .3s ease-in-out;
     opacity: 0;
 }
