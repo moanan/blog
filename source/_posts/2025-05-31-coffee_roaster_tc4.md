@@ -64,7 +64,7 @@ TC4+兼容[TC4代码](https://github.com/greencardigan/TC4-shield)，代码整�
 
 ### Artisan
 
-[Artisan](https://artisan-scope.org/)功能强大，有很多功能需要探索。从此我的烘豆进入精密化操作阶段。
+[Artisan](https://artisan-scope.org/)功能强大，有很多功能需要探索。从此烘豆进入精密化操作阶段。
 {% asset_img 12.png 500 %}
 
 
