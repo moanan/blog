@@ -18,10 +18,10 @@ mathjax: true
 {% asset_img 2.jpg 200 %}
 
 有简单的电路，通过排线与面板上的控制器相连。
-{% asset_img 3.jpg 200 %}
+{% asset_img 3.JPG 200 %}
 
 一个交流电机（已拆除）向上送风，透过加热电炉丝加热。
-{% asset_img 4.jpg 200 %}
+{% asset_img 4.JPG 200 %}
 
 ## 升级
 
@@ -36,7 +36,7 @@ mathjax: true
 
 ### 电机
 由于TC4+不直接支持原装的交流电机风扇，只支持直流电机风扇，为了提高烘豆的均匀度，我换成了ESC+无刷直流电机的方案。图左侧是拆下来的直流风扇，右边是通过3D打印结构固定的无刷暴力涵道风机。
-{% asset_img 7.jpg 300 %}
+{% asset_img 7.JPG 300 %}
 
 ### 扇叶
 实际测试发现，尽管无刷风扇的风量特别大，功率也增加了一倍，但仍然不能把咖啡豆地吹起来，效果还不如原来80W的交流风扇。这个问题最终定位为两种风扇原理的不同。原装的是离心风扇（centrifugal fan），风量大，风压小；替换为了轴流风扇（axial fan），风压大，风量小。因此，最终采用了无刷电机+离心扇叶的方式解决了这个问题。
@@ -51,7 +51,7 @@ mathjax: true
 ### 控制柜
 试烘成功后，简单设计了一个3D打印的控制柜，将直流电源、TC4+、继电器、ESC、显示屏等集成起来。
 {% asset_img 9.jpg 300 %}
-{% asset_img 10.jpg 300 %}
+{% asset_img 10.JPG 300 %}
 
 ## 软件
 
@@ -69,7 +69,7 @@ TC4+兼容[TC4代码](https://github.com/greencardigan/TC4-shield)，代码整�
 
 
 ## 实战
-{% asset_img 13.jpg 500 %}
+{% asset_img 13.JPG 500 %}
 参考链接：{% post_link 2023-02-09-coffee-roasting %}
 
 
